@@ -1,2 +1,45 @@
+:root{
+    --header-font: 'Montserrat';
+    --paragraph-font: 'Inter';
+    --mob-quote-style: 'light italic';
 
+    --mob-h1-size: 1.5rem;
+    --mob-h1-line-height: 2.3rem;
+    --mob-h1-weight-default: 500;
+    --mob-h1-weight-thin: 300;
+    --mob-h1-weight-semi-bold: 600;
+    --mob-h1-weight-bold: 700;
+
+     --mob-h2-size: 1.3rem;
+     --mob-h2-line-height: 2rem;
+     --mob-h2-weight-default: 500;
+     --mob-h2-weight-thin: 300;
+     --mob-h2-weight-semibold: 600;
+     --mob-h2-weight-bold: 700;
+
+     --mob-h3-size: 1.1rem;
+     --mob-h3-line-height: 1.75rem;
+     --mob-h3-weight-default: 500;
+     --mob-h3-weight-thin: 300;
+     --mob-h3-weight-semibold: 600;
+     --mob-h3-weight-bold: 700;
+
+     --mob-paragraph-size: 1rem;
+     --mob-paragraph-line-height: 1.2rem;
+     --mob-paragraph-weight-default: 500;
+     --mob-paragraph-weight-thin: 300;
+     --mob-paragraph-weight-semibold: 600;
+     --mob-paragraph-weight-bold: 700;
+
+     --mob-button-size: 0.8rem;
+     --mob-button-line-height: auto;
+     --mob-button-weight-default: 500;
+     --mob-button-weight-thin: 300;
+     --mob-button-weight-semibold: 600;
+     --mob-button-weight-bold: 700;
+
+     --mob-quote-size: 1.2rem;
+     --mob-quote-line-height: auto;
+     --mob-quote-weight: 300;
+}
 
