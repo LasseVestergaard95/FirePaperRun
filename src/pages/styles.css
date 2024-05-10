@@ -1,4 +1,10 @@
 :root{
+  --lighter-white: #fefefe;
+    --light-white: #F3F2F2;
+    --dusty-orange: #EEE8E2;
+    --light-black: #2d2d2d;
+    --dark-black: #181818;
+
     --header-font: 'Montserrat';
     --paragraph-font: 'Inter';
     --mob-quote-style: 'light italic';
