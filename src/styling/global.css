@@ -10,10 +10,8 @@ body {
   line-height: 1.6;
   color: var(--light-black);
   background-color: var(--light-white);
-  /* Nedenstående 3 linjer skal fjernes. Dens eneste purpose er at få footeren nederst på siden */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+
+  margin-inline: auto;
 }
 
 /* Normalisering af billeder */
@@ -23,13 +21,8 @@ img {
   display: block;
 }
 
-/* Nedenstående 2 skal fjernes senere. Eneste purpose er at få footeren nederst på siden. */
-main {
-  flex: 1;
-}
-footer {
-  margin-top: auto;
-}
+
+
 
 h1,
 h2,

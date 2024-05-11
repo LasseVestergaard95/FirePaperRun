@@ -1,14 +1,39 @@
 ---
-import MainLayout from "../layout/MainLayout.astro"
-import Test from "../components/Test.astro"
-
+import MainLayout from "../layout/MainLayout.astro";
 ---
 
 <MainLayout>
-	<h1>Hej</h1>
-	<Test></Test>
+  <section class="hero">
+    <div><img class="baggrund" src="/public/banner/kopper-haand-1.webp" alt="" /></div>
+    <div><img class="logo" src="/public/logo/fpr-hvid-stacked.svg" alt="" /> <p>Dette er en tekst</p></div>
+  </section>
 </MainLayout>
 <style>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    max-height: 450px;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero div:first-of-type {
+    grid-area: 1 / 1 / 4 / 4;
+  }
+  .hero div:nth-of-type(2) {
+    grid-area: 2 / 2 / 3 / 3;
 
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .logo {
+    width: 12;
+    max-width: 16rem;
+  }
+  .baggrund {
+    object-fit: cover;
+  }
 </style>

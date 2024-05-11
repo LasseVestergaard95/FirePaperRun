@@ -3,35 +3,41 @@
 ---
 
 <header>
-  <nav class="main-menu">
-    <p>logo</p>
-  </nav>
+  <nav>
+   <a href="/"><img src="/public/logo/fpr-sort-monogram.svg" alt="FirePaperRun logo"></a> 
+
   <div class="left-menu">
-    <button>Book workshops</button>
+    <button class="workshop-btn">Book workshops</button>
     <button class="burger-menu-btn">
       <span class="burger-icon"></span>
     </button>
-    <nav class="burger-menu">
+    <div class="burger-menu">
       <a href="/">Forside</a>
       <a href="/">Om os</a>
       <a href="/">Keramik</a>
-    </nav>
+    </div>
   </div>
+  </nav>
 </header>
 
 <style>
   header{
+    padding-inline: 0.7rem;
+    padding-block: 1rem;
+  }
+  nav{
     display: flex;
     justify-content: space-between;
   }
-  .main-menu {
-    display: flex;
-    justify-content: space-between;
-    padding-inline: 1rem;
-  }
+img{
+  max-width: 2.5rem;
+}
   .left-menu {
     display: flex;
     gap: 1rem;
+  }
+  .workshop-btn{
+    display: none;
   }
 
   /* Burger menu button */
