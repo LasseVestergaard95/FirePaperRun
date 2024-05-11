@@ -1,34 +1,58 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-  /* Normalisering af font og linjehøjde på dokumentets tekster, samt nedtoning af tekstfarven */
-  body {
-    font-family: system-ui, sans-serif,;
-    line-height: 1.6;
-    color: #2d2d2d;
-    /* Nedenstående skal fjernes. Dens eneste purpose er at få footeren nederst på siden */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-   
-  
-  /* Normalisering af billeder */
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Nedenstående skal fjernes senere. Eneste purpose er at få footeren nederst på siden. */
-main{
+/* Normalisering af font og linjehøjde på dokumentets tekster, samt nedtoning af tekstfarven */
+body {
+  font-family: var(--paragraph-font), sans-serif, system-ui;
+  line-height: 1.6;
+  color: var(--light-black);
+  background-color: var(--light-white);
+  /* Nedenstående 3 linjer skal fjernes. Dens eneste purpose er at få footeren nederst på siden */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Normalisering af billeder */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Nedenstående 2 skal fjernes senere. Eneste purpose er at få footeren nederst på siden. */
+main {
   flex: 1;
 }
-  footer{
-    margin-top: auto;
-  }
+footer {
+  margin-top: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--header-font);
+}
+h1 {
+  font-size: var(--mob-h1-size);
+  line-height: var(--mob-h1-line-height);
+  font-weight: var(--mob-h1-weight-default);
+}
+h2 {
+  font-size: var(--mob-h2-size);
+  line-height: var(--mob-h2-line-height);
+  font-weight: var(--mob-h2-weight-default);
+}
+h3 {
+  font-size: var(--mob-h3-size);
+  line-height: var(--mob-h3-line-height);
+  font-weight: var(--mob-h3-weight-default);
+}
+p {
+  font-size: var(--mob-paragraph-size);
+  line-height: var(--mob-paragraph-line-height);
+  font-weight: var(--mob-paragraph-weight-default);
+}
