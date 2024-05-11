@@ -32,8 +32,9 @@
 
      --mob-paragraph-size: 1rem;
      --mob-paragraph-line-height: 1.2rem;
-     --mob-paragraph-weight-default: 500;
-     --mob-paragraph-weight-thin: 300;
+     /* jeg har ændret i de to nedenstående så at default er light */
+     --mob-paragraph-weight-regular: 500;
+     --mob-paragraph-weight-default: 300;
      --mob-paragraph-weight-semibold: 600;
      --mob-paragraph-weight-bold: 700;
 
@@ -47,5 +48,7 @@
      --mob-quote-size: 1.2rem;
      --mob-quote-line-height: auto;
      --mob-quote-weight: 300;
+
+     --default-inline: 1.5rem;
 }
 

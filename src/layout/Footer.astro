@@ -3,12 +3,36 @@
 ---
 
 <footer>
-  <h2>Dette er footeren</h2>
+  <div><h2>Kontakt</h2></div>
+  <div class="kontakt-info">
+    <p>Tlf nummer: <a href="tel:93878524">+45 93 87 85 24</a></p>
+    <p>E-mail: <a href="mailto:info@firepaperrun.dk">info@firepaperrun.dk</a></p>
+  </div>
+  <div class="adresse">
+    <p>Oscar Pettifords Vej 23, 8th</p>
+    <p>2450 København SV</p>
+    <p>Danmark</p>
+  </div>
+  <div class="cvr"><p>CVR-nr: 38409662</p></div>
+  <div class="socials"><a href="https://www.instagram.com/firepaperrun/"><img src="./public/logo/instagram-logo.svg" alt="instagram logo" /></a></div>
 </footer>
 
 <style>
-  footer{
+  footer {
     background-color: var(--dark-black);
     color: var(--lighter-white);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block-start: 3rem;
+    padding-block-end: 1.5rem;
+    padding-inline: var(--default-inline);
+  }
+  a {
+    color: var(--light-white);
+  }
+  img {
+    max-width: 2rem;
+    margin-inline: auto;
   }
 </style>

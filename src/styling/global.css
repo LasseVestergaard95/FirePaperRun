@@ -56,3 +56,7 @@ p {
   line-height: var(--mob-paragraph-line-height);
   font-weight: var(--mob-paragraph-weight-default);
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
