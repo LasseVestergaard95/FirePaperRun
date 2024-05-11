@@ -10,6 +10,7 @@
     font-family: system-ui, sans-serif,;
     line-height: 1.6;
     color: #2d2d2d;
+    /* Nedenstående skal fjernes. Dens eneste purpose er at få footeren nederst på siden */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -23,6 +24,8 @@
     height: auto;
     display: block;
   }
+
+  /* Nedenstående skal fjernes senere. Eneste purpose er at få footeren nederst på siden. */
 main{
   flex: 1;
 }
