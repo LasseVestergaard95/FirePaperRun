@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /* Normalisering af font og linjehøjde på dokumentets tekster, samt nedtoning af tekstfarven */
+  body {
+    font-family: system-ui, sans-serif,;
+    line-height: 1.6;
+    color: #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+   
+  
+  /* Normalisering af billeder */
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+main{
+  flex: 1;
+}
+  footer{
+    margin-top: auto;
+  }
