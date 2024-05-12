@@ -1,11 +1,21 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
+import FrontpageCard from "../components/FrontpageCard.astro";
 ---
 
 <MainLayout>
   <section class="hero">
     <div><img class="baggrund" src="/banner/kopper-haand-1.webp" alt="" /></div>
     <div><img class="logo" src="/logo/fpr-hvid-stacked.svg" alt="" /> <p>Dette er en tekst</p></div>
+  </section>
+  <section class="frontpage_intro">
+    <h2>Lær at arbejde med hænderne</h2>
+    <p>Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det sædvanlige kontorliv.</p>
+    <p>I Sydhavnen, i de smukkeste omgivelser, kan du lære at skabe unikaværker i keramik eller gips. Kun fantasien sætter grænser.</p>
+    <div class="card_shelf">
+      <FrontpageCard titel="At arbejde med gips" img="/produkter/gips.jpg" />
+      <FrontpageCard titel="At arbejde med keramik" img="/produkter/keramik.jpg" />
+    </div>
   </section>
 </MainLayout>
 <style>
@@ -34,5 +44,21 @@ import MainLayout from "../layout/MainLayout.astro";
   }
   .baggrund {
     object-fit: cover;
+  }
+  .frontpage_intro {
+    margin-inline: var(--default-inline);
+    padding-block: 1.8rem;
+  }
+  .frontpage_intro h2 {
+    margin-bottom: 0.5rem;
+  }
+  .frontpage_intro p:nth-of-type(1) {
+    margin-bottom: 1rem;
+  }
+  .card_shelf {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+    margin-block: 2rem;
   }
 </style>

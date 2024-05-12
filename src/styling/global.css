@@ -48,6 +48,7 @@ p {
   font-size: var(--mob-paragraph-size);
   line-height: var(--mob-paragraph-line-height);
   font-weight: var(--mob-paragraph-weight-default);
+  max-width: 65ch;
 }
 a{
   text-decoration: none;
