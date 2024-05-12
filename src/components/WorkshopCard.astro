@@ -1,0 +1,80 @@
+---
+const { titel, img } = Astro.props;
+---
+
+<article>
+  <a href="/">
+    <div class="gradient"></div>
+    <img src={img} alt="" />
+    <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>lejligheden, Sydhavn</p></div>
+    <div class="main_info">
+      <h3>{titel}</h3>
+      <div class="dato_tid"><div class="dato"><span><img src="/logo/calender.svg" alt="" /></span>5. maj</div><div class="tid"><span><img src="/logo/time.svg" alt="" /></span>10:00-12:00</div></div>
+      <p class="pris">Fra 499 DKK</p>
+    </div>
+  </a>
+</article>
+
+<style>
+  article {
+    color: var(--light-black);
+    max-width: 25rem;
+    height: 17rem;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  a {
+    height: 100%;
+    display: grid;
+    position: relative;
+  }
+
+  img {
+    grid-column: 1;
+    grid-row: 1;
+    object-fit: cover;
+    height: 100%;
+  }
+  .gradient {
+    position: absolute;
+    background-image: linear-gradient(to top, rgba(22, 22, 22, 0.6) 20%, transparent);
+    height: 100%;
+    width: 100%;
+  }
+  div {
+    z-index: 2;
+    grid-column: 1;
+    grid-row: 1;
+    color: white;
+    align-self: end;
+  }
+  .main_info,
+  .lokation {
+    padding: 1rem;
+  }
+  .lokation {
+    place-self: start end;
+  }
+  p {
+    margin-bottom: 0.3rem;
+  }
+  .dato_tid {
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin-bottom: 1.25rem;
+    margin-top: 0.3rem;
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .dato_tid span {
+    margin-right: 0.7rem;
+  }
+
+  .dato,
+  .tid {
+    display: flex;
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
 import FrontpageCard from "../components/FrontpageCard.astro";
+import WorkshopCard from "../components/WorkshopCard.astro";
 ---
 
 <MainLayout>
@@ -17,6 +18,8 @@ import FrontpageCard from "../components/FrontpageCard.astro";
       <FrontpageCard titel="At arbejde med keramik" img="/produkter/keramik.jpg" />
     </div>
   </section>
+  <section class="workshop_shelf">
+  <WorkshopCard titel="Japansk kop workshop" img="/produkter/workshop-keramik.jpg"/></section>
 </MainLayout>
 <style>
   .hero {
@@ -46,6 +49,10 @@ import FrontpageCard from "../components/FrontpageCard.astro";
     object-fit: cover;
   }
   .frontpage_intro {
+    margin-inline: var(--default-inline);
+    padding-block: 1.8rem;
+  }
+  .workshop_shelf {
     margin-inline: var(--default-inline);
     padding-block: 1.8rem;
   }
