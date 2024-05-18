@@ -5,7 +5,7 @@ const { name, location, image, start, end, date, price, id } = Astro.props;
 <article>
   <a href=`workshop/${name + id}`>
     <div class="gradient"></div>
-    <img src=`/workshops/${image}` alt="" />
+    <img src=`/workshops/${image}` alt=`billede af ${name}` />
     <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{location}</p></div>
     <div class="main_info">
       <h3>{name}</h3>

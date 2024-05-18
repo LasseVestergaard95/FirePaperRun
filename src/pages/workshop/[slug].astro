@@ -1,6 +1,13 @@
 ---
+// jeg oplevede at jeg fik en fejl nede i min body hvor fejlen lød på property "name" does not exist on type "never"
+// Jeg har derfor benyttet nedenstående kode til at få Types ript til at forstå hvilken slags data mine objekter indeholder. *Denne løsning har jeg fået fra ChatGPT.
+interface Workshop {
+  id: string;
+  name: string;
+  image: string;
+}
 export async function getStaticPaths() {
-  const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops", {
+  const data: Workshop[] = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops", {
     method: "GET",
     headers: {
       apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjZmlpbHBsb2xhZmhnb3R6Z3JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzM4NjEsImV4cCI6MjAzMDMwOTg2MX0.NG1pwR1rYfymfHS_elIDmB5V-2TOWGrrPumjrgwhDp4",
@@ -10,10 +17,18 @@ export async function getStaticPaths() {
   return data.map((workshop) => {
     return {
       params: { slug: workshop.name + workshop.id },
-      props: { workshop },
+      props: { myData: workshop },
     };
   });
 }
-const { workshop } = Astro.props;
-console.log(workshop);
+const { myData } = Astro.props;
 ---
+
+<h1>{myData.name}</h1>
+<img src=`/workshops/${myData.image}` alt=`billede af ${myData.name}` />
+
+<style>
+  img {
+    width: 100%;
+  }
+</style>
