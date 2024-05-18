@@ -1,17 +1,16 @@
 ---
-// const { titel, img } = Astro.props;
 const { data } = Astro.props;
 ---
 
 <article>
   <a href="/">
     <div class="gradient"></div>
-    <img src="/kop_workshop.jpg" alt="" />
+    <img src={`/workshops/${data.image}`} alt="" />
     <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{data.location}</p></div>
     <div class="main_info">
       <h3>{data.name}</h3>
       <div class="dato_tid"><div class="dato"><span><img src="/logo/calender.svg" alt="" /></span>{data.date}</div><div class="tid"><span><img src="/logo/time.svg" alt="" /></span>{data.start_time}-{data.end_time}</div></div>
-      <p class="pris">Fra 499 DKK</p>
+      <p class="pris">Fra {data.price} DKK</p>
     </div>
   </a>
 </article>
