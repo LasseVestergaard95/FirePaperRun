@@ -34,6 +34,10 @@ const { name, location, image, start, end, date, price, id } = Astro.props;
     grid-row: 1;
     object-fit: cover;
     height: 100%;
+    aspect-ratio: 16/9;
+  }
+  span img {
+    aspect-ratio: 1;
   }
   .gradient {
     position: absolute;

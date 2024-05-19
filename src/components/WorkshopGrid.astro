@@ -12,7 +12,7 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
 <section class="workshop_grid">
   {
     data.map((workshop) => {
-      return <WorkshopCard id={workshop.id} name={workshop.name} location={workshop.location} image={workshop.image} start={workshop.start_time} end={workshop.end_time} date={workshop.date} price={workshop.date} />;
+      return <WorkshopCard id={workshop.id} name={workshop.name} location={workshop.location} image={workshop.image} start={workshop.start_time} end={workshop.end_time} date={workshop.date} price={workshop.price} />;
     })
   }
 </section>
