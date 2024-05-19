@@ -114,15 +114,24 @@
   .burger-menu a:hover {
 font-weight: var(--mob-h1-weight-default);
   }
+
+  body.no_scroll {
+  overflow: hidden;
+}
+
 </style>
 
 <script>
+  // Nedenstående funktion toggler vores burger menu on and off. Derudover skal det ikke være muligt at scrolle når den er aktiv så derfor er .no_scroll tilføjet samtidig.
+  
   document.addEventListener("DOMContentLoaded", function () {
     const burgerMenuBtn = document.querySelector(".burger-menu-btn");
     const burgerMenu = document.querySelector(".burger-menu");
+    const body = document.body;
 
     burgerMenuBtn.addEventListener("click", function () {
       burgerMenu.classList.toggle("show");
+      body.classList.toggle("no_scroll");
     });
   });
 </script>
