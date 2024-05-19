@@ -1,4 +1,5 @@
 ---
+import MainLayout from "../../layout/MainLayout.astro";
 // jeg oplevede at jeg fik en fejl nede i min body hvor fejlen lød på property "name" does not exist on type "never"
 // // Jeg har derfor benyttet nedenstående kode til at få Types ript til at forstå hvilken slags data mine objekter indeholder. *Denne løsning har jeg fået fra ChatGPT.
 interface Workshop {
@@ -24,9 +25,10 @@ export async function getStaticPaths() {
 const { myData } = Astro.props;
 ---
 
-<h1>{myData.name}</h1>
-<img src=`/workshops/${myData.image}` alt=`billede af ${myData.name}` />
-
+<MainLayout>
+  <h1>{myData.name}</h1>
+  <img src=`/workshops/${myData.image}` alt=`billede af ${myData.name}` />
+</MainLayout>
 <style>
   img {
     width: 100%;
