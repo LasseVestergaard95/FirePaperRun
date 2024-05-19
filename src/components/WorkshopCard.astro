@@ -1,5 +1,5 @@
 ---
-const { name, location, image, start, end, date, price, id } = Astro.props;
+const { name, location, image, start, end, date, price, id, sold_out } = Astro.props;
 
 // Denne funktion formaterer vores timestamp fra Supabase og fjerner de sidste to cifre da vi ikke har brug fro at vise sekunder. Dette gælder både start og slut tidspunkt.
 function formatTime(time) {
@@ -16,7 +16,7 @@ function formatDate(dateString) {
 ---
 
 <article>
-  <a href={`workshop/${name + id}`}>
+  <a class={sold_out === true && "is_sold_out"} href={`/workshop/${name + id}`}>
     <div class="gradient"></div>
     <img src={`/workshops/${image}`} alt={`billede af ${name}`} />
     <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{location}</p></div>
@@ -26,7 +26,7 @@ function formatDate(dateString) {
         <div class="dato"><span><img src="/logo/calender.svg" alt="" /></span>{formatDate(date)}</div>
         <div class="tid"><span><img src="/logo/time.svg" alt="" /></span>{formatTime(start)}-{formatTime(end)}</div>
       </div>
-      <p class="pris">Fra {price} DKK</p>
+      <p class={`pris, ${sold_out === true && "is_sold_out_dash"}`}>Fra {price} DKK <span class="span_sold_out">{sold_out === true && "Udsolgt"}</span></p>
     </div>
   </a>
 </article>
@@ -98,4 +98,18 @@ function formatDate(dateString) {
   .tid {
     display: flex;
   }
+  .is_sold_out {
+    filter: grayscale(0.8);
+  }
+  .is_sold_out_dash {
+    text-decoration: line-through;
+  }
+  .span_sold_out{
+    margin-left: 1rem;
+    vertical-align: bottom;
+    color: orange;
+    font-weight: var(--mob-h2-weight-default);
+  }
+
+
 </style>

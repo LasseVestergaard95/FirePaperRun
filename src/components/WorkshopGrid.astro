@@ -1,5 +1,5 @@
 ---
-import { date } from "astro/zod";
+output: "hybrid";
 import WorkshopCard from "./WorkshopCard.astro";
 const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops", {
   method: "GET",
@@ -12,7 +12,7 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
 <section class="workshop_grid">
   {
     data.map((workshop) => {
-      return <WorkshopCard id={workshop.id} name={workshop.name} location={workshop.location} image={workshop.image} start={workshop.start_time} end={workshop.end_time} date={workshop.date} price={workshop.price} />;
+      return <WorkshopCard id={workshop.id} name={workshop.name} location={workshop.location} image={workshop.image} start={workshop.start_time} end={workshop.end_time} date={workshop.date} price={workshop.price} sold_out={workshop.sold_out} />;
     })
   }
 </section>
