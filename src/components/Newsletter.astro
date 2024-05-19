@@ -1,0 +1,53 @@
+---
+
+---
+
+<form id="newsletter_form" netlify>
+  <div class="info-fields">
+    <input type="text" name="name" value="" placeholder="Name..." id="name" />
+    <input type="email" name="email" value="" placeholder="E-mail..." id="email" />
+  </div>
+  <input type="submit" name="submit" value="submit" />
+</form>
+
+<script>
+  // Bemærk at denne sektion er taget fra vores tidligere projekt på 2 semester (Omada testimonials)
+
+  // Define the Supabase URL where the testimonials will be stored
+  const supabaseUrl = "https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/newsletter_signups";
+
+  // Define the Supabase API key
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjZmlpbHBsb2xhZmhnb3R6Z3JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzM4NjEsImV4cCI6MjAzMDMwOTg2MX0.NG1pwR1rYfymfHS_elIDmB5V-2TOWGrrPumjrgwhDp4";
+
+  // Get the testimonial form element
+  const form = document.querySelector("#newsletter_form");
+
+  // Add a submit event listener to the form
+  form.addEventListener("submit", async (e) => {
+    // Prevent the default form submission behavior
+    e.preventDefault();
+
+    // Show an alert to the user
+    alert("Tak for din tilmelding");
+
+    // Get the input values from the form
+    const name = form.querySelector("#name").value;
+    const email = form.querySelector("#email").value;
+
+    // Create an object with the input data
+    const data = {
+      name,
+      email,
+    };
+
+    // Send a POST request to the Supabase API to save the testimonial
+    const response = await fetch(supabaseUrl, {
+      method: "POST",
+      headers: {
+        apikey: supabaseKey,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+  });
+</script>
