@@ -1,15 +1,31 @@
 ---
 const { name, location, image, start, end, date, price, id } = Astro.props;
+
+// Denne funktion formaterer vores timestamp fra Supabase og fjerner de sidste to cifre da vi ikke har brug fro at vise sekunder. Dette gælder både start og slut tidspunkt.
+function formatTime(time) {
+  return time.slice(0, 5);
+}
+
+// Her formaterer vi igen, dog på vores dato så der i stedet for står dagen og måneden. *OBS ChatGPT har hjulpet med at finde overordnede metoder til at kunne løse denne.
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = date.toLocaleString("da-DK", { month: "short" });
+  return `${day}. ${month}`;
+}
 ---
 
 <article>
-  <a href=`workshop/${name + id}`>
+  <a href={`workshop/${name + id}`}>
     <div class="gradient"></div>
-    <img src=`/workshops/${image}` alt=`billede af ${name}` />
+    <img src={`/workshops/${image}`} alt={`billede af ${name}`} />
     <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{location}</p></div>
     <div class="main_info">
       <h3>{name}</h3>
-      <div class="dato_tid"><div class="dato"><span><img src="/logo/calender.svg" alt="" /></span>{date}</div><div class="tid"><span><img src="/logo/time.svg" alt="" /></span>{start}-{end}</div></div>
+      <div class="dato_tid">
+        <div class="dato"><span><img src="/logo/calender.svg" alt="" /></span>{formatDate(date)}</div>
+        <div class="tid"><span><img src="/logo/time.svg" alt="" /></span>{formatTime(start)}-{formatTime(end)}</div>
+      </div>
       <p class="pris">Fra {price} DKK</p>
     </div>
   </a>
