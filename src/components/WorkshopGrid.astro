@@ -1,5 +1,4 @@
 ---
-output: "server";
 import WorkshopCard from "./WorkshopCard.astro";
 const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops", {
   method: "GET",
@@ -7,6 +6,7 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjZmlpbHBsb2xhZmhnb3R6Z3JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzM4NjEsImV4cCI6MjAzMDMwOTg2MX0.NG1pwR1rYfymfHS_elIDmB5V-2TOWGrrPumjrgwhDp4",
   },
 }).then((res) => res.json());
+
 ---
 
 <section class="workshop_grid">
