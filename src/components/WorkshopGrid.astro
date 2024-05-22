@@ -19,9 +19,17 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
 <style>
   .workshop_grid {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-inline: var(--default-inline);
     justify-content: center;
     margin-block: 4rem;
+    place-items: center;
+  }
+
+  @media screen and (min-width: 750px){
+    .workshop_grid{
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 </style>
