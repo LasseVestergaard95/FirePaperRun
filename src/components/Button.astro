@@ -1,5 +1,5 @@
 ---
-const { link, type } = Astro.props;
+const { link, type} = Astro.props;
 ---
 
   <a class= {type} href=`/${link}`>
@@ -12,12 +12,12 @@ a {
         justify-content: center;
         align-items: center;
         text-decoration: none;
-        padding: 1rem;
-        padding-inline: 1.1rem;
-        padding-block: 0.50rem;
-        border-radius: var(--button-border-s);
         width: fit-content;
         white-space: nowrap;
+          padding: 1rem;
+    padding-inline: 1.1rem;
+    padding-block: 0.50rem;
+    border-radius: var(--button-border-s);
     }
 
 .teritary {
@@ -33,5 +33,4 @@ a {
   color: var(--button-fill-text);
   background-color: var(--button-fill);
 }
-
 </style>
