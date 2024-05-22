@@ -1,0 +1,36 @@
+---
+const { link, type } = Astro.props;
+---
+
+  <a class= {type} href=`/${link}`>
+    <slot />
+</a>
+
+<style>
+a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        padding: 1rem;
+        padding-inline: 1.1rem;
+        padding-block: 0.50rem;
+        border-radius: var(--button-border-s);
+        width: fit-content;
+    }
+
+.teritary {
+    color: var(--button-stroke-color-white);
+    border: var(--button-stroke-xs) solid var(--button-stroke-white);
+}
+.secondary {
+    color: var(--button-stroke-color-black);
+    border: var(--button-stroke-xs) solid var(--button-stroke-black);
+}
+
+.primary {
+  color: var(--button-fill-text);
+  background-color: var(--button-fill);
+}
+
+</style>

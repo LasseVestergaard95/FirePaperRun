@@ -3,13 +3,16 @@ import MainLayout from "../layout/MainLayout.astro";
 import FrontpageCard from "../components/FrontpageCard.astro";
 import WorkshopGrid from "../components/WorkshopGrid.astro";
 import Newsletter from "../components/Newsletter.astro";
+import Button from "../components/Button.astro";
 import ProductCard from "../components/ProductCard.astro";
 ---
 
 <MainLayout>
   <section class="hero">
     <div><img class="baggrund" src="/banner/kopper-haand-1.webp" alt="" /></div>
-    <div><img class="logo" src="/logo/fpr-hvid-stacked.svg" alt="" /> <p>Dette er en tekst</p></div>
+    <div><img class="logo" src="/logo/fpr-hvid-stacked.svg" alt="" /> <p>Dette er en tekst</p>
+        <Button type="primary" link="/book_workshop">Book workshop</Button>
+    </div>
   </section>
   <section class="frontpage_intro">
     <h2>Lær at arbejde med hænderne</h2>
@@ -22,6 +25,7 @@ import ProductCard from "../components/ProductCard.astro";
   </section>
   <section class="workshop_shelf">
     <WorkshopGrid />
+          <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
   </section>
 <ProductCard/>
   <Newsletter/>
