@@ -2,6 +2,7 @@
   /* White-colors */
   --lighter-white: #fefefe;
   --light-white: #f3f2f2;
+  --light-orange: #DCCEC5;
   --dusty-orange: #eee8e2;
   --orange: #8c4322;
   --light-black: #2d2d2d;
@@ -45,10 +46,6 @@
 
   /* Icon / NumberStrings */
   --icon-stroke-s: var(--stroke-s);
-  --icon-stroke-color-white: var(--light-white);
-  --icon-fill-color-white: var(--light-white);
-  --icon-stroke-color-black: var(--light-black);
-  --icon-fill-color-black: var(--light-black);
 
     /* Card / NumberStrings */
     --Card-border-radius-s: var(--border-radius-s);
