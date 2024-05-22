@@ -1,19 +1,20 @@
 ---
-import Textsection from "./Textsection.astro";
-import Button from "../components/Button.astro";
+
 ---
 <section id="newsletter">
   <div class="background">
     <img src="/public/logo/fpr-sort-monogram.svg" alt="">
   </div>
-<Textsection color="white" header="Tilmeld dig vores nyhedsbrev" text="Og vær blandt de første til at modtage nyheder og informationer om workshops og kurser!"/>
+<div class="newsletter-width">
+  <h2>Tilmeld dig vores nyhedsbrev</h2>
+  <p>Og vær blandt de første til at modtage nyheder og informationer om workshops og kurser!</p>
 <form id="newsletter_form" netlify>
   <div class="info-fields">
     <input type="text" name="name" value="" placeholder="Name:" id="name" />
     <input type="email" name="email" value="" placeholder="E-mail:" id="email" />
   </div>
   <input type="submit" name="submit" value="Tilmeld" />
-</form>
+</form></div>
 </section>
 
 
@@ -56,6 +57,14 @@ input[type="text"], input[type="email"]{
   padding-block: var(--padding-xs);
 }
 
+input:focus,
+select:focus,
+option:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 
 input[type="submit"]{
   color: var(--button-stroke-color-white);
@@ -77,13 +86,15 @@ form{
   flex-direction: column;
 }
 
+h2{
+  color: var(--news-text)
+}
 
 
 /*Desktop*/
 @media screen and (min-width: 750px){
   #newsletter{
-  padding-inline: 25rem;
-  padding-block: 10rem;
+  padding-block: 5rem;
   background-color: var(--orange);
   position: relative;
   z-index: 1;
@@ -111,15 +122,45 @@ input::placeholder, textarea::placeholder, #newsletter{
   color: var(--news-text);
 }
 
+input:focus,
+select:focus,
+option:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 input[type="text"], input[type="email"]{
   border-bottom: 1.5px solid var(--light-white);
   background-color: transparent;
   color: var(--news-text);
   opacity: 70%;
+  margin-bottom: var(--padding-xs);
+  padding-block: var(--padding-s)
 }
 
+.newsletter-width{
+  min-width: 25rem;
+  max-width: 39rem;
+  margin: auto;
+}
+
+/*BUTTON SKAL SKIFTES UD MED DESKTOP VER*/
 input[type="submit"]{
-  display: none;
+  color: var(--button-stroke-color-white);
+  border: var(--button-stroke-xs) solid var(--button-stroke-white);
+  background-color: transparent;
+  align-self: center;
+  padding: 1rem;
+  padding-inline: var(--padding-s);
+  padding-block: var(--padding-xs);
+  border-radius: var(--button-border-s);
+  margin-top: var(--padding-s);
+  width: fit-content;
+}
+
+h2{
+  color: var(--news-text);
 }
 
 
