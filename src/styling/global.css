@@ -28,6 +28,7 @@ h1,
 h2,
 h3 {
   font-family: var(--header-font);
+  color: var(--dark-black);
 }
 h1 {
   font-size: var(--mob-h1-size);
@@ -54,3 +55,4 @@ a{
   text-decoration: none;
   color: inherit;
 }
+
