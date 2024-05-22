@@ -6,12 +6,11 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjZmlpbHBsb2xhZmhnb3R6Z3JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzM4NjEsImV4cCI6MjAzMDMwOTg2MX0.NG1pwR1rYfymfHS_elIDmB5V-2TOWGrrPumjrgwhDp4",
   },
 }).then((res) => res.json());
-
 ---
 
 <section class="workshop_grid">
   {
-    data.map((workshop) => { 
+    data.map((workshop) => {
       return <WorkshopCard id={workshop.id} name={workshop.name} location={workshop.location} image={workshop.image} start={workshop.start_time} end={workshop.end_time} date={workshop.date} price={workshop.price} sold_out={workshop.sold_out} />;
     })
   }
@@ -19,8 +18,7 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
 
 <style>
   .workshop_grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 2rem;
     margin-inline: var(--default-inline);
     justify-content: center;

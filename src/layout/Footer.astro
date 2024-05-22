@@ -19,7 +19,7 @@
     <h2>Katrine Blinkenberg</h2>
     <p>Interesseret i mine skulpturer?</p>
     <p>Besøg min kunstnerhjemmeside</p>
-    <a href="https://katrineblinkenberg.com/">Katrine Blinkenberg.com</p>
+    <a href="https://katrineblinkenberg.com/">Katrine Blinkenberg.com</a>
   </div>
 
   <div class="FirePaperRun">
@@ -34,15 +34,26 @@
     background-color: var(--footer-bg-color);
     color: var(--footer-text-color);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 2rem;
     padding-block: 5rem;
-    padding-inline: 5rem;
+    padding-inline: var(--default-inline);
   }
   img {
     max-width: 2rem;
     padding-block: 1rem;
   }
-  footer div{
-    max-width: 20rem;
+  .cvr{
+    margin-top: 1rem;
+  }
+
+  @media screen and (min-width: 750px){
+    footer{
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    footer div{
+      max-width: 15rem;
+    }
   }
 </style>
