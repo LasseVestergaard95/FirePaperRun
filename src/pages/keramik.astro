@@ -1,5 +1,66 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
+import Textsection from "../components/Textsection.astro";
+import WorkshopGrid from "../components/WorkshopGrid.astro";
+import Button from "../components/Button.astro";
 ---
 
-<MainLayout> Skriv her </MainLayout>
+<MainLayout>
+    <section class="header_section">
+        <div class="div1">
+    <img class="header_img" src="/public/workshop/kop_workshop.jpg" alt="" /> </div><div class="div2"><h1>Arbejde med keramik</h1></div>
+    </section>
+    
+   <Textsection class="content"
+   header="Oplev ContainerClay" text="I en container i Sydhavnen kan du komme til den vildeste workshop i keramik. Hyg med gamle venner og stift nye bekendtskaber når vi holder 3 timers keramik workshop. Jeg tager dig igennem hele processen, så du kan tage dine egne unika værker med hjem." />
+   <img src="/public/produkter/gips.jpg"/>
+<Textsection class="content"
+   header="Processen" text="Til alle mine keramik workshops, får du udleveret ler. Jeg vil tage dig gennem processen hvor du lærer nyttige teknikker som er baseret på en japansk metode. Når du er færdig med dit keramik, kan du markere hvilken farve du ønsker eller lade mig bestemme for dig. Du kan forvente at dit keramik er færdig cirka 2-3 uger efter da det først skal tørre, brændes samt glaseres." /></Textsection>" <img src="/public/produkter/workshop-keramik.jpg"/>
+
+   <section class="Services-clay-to-go">
+        <div class="div1">
+    <img class="header_img" src="/public/workshop/kop_workshop.jpg" alt="" /> </div><div class="div2"><h2>Clay to go</h2> <Textsection class="content"
+   text="Mange laver keramik hjemme i en privat atmosfære. Hvis du vil lave keramik hjemme, kan du hente ler i containeren eller købe den i webshoppen med forsendelse eller på vores adresse i Sydhavn."/></div>
+   <Button type= "secondary" link="/">Køb produkter</Button>
+</section>
+
+<section class="Services-burn">
+        <div class="div1">
+    <img class="header_img" src="/public/workshop/kop_workshop.jpg" alt="" /> </div><div class="div2"><h2>Brændning</h2> <Textsection class="content"
+   text="Når du er færdig med at bygge, skal du bringe dit keramik ned til containeren. Leret skal være helt tørt før det kan brændes, så vent minimum 3 uger. Jeg brænder normalt ved 1.260 grader, hvilket betyder, at det er stentøj. Da den forkerte lertype kan ødelægge oven, er det vigtigt, du enten køber din ler hos mig eller at du kan dokumentere hvilken type ler, du bruger."/></div>
+</section>
+
+<Textsection class="content"
+   header="Priser for brændning" text="Til alle mine keramik workshops, får du udleveret ler. Jeg vil tage dig gennem processen hvor du lærer nyttige teknikker som er baseret på en japansk metode. Når du er færdig med dit keramik, kan du markere hvilken farve du ønsker eller lade mig bestemme for dig. Du kan forvente at dit keramik er færdig cirka 2-3 uger efter da det først skal tørre, brændes samt glaseres." /></Textsection>" <img src="/public/produkter/workshop-keramik.jpg"/>
+
+
+
+   <section>
+   <h2>Kommende workshops</h2>
+     <WorkshopGrid />
+      <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
+      </section>
+</MainLayout>
+
+<style>
+    .header_section {
+    display: grid; 
+grid-template-columns: repeat(2, 1fr); 
+grid-template-rows: repeat(2, 1fr); 
+grid-column-gap: 0px;
+grid-row-gap: 0px; 
+}
+.div1 { 
+    grid-area: 1 / 1 / 3 / 3; 
+} 
+.div2 { 
+    grid-area: 2 / 1 / 3 / 3;
+    align-self: end; 
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: var(--lighter-white);
+}
+
+</style>
