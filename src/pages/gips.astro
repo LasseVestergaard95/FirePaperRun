@@ -1,8 +1,33 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
-
+import Textsection from "../components/Textsection.astro";
+import Workshopgrid from "../components/WorkshopGrid.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout>
-    skriv her
+    <section class="hero">
+    <div><img class="baggrund" src="/produkter/gips.jpg" alt="" /></div>
+    </section>
+    
+<section>
+<Textsection header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem."/>
+<img src="/produkter/gips.jpg" alt="" />
+</section>
+
+<section>
+<Textsection header="At arbejde intuitivt" text="Når du arbejder med gips, handler det om at kunne give slip og skabe ud fra intuition. Du har kun et lille tidsrum til at bygge skulpturen fra gipsen rammer vandet til det størkner. Det er først når skulpturen skal efterarbejdes at fordybelsen kommer. Denne metode minder om en skrivemetode ved navn automatskrift, som jeg selv har haft glæde af i mit tidligere arbejde som præst. Metoden handler om at sætte en tidsgrænse og inde for denne grænse skal du bare tømme hovedet ned på papir. Måske du selv kunne få gavn af denne metode?"/>
+<img src="/produkter/gips.jpg" alt="" />
+</section>
+<Workshopgrid/>
+<Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
+
 </MainLayout>
+
+
+
+<style>
+    img {
+        max width: 100%;
+    }
+</style>
