@@ -1,7 +1,11 @@
 ---
-
+import Textsection from "./Textsection.astro";
 ---
-
+<section id="newsletter">
+  <div class="background">
+    <img src="/public/logo/fpr-sort-monogram.svg" alt="">
+  </div>
+<Textsection header="Tilmeld dig vores nyhedsbrev" text="Og vær blandt de første til at modtage nyheder og informationer om workshops og kurser!"/>
 <form id="newsletter_form" netlify>
   <div class="info-fields">
     <input type="text" name="name" value="" placeholder="Name..." id="name" />
@@ -9,6 +13,107 @@
   </div>
   <input type="submit" name="submit" value="submit" />
 </form>
+</section>
+<style>
+
+#newsletter{
+  padding:var(--default-inline);
+  background-color: var(orange);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.background{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  right: -10rem;
+  top: -0.1rem;
+  max-width: 70%;
+  opacity: 30%;
+}
+
+input{
+  width: 100%;
+  padding: 0.25rem;
+  border: none;
+}
+
+input::placeholder, textarea::placeholder, #newsletter{
+  color: var(--light-white);
+}
+
+input[type="text"], input[type="email"]{
+  border-bottom: 1.5px solid var(--light-white);
+  background-color: transparent;
+  color: var(--light-white);
+  opacity: 70%;
+  font: var(--paragraph-font);
+}
+
+input:focus{
+  border-bottom: var(--dark-black);
+}
+
+input[type="submit"]{
+  display: none;
+}
+
+
+/*Desktop*/
+@media screen and (min-width: 750px){
+  #newsletter{
+  padding-inline: 25rem;
+  padding-block: 10rem;
+  background-color: var(orange);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.background{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  right: -5rem;
+  top: -0.1rem;
+  max-width: 33%;
+  opacity: 30%;
+}
+
+input{
+  width: 100%;
+  padding: 0.25rem;
+  border: none;
+}
+
+input::placeholder, textarea::placeholder, #newsletter{
+  color: var(--light-white);
+}
+
+input[type="text"], input[type="email"]{
+  border-bottom: 1.5px solid var(--light-white);
+  background-color: transparent;
+  color: var(--light-white);
+  opacity: 70%;
+  font: var(--paragraph-font);
+}
+
+input:focus{
+  border-bottom: var(--dark-black);
+}
+
+input[type="submit"]{
+  display: none;
+}
+
+
+}
+
+</style>
 
 <script>
   // Bemærk at denne sektion er taget fra vores tidligere projekt på 2 semester (Omada testimonials)
