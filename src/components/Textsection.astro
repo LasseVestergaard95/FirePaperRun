@@ -1,12 +1,17 @@
 ---
 const header = Astro.props.header;
 const text = Astro.props.text;
-const color = Astro.props.color;
 ---
     <section>
         <h2>{header}</h2>
         <p>{text}</p>
     </section>
+
+    <style>
+        h2{
+            padding-bottom: var(--padding-xs);
+        }
+    </style>
 
 
  
