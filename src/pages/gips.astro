@@ -4,7 +4,45 @@ import Textsection from "../components/Textsection.astro";
 ---
 
 <MainLayout>
+    <section class="header_section">
+        <div class="div1">
+    <img class="header_img" src="/public/produkter/gips.jpg" alt="" /> </div><div class="div2"><h1>Arbejde med gips</h1></div>
+    </section>
+    
+    <section>
    <Textsection
-   header="Oplev skulptur workshop" 
-   />
+   header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem." />
+   <img src="/public/produkter/gips.jpg"/>
+<Textsection
+   header="At arbejde intuitivt" text="Når du arbejder med gips, handler det om at kunne give slip og skabe ud fra intuition. Du har kun et lille tidsrum til at bygge skulpturen fra gipsen rammer vandet til det størkner. Det er først når skulpturen skal efterarbejdes at fordybelsen kommer. Denne metode minder om en skrivemetode ved navn automatskrift, som jeg selv har haft glæde af i mit tidligere arbejde som præst. Metoden handler om at sætte en tidsgrænse og inde for denne grænse skal du bare tømme hovedet ned på papir. Måske du selv kunne få gavn af denne metode?" />
+   <img src="/public/produkter/gips.jpg"/>
+   </section>
 </MainLayout>
+
+<style>
+    .header_section {
+    display: grid; 
+grid-template-columns: repeat(2, 1fr); 
+grid-template-rows: repeat(2, 1fr); 
+grid-column-gap: 0px;
+grid-row-gap: 0px; 
+}
+.div1 { 
+    grid-area: 1 / 1 / 3 / 3; 
+} 
+.div2 { 
+    grid-area: 2 / 1 / 3 / 3;
+    align-self: end; 
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+h1 {
+    color: var(--lighter-white);
+}
+
+    
+
+  
+
+</style>
