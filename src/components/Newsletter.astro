@@ -1,24 +1,27 @@
 ---
 import Textsection from "./Textsection.astro";
+import Button from "../components/Button.astro";
 ---
 <section id="newsletter">
   <div class="background">
     <img src="/public/logo/fpr-sort-monogram.svg" alt="">
   </div>
-<Textsection header="Tilmeld dig vores nyhedsbrev" text="Og vær blandt de første til at modtage nyheder og informationer om workshops og kurser!"/>
+<Textsection color="white" header="Tilmeld dig vores nyhedsbrev" text="Og vær blandt de første til at modtage nyheder og informationer om workshops og kurser!"/>
 <form id="newsletter_form" netlify>
   <div class="info-fields">
-    <input type="text" name="name" value="" placeholder="Name..." id="name" />
-    <input type="email" name="email" value="" placeholder="E-mail..." id="email" />
+    <input type="text" name="name" value="" placeholder="Name:" id="name" />
+    <input type="email" name="email" value="" placeholder="E-mail:" id="email" />
   </div>
-  <input type="submit" name="submit" value="submit" />
+  <input type="submit" name="submit" value="Tilmeld" />
 </form>
 </section>
+
+
 <style>
 
 #newsletter{
-  padding:var(--default-inline);
-  background-color: var(--orange);
+  padding:var(--padding-m);
+  background-color: var(--news-bg);
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -42,24 +45,41 @@ input{
 }
 
 input::placeholder, textarea::placeholder, #newsletter{
-  color: var(--light-white);
+  color: var(--news-text);
 }
 
 input[type="text"], input[type="email"]{
   border-bottom: 1.5px solid var(--light-white);
   background-color: transparent;
-  color: var(--light-white);
+  color: var(--news-text);
   opacity: 70%;
-  font: var(--paragraph-font);
+  padding-block: var(--padding-xs);
 }
 
 input:focus{
-  border-bottom: var(--dark-black);
+  border-bottom: none;
 }
 
 input[type="submit"]{
-  display: none;
+  color: var(--button-stroke-color-white);
+  border: var(--button-stroke-xs) solid var(--button-stroke-white);
+  background-color: transparent;
+  align-self: center;
+  padding: 1rem;
+  padding-inline: var(--padding-s);
+  padding-block: var(--padding-xs);
+  border-radius: var(--button-border-s);
+  margin-top: var(--padding-s);
+  width: fit-content;
 }
+
+form{
+  padding-bottom: 1.25rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 /*Desktop*/
@@ -91,15 +111,14 @@ input{
 }
 
 input::placeholder, textarea::placeholder, #newsletter{
-  color: var(--light-white);
+  color: var(--news-text);
 }
 
 input[type="text"], input[type="email"]{
   border-bottom: 1.5px solid var(--light-white);
   background-color: transparent;
-  color: var(--light-white);
+  color: var(--news-text);
   opacity: 70%;
-  font: var(--paragraph-font);
 }
 
 input:focus{

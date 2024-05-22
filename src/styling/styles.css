@@ -16,7 +16,9 @@
   --stroke-xs: 1px;
   --stroke-s: 2px;
 
+  --padding-xs: 0.5rem;
   --padding-s: 1rem;
+  --padding-m: 3.125rem;
 
   --border-radius-s: 5px;
   --border-radius-m: 10px;
