@@ -28,7 +28,7 @@
   --button-stroke-color-white: var(--light-white);
   --button-stroke-white: var(--light-white);
   --button-stroke-black: var(--dark-black);
-  --button-stroke-color-black: var(--dark-black);
+  --button-stroke-black: var(--dark-black);
 
     /* Button / Secondary / NumberStrings */
   --button-stroke-xs: var(--stroke-xs);
