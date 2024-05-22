@@ -3,6 +3,8 @@ import MainLayout from "../layout/MainLayout.astro";
 import FrontpageCard from "../components/FrontpageCard.astro";
 import WorkshopGrid from "../components/WorkshopGrid.astro";
 import Newsletter from "../components/Newsletter.astro";
+import Textsection from "../components/Textsection.astro";
+
 ---
 
 <MainLayout>
@@ -11,12 +13,10 @@ import Newsletter from "../components/Newsletter.astro";
     <div><img class="logo" src="/logo/fpr-hvid-stacked.svg" alt="" /> <p>Dette er en tekst</p></div>
   </section>
   <section class="frontpage_intro">
-    <h2>Lær at arbejde med hænderne</h2>
-    <p>Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det sædvanlige kontorliv.</p>
-    <p>I Sydhavnen, i de smukkeste omgivelser, kan du lære at skabe unikaværker i keramik eller gips. Kun fantasien sætter grænser.</p>
+    <Textsection header=" Lær at arbejde med hænderne" text="Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det  sædvanlige kontorliv. I Sydhavnen, i de smukkeste omgivelser, kan du lære at skabe unikaværker i keramik eller gips. Kun fantasien sætter grænser." />
     <div class="card_shelf">
       <FrontpageCard titel="At arbejde med gips" img="/produkter/gips.jpg" />
-      <FrontpageCard titel="At arbejde med keramik" img="/produkter/keramik.jpg" />
+      <FrontpageCard titel="At arbejde med keramik" img="/produkter/keramik.jpg"/>
     </div>
   </section>
   <section class="workshop_shelf">
