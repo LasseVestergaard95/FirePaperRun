@@ -10,9 +10,7 @@ import Button from "../components/Button.astro";
   <section class="hero">
     <div><img class="baggrund" src="/banner/kopper-haand-1.webp" alt="" /></div>
     <div><img class="logo" src="/logo/fpr-hvid-stacked.svg" alt="" /> <p>Dette er en tekst</p>
-    <div class="button_frame">
-        <Button type="primary" link="/book_workshop">Se alle workshops</Button>
-      </div> 
+        <Button type="primary" link="/book_workshop">Book workshop</Button>
     </div>
   </section>
   <section class="frontpage_intro">
@@ -26,11 +24,9 @@ import Button from "../components/Button.astro";
   </section>
   <section class="workshop_shelf">
     <WorkshopGrid />
+          <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
   </section>
   <Newsletter/>
-  <div class="button_frame">
-                        <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
-                    </div> 
 </MainLayout>
 <style>
   .hero {
