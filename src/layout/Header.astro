@@ -5,15 +5,19 @@ import Button from "../components/Button.astro";
 <header>
   <nav>
     <div class="desktop_menu">
-      <a href="/"><img src="/logo/fpr-sort-monogram.svg" alt="FirePaperRun logo" /></a>
+      <div class="desktop-menu-left">
+        <a href="/"><img src="/logo/fpr-sort-monogram.svg" alt="FirePaperRun logo" /></a>
 
-      <a href="/">Køb Produkter</a>
-      <a href="/gips">Arbejd med gips</a>
-      <a href="/keramik">Arbejd med keramik</a>
-      <a href="/om">Om os</a>
-      <Button type="primary">Book Workshop</Button>
-      <a href="/"><img class="vogn" src="/logo/shoppingcart.svg" alt="shoppingcart"></a>
-    </div>
+        <a href="/">Køb Produkter</a>
+        <a href="/gips">Arbejd med gips</a>
+        <a href="/keramik">Arbejd med keramik</a>
+        <a href="/om">Om os</a>
+      </div>
+      <div class="desktop-menu-right">
+        <Button type="primary">Book Workshop</Button>
+        <a href="/"><img class="vogn" src="/logo/shoppingcart.svg" alt="shoppingcart"></a>
+      </div>
+  </div>
 
     <div class="mobile_menu">
       <a href="/"><img class="logo" src="/logo/fpr-sort-monogram.svg" alt="FirePaperRun logo" /></a>
@@ -40,7 +44,22 @@ import Button from "../components/Button.astro";
   header {
     padding-inline: 0.7rem;
     padding-block: 1rem;
+    overflow: hidden;
+    z-index: 99999;
+    transition: background-color 0.3s cubic-bezier(.14,.51,.81,.4), padding 0.3s ease;
   }
+
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header.sticky{
+  background-color: var(--light-orange);
+  padding-inline: 0.7rem;
+  padding-block: 0.5rem;
+}
   nav, .mobile_menu {
     display: flex;
     justify-content: space-between;
@@ -146,13 +165,21 @@ display: none;
 
 .mobile_menu{display: none;}
 
-header{
+.desktop_menu{
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: auto;
   padding-inline: 0.7rem;
   padding-block: 1rem;
+}
+
+.desktop-menu-left, .desktop-menu-right{
+  display: flex;
+  justify-content: space-evenly;
+  width: auto;
+  align-items: center;
+  gap: 30px;
 }
 
   nav {
@@ -163,21 +190,33 @@ header{
     max-width: 2.5rem;
   }
 
+ 
+
 }
 
 </style>
 
 <script>
-  // Nedenstående funktion toggler vores burger menu on and off. Derudover skal det ikke være muligt at scrolle når den er aktiv så derfor er .no_scroll tilføjet samtidig.
-  
   document.addEventListener("DOMContentLoaded", function () {
     const burgerMenuBtn = document.querySelector(".burger-menu-btn");
     const burgerMenu = document.querySelector(".burger-menu");
     const body = document.body;
+    const header = document.querySelector("header");
+    const sticky = header.offsetTop;
 
     burgerMenuBtn.addEventListener("click", function () {
       burgerMenu.classList.toggle("show");
       body.classList.toggle("no_scroll");
     });
+
+    window.onscroll = function() { stickynav(); };
+
+    function stickynav() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
   });
 </script>
