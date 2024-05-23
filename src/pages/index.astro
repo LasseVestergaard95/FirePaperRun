@@ -12,10 +12,12 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
 
 <MainLayout>
   <section class="hero">
-    <div><img class="baggrund" src="/banner/kopper-haand-1.webp" alt="" /></div>
-    <div><img class="logo" src="/logo/fpr-hvid-stacked.svg" alt="" /> <p>Dette er en tekst</p>
-        <Button type="primary" link="/book_workshop">Book workshop</Button>
-    </div>
+    <div><img class="banner" src="/banner/header.jpg" alt="banner billede" /></div>
+    <div class="banner-text">
+      <div> <h1>Workshop i keramik og ler</h1><p>for virksomheder og privat</p></div>
+        <div class="btn"><Button type="primary" link="/book_workshop">Book workshop</Button>
+        </div>
+      </div>
   </section>
   <section class="frontpage_intro">
     <Textsection header=" Lær at arbejde med hænderne" text="Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det  sædvanlige kontorliv. I Sydhavnen, i de smukkeste omgivelser, kan du lære at skabe unikaværker i keramik eller gips. Kun fantasien sætter grænser." />
@@ -35,7 +37,7 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
 <style>
   .hero {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     max-height: 450px;
     overflow: hidden;
@@ -56,11 +58,16 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
     width: 12;
     max-width: 16rem;
   }
-  .baggrund {
-    object-fit: cover;
+  .banner {
+    width: auto;
+    height: 90%;
+  }
+
+  .banner-text{
+    display: flex;
+    gap: 50px;
   }
   .frontpage_intro {
-    margin-inline: var(--default-inline);
     padding-block: 1.8rem;
   }
   .workshop_shelf {
@@ -78,5 +85,31 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
     gap: 2.25rem;
     margin-block: 2rem;
     justify-content: center;
+  }
+  h1, p{
+    color: var(--light-white);
+  }
+
+  p{
+    font-weight: var(--mob-h1-weight-thin);
+    font-size: var(--mob-h1-size);
+  }
+
+  
+
+
+  
+
+
+  /*DESKTOP*/
+@media screen and (min-width: 750px){
+  .banner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn{
+    display: none;
+  }
   }
 </style>

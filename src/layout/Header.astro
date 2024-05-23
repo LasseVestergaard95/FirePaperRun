@@ -49,6 +49,8 @@ import Button from "../components/Button.astro";
     transition:
       background-color 0.3s cubic-bezier(0.14, 0.51, 0.81, 0.4),
       padding 0.3s ease;
+    z-index: 99999;
+    transition: background-color 0.5s cubic-bezier(.14,.51,.81,.4), padding 0.5s ease;
   }
 
   .sticky {
@@ -65,6 +67,12 @@ import Button from "../components/Button.astro";
   }
   nav,
   .mobile_menu {
+header.sticky{
+  background-color: var(--light-orange);
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+}
+  nav, .mobile_menu {
     display: flex;
     justify-content: space-between;
     width: 100%;
