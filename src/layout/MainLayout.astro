@@ -18,10 +18,21 @@ import Footer from "./Footer.astro";
     <title>Astro</title>
   </head>
   <body>
-    <Header />
+    <div class="header_nav"><Header /></div>
+    
     <main>
       <slot />
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  main{
+    position: relative;
+  }
+  /* .header_nav{
+    position: absolute;
+    z-index: 999;
+  } */
+</style>
