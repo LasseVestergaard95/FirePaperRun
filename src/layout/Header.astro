@@ -4,37 +4,33 @@ import Button from "../components/Button.astro";
 
 <header>
   <nav>
-    <div><a href="/"><img src="/logo/fpr-sort-monogram.svg" alt="FirePaperRun logo" /></a></div>
-    
     <div class="desktop_menu">
-    <div class="undersider">
+      <a href="/"><img src="/logo/fpr-sort-monogram.svg" alt="FirePaperRun logo" /></a>
+
       <a href="/">Køb Produkter</a>
       <a href="/gips">Arbejd med gips</a>
       <a href="/keramik">Arbejd med keramik</a>
-      <a href="/om">Om os</a></div>
-      <div class="CTA">
-        <div class="CTA-btn">
-          <Button type="primary">Book Workshop</Button>
-        </div>
-        <div>
-          <a href="/"><img class="vogn" src="/logo/shoppingcart.svg" alt="shoppingcart"></a>
-        </div>
-      </div>
-    
+      <a href="/om">Om os</a>
+      <Button type="primary">Book Workshop</Button>
+      <a href="/"><img class="vogn" src="/logo/shoppingcart.svg" alt="shoppingcart"></a>
     </div>
 
-
-    <div class="left-menu">
-
-      <button class="burger-menu-btn">
-        <span class="burger-icon"></span>
-      </button>
-      <div class="burger-menu">
-        <a href="/book_workshop">Book Workshop</a>
-        <a href="/">Køb Produkter</a>
-        <a href="/gips">Arbejd med gips</a>
-        <a href="/keramik">Arbejd med keramik</a>
-        <a href="/om">Om os</a>
+    <div class="mobile_menu">
+      <a href="/"><img class="logo" src="/logo/fpr-sort-monogram.svg" alt="FirePaperRun logo" /></a>
+      <div class="mobile_menu_right">
+        <a href="/"><img class="vogn" src="/logo/shoppingcart.svg" alt="shoppingcart"></a>
+        <div class="burger-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="burger-menu">
+          <a href="/book_workshop">Book Workshop</a>
+          <a href="/">Køb Produkter</a>
+          <a href="/gips">Arbejd med gips</a>
+          <a href="/keramik">Arbejd med keramik</a>
+          <a href="/om">Om os</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -45,16 +41,13 @@ import Button from "../components/Button.astro";
     padding-inline: 0.7rem;
     padding-block: 1rem;
   }
-  nav {
+  nav, .mobile_menu {
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
   img {
     max-width: 2.5rem;
-  }
-  .left-menu {
-    display: flex;
-    gap: 1rem;
   }
   .workshop-btn {
     display: none;
@@ -62,43 +55,41 @@ import Button from "../components/Button.astro";
 
   /* Burger menu button */
   .burger-menu-btn {
-    display: block;
-    width: 40px;
+    width: 30px;
     height: 40px;
     background-color: transparent;
     border: none;
     cursor: pointer;
   }
 
-  .burger-icon {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background-color: #333;
-    position: relative;
-  }
-
-  .burger-icon:before,
-  .burger-icon:after {
-    content: "";
+  .burger-menu-btn span{
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #333;
-    position: absolute;
+    background-color: var(--dark-black);
+    border-radius: 5px;
+    margin-bottom: 7px;
+  }
+.vogn{
+    width: 30px;
+    height: 40px;
   }
 
-  .burger-icon:before {
-    top: -7px;
+  .mobile_menu_right{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
   }
+  /*Burger animation*/
+  
 
-  .burger-icon:after {
-    bottom: -7px;
-  }
 
-  .vogn{
-    align-self: center;
-  }
+
+  
+
+ 
+
   /* Burger menu */
   .burger-menu {
     z-index: 999;
@@ -131,6 +122,10 @@ import Button from "../components/Button.astro";
     padding: 5px 0;
   }
 
+  .burger-menu:hover{
+    cursor: pointer;
+  }
+
   .burger-menu a:hover {
 font-weight: var(--mob-h1-weight-default);
   }
@@ -139,21 +134,18 @@ font-weight: var(--mob-h1-weight-default);
   overflow: hidden;
 }
 
-.CTA-btn, .undersider{
-  display: none ;
+.desktop_menu{
+display: none;
 }
+
 
 
 
 /*DESKTOP*/
 @media screen and (min-width: 750px) {
 
-  .left-menu{display: none;}
+.mobile_menu{display: none;}
 
-.CTA, .undersider, .CTA-btn{
-  display: flex;
-  justify-content: space-between;
-}
 header{
   display: flex;
   justify-content: space-between;
@@ -161,10 +153,6 @@ header{
   height: auto;
   padding-inline: 0.7rem;
   padding-block: 1rem;
-}
-
-.CTA{
-  gap: var(--padding-m);
 }
 
   nav {
