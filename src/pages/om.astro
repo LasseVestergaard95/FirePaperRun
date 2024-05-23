@@ -1,9 +1,80 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
 import Textsection from "../components/Textsection.astro";
+import WorkshopShelf from "../components/WorkshopShelf.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout>
-    mangler banner her
-    <Textsection header="Katrine Blinkenberg" text="Mit navn er Katrine Blinkenberg, og jeg er hovedet bag FirePaperRun. I 2022 vaglte jeg at ligge præstearbejdet fra mig og udforske min kreative side. Siden da, har jeg afholdt mange forskellige workshops, i gips og ler."/>
+    <div class="section-gap">
+            mangler banner her
+            
+        <Textsection header="Katrine Blinkenberg" text="Mit navn er Katrine Blinkenberg, og jeg er hovedet bag FirePaperRun. I 2022 vaglte jeg at ligge præstearbejdet fra mig og udforske min kreative side. Siden da, har jeg afholdt mange forskellige workshops, i gips og ler."/>
+        
+        
+        <div class="default-inline">
+            <div class="video-section">
+                video her
+
+                <div>
+                    <p class="quote">“FirePaperRun handler om de unikke, smukke
+                        relationer vi har til andre mennesker”</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="firepaperrun">
+        <div class="pad-bot">
+            <Textsection header="FirePaperRun" text="Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det sædvanlige kontorliv. Vi afholder workshops for private og virksomheder og alt kan skræddersyes til hvad det er i gerne vil udforske og lære."/>
+        </div>
+        <div>
+            <img src="/public/banner/header.jpg" alt="billede til workshop">
+        </div>
+        </div>
+
+        <Textsection header="Håndværk og mennesket" text="Man kan lære meget om et menneske ved at se hvordan de arbejder med deres hænder. Samtidig kan det, at have et kreativt afbræk i dagligdagen skabe et nyt pust af energi og inspiration til din hverdag! Alle kan lære at lave kunst, og det er aldrig for sent at lære."/>
+
+        <div class="default-inline kommendeworkshops">
+            <div><h2>Kommende workshops</h2></div>
+            <div><WorkshopShelf/></div>
+            <div class="btn"><Button type="secondary">Se alle workshops</Button></div>
+        </div>
+</div>
 </MainLayout>
+
+
+<style>
+
+.default-inline{
+    padding-inline: var(--default-inline);
+}
+
+.section-gap{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.firepaperrun{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-s);
+}
+
+.kommendeworkshops{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5rem;
+    gap: var(--padding-s);
+}
+
+.btn{
+    align-self: center;
+}
+
+.pad-bot{
+    padding-bottom: var(--padding-m);
+}
+
+
+</style>
