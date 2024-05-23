@@ -7,6 +7,7 @@ import Textsection from "../components/Textsection.astro";
 import Button from "../components/Button.astro";
 import ProductCard from "../components/ProductCard.astro";
 import Faq from "../components/Faq.astro";
+import WorkshopShelf from "../components/WorkshopShelf.astro";
 ---
 
 <MainLayout>
@@ -24,8 +25,8 @@ import Faq from "../components/Faq.astro";
     </div>
   </section>
   <section class="workshop_shelf">
-    <WorkshopGrid />
-          <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
+ <div> <WorkshopShelf/></div>
+  <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
   </section>
 <ProductCard/>
   <Newsletter/>
@@ -63,7 +64,6 @@ import Faq from "../components/Faq.astro";
     padding-block: 1.8rem;
   }
   .workshop_shelf {
-    margin-inline: var(--default-inline);
     padding-block: 1.8rem;
   }
   .frontpage_intro h2 {

@@ -8,7 +8,7 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
 }).then((res) => res.json());
 ---
 
-<section class="workshop_grid">
+<section class="workshop_shelf">
   {
     data.map((workshop) => {
       return <WorkshopCard id={workshop.id} name={workshop.name} location={workshop.location} image={workshop.image} start={workshop.start_time} end={workshop.end_time} date={workshop.date} price={workshop.price} sold_out={workshop.sold_out} />;
@@ -17,16 +17,20 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
 </section>
 
 <style>
-  .workshop_grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  .workshop_shelf {
+    display: flex;
     gap: 2rem;
-    margin-inline: var(--default-inline);
-    justify-content: center;
-    margin-block: 4rem;
-    place-items: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-block-end: 2.5rem;
+    margin-left: 1rem;
   }
-
-  
-
+  .workshop_shelf::-webkit-scrollbar {
+    display: none;
+  }
+  .workshop_shelf > * {
+    flex: 0 0 auto;
+    margin-inline: 0 !important;
+  }
 </style>
