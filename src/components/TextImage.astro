@@ -1,0 +1,31 @@
+
+
+
+<section>
+    <div><slot/></div>
+    <div><img src="/public/banner/header.jpg" alt="billede"></div>
+</section>
+
+<style>
+
+img{
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+
+@media screen and (min-width: 750px){
+
+section{
+    display: grid;
+    grid-template-columns: 2fr;
+    width: 100%;
+    
+}
+}
+
+
+
+
+</style>

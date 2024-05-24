@@ -3,9 +3,13 @@ import MainLayout from "../layout/MainLayout.astro";
 import Textsection from "../components/Textsection.astro";
 import WorkshopShelf from "../components/WorkshopShelf.astro";
 import Button from "../components/Button.astro";
+import TextImage from "../components/TextImage.astro";
 ---
 
 <MainLayout>
+
+    <TextImage><Textsection header="rdkipe" text="dk"/><TextImage/>
+
     <div class="section-gap">
             mangler banner her
             
@@ -76,5 +80,9 @@ import Button from "../components/Button.astro";
     padding-bottom: var(--padding-m);
 }
 
+img{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
 
 </style>
