@@ -1,11 +1,18 @@
 ---
 import MainLayout from "../../layout/MainLayout.astro";
+import Button from "../../components/Button.astro";
 // jeg oplevede at jeg fik en fejl nede i min body hvor fejlen lød på property "name" does not exist on type "never"
 // // Jeg har derfor benyttet nedenstående kode til at få Types ript til at forstå hvilken slags data mine objekter indeholder. *Denne løsning har jeg fået fra ChatGPT.
 interface Workshop {
-  id: string;
+  id: number;
   name: string;
   image: string;
+  price: number;
+  location: string;
+  date: string;
+  start_time: string;
+  end_time: string;
+  description: string;
 }
 export async function getStaticPaths() {
   const data: Workshop[] = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops", {
@@ -23,14 +30,99 @@ export async function getStaticPaths() {
   });
 }
 const { myData } = Astro.props;
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = date.toLocaleString("da-DK", { month: "short" });
+  return `${day}. ${month}`;
+}
 ---
 
 <MainLayout>
-  <h1>{myData.name}</h1>
-  <img src=`/workshops/${myData.image}` alt=`billede af ${myData.name}` />
+  <section class="workshop_grid">
+    <div>
+      <img src=`/workshops/${myData.image}` alt=`billede af ${myData.name}` />
+    </div>
+    <div class="workshop_info">
+      <h1>{myData.name}</h1>
+      <p>Fra {myData.price} DKK</p>
+      <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{myData.location}</p></div>
+      <div class="dato_tid">
+        <div class="dato"><span><img src="/logo/calender.svg" alt="" /></span>{formatDate(myData.date)}</div>
+        <div class="tid"><span><img src="/logo/time.svg" alt="" /></span>{myData.start_time.slice(0, 5)}-{myData.end_time.slice(0, 5)}</div>
+      </div>
+      <div class="choose_amount">
+        <button>-</button>
+        <span class="show_amount">1</span>
+        <button>+</button>
+      </div>
+      <p>Kun 4 ledige pladser</p>
+      <div class="buy_button"><Button type="primary" knaptekst="Læg i kurv" link="/" /></div>
+      <div class="description"><p>{myData.description}</p>
+      <div class="overlay"></div></div>
+    </div>
+  </section>
 </MainLayout>
 <style>
   img {
     width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+  }
+  .workshop_info {
+    margin-inline: var(--default-inline);
+    display: flex;
+    flex-direction: column;
+  }
+
+  span img {
+    aspect-ratio: 1;
+  }
+  .dato_tid {
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin-bottom: 1.25rem;
+    margin-top: 0.3rem;
+  }
+  .dato_tid span {
+    margin-right: 0.7rem;
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  button {
+    background-color: transparent;
+    padding-inline: 1.5rem;
+    padding-block: 0.6rem;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  .choose_amount {
+    display: flex;
+  }
+  .show_amount {
+    width: 10rem;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .buy_button {
+    align-self: center;
+  }
+  .description{
+    position: relative;
+  }
+  .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    position: absolute;
+    top: 0;
   }
 </style>
