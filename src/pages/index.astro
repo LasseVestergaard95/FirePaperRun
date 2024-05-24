@@ -15,7 +15,7 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
     <div><img class="banner" src="/banner/header.jpg" alt="banner billede" /></div>
     <div class="banner-text">
       <div> <h1>Workshop i keramik og ler</h1><p>for virksomheder og privat</p></div>
-        <div class="btn"><Button type="primary" link="/book_workshop">Book workshop</Button>
+        <div class="btn"> <Button type="primary" knaptekst="Book workshop" link="book_workshop"/>
         </div>
       </div>
   </section>
@@ -108,7 +108,7 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
     height: 100%;
   }
 
-  .btn{
+  .banner-text div:last-child{
     display: none;
   }
   }

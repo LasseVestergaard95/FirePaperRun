@@ -1,9 +1,8 @@
 ---
-const { link, type} = Astro.props;
+const { link, type, knaptekst} = Astro.props;
 ---
 
-  <a class= {type} href=`/${link}`>
-    <slot />
+  <a class= {type} href=`/${link}`>{knaptekst}
 </a>
 
 <style>
