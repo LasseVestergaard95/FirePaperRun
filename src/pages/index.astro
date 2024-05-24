@@ -80,11 +80,12 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
     margin-bottom: 1rem;
   }
   .card_shelf {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     gap: 2.25rem;
     margin-block: 2rem;
-    justify-content: center;
+    margin-inline: var(--default-inline);
+
   }
   h1, p{
     color: var(--light-white);
@@ -106,6 +107,7 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
   .banner {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   .banner-text div:last-child{

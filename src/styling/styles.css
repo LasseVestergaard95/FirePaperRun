@@ -16,12 +16,13 @@
   --stroke-xs: 1px;
   --stroke-s: 2px;
 
-  --padding-default: 80px;
+  --padding-default: 5rem; /*Bruges til at adskille sektioner*/
   --padding-xs: 0.5rem;
   --padding-s: 1rem;
   --padding-m: 1.5rem;
   --padding-l: 2rem;
-  --padding-xl:
+  --padding-xl: 2.5rem;
+  --padding-xxl:3rem;
 
   --border-radius-s: 5px;
   --border-radius-m: 10px;
@@ -81,154 +82,102 @@
   --mob-quote-style: "light italic";
 
     /* Fonts */
-  --mob-h1-size: 1.5rem;
-  --mob-h1-line-height: 2.3rem;
-  --mob-h1-weight-default: 500;
-  --mob-h1-weight-thin: 200;
-  --mob-h1-weight-semi-bold: 600;
-  --mob-h1-weight-bold: 700;
+  --h1-size: 1.5rem;
+  --h1-line-height: 2.3rem;
+  --h1-weight-default: 500;
+  --h1-weight-thin: 200;
+  --h1-weight-semi-bold: 600;
+  --h1-weight-bold: 700;
 
-  --mob-h2-size: 1.3rem;
-  --mob-h2-line-height: 2rem;
-  --mob-h2-weight-default: 500;
-  --mob-h2-weight-thin: 300;
-  --mob-h2-weight-semibold: 600;
-  --mob-h2-weight-bold: 700;
+  --h2-size: 1.3rem;
+  --h2-line-height: 2rem;
+  --h2-weight-default: 500;
+  --h2-weight-thin: 300;
+  --h2-weight-semibold: 600;
+  --h2-weight-bold: 700;
 
-  --mob-h3-size: 1.1rem;
-  --mob-h3-line-height: 1.75rem;
-  --mob-h3-weight-default: 500;
-  --mob-h3-weight-thin: 300;
-  --mob-h3-weight-semibold: 600;
-  --mob-h3-weight-bold: 700;
+  --h3-size: 1.1rem;
+  --h3-line-height: 1.75rem;
+  --h3-weight-default: 500;
+  --h3-weight-thin: 300;
+  --h3-weight-semibold: 600;
+  --h3-weight-bold: 700;
 
-  --mob-paragraph-size: 1rem;
-  --mob-paragraph-line-height: 1.2rem;
-  /* jeg har ændret i de to nedenstående så at default er light */
-  --mob-paragraph-weight-regular: 500;
-  --mob-paragraph-weight-default: 300;
-  --mob-paragraph-weight-semibold: 600;
-  --mob-paragraph-weight-bold: 700;
+  --paragraph-size: 1rem;
+  --paragraph-line-height: 1.2rem;
+  --paragraph-weight-thin: 200;
+  --paragraph-weight-regular: 500;
+  --paragraph-weight-semibold: 600;
+  --paragraph-weight-bold: 700;
 
-  --mob-button-size: 0.8rem;
-  --mob-button-line-height: auto;
-  --mob-button-weight-default: 500;
-  --mob-button-weight-thin: 300;
-  --mob-button-weight-semibold: 600;
-  --mob-button-weight-bold: 700;
+  /*btn large*/
+  --button-l-block: 1.25rem;
+  --button-l-inline: 3.125rem;
+  --button-l-line-height: auto;
+  --button-l-weight-regular: 500;
 
-  --mob-quote-size: 1.2rem;
-  --mob-quote-line-height: auto;
-  --mob-quote-weight: 300;
+  /*btn small*/
+  --button-s-block: 1rem;
+  --button-s-inline: 2rem;
+  --button-s-line-height: auto;
+  --button-s-weight-regular: 500;
 
-  --default-inline: 1.5rem;
+
+  /*quote*/
+  --quote-size: 1.2rem;
+  --quote-line-height: auto;
+  --quote-weight: 300;
+
+  --default-inline: 1.5rem; /*Inline der skal bruges på alle sider*/
 }
 
 @media screen and (min-width: 750px) {
   :root {
-  --padding-xs: 0.5rem;
-  --padding-s: 1rem;
-  --padding-m: 3.125rem;
+    --padding-default: 9.372px; /*Bruges til at adskille sektioner*/
+    --padding-xs: 1rem;
+    --padding-s: 2rem;
+    --padding-m: 3rem;
+    --padding-l: 3.5rem;
+    --padding-xl: 4rem;
+    --padding-xxl: 4.5rem;
 
   --border-radius-s: 10px;
   --border-radius-m: 15px;
 
-  /* Semantic-tokens */
-    /* Button / Default / Colors */
-  --button-fill: var(--yellow);
-  --button-fill-text: var(--dark-red);
-
-    /* Button / Secondary / Stroke / Colors */
-  --button-stroke-color-white: var(--light-white);
-  --button-stroke-white: var(--light-white);
-  --button-stroke-black: var(--dark-black);
-  --button-stroke-black: var(--dark-black);
-
-    /* Button / Secondary / NumberStrings */
-  --button-stroke-xs: var(--stroke-xs);
-  --button-stroke-s: var(--stroke-s);
-  --button-border-s: var(--border-radius-s);
-  --button-border-m: var(--border-radius-m);
-  --button-border-l: var(--border-radius-l);
-
-  /* Logo / NumberStrings */
-  --logo-stroke-default: var(--stroke-xs);
-  --logo-stroke-color: var(--light-white);
-
-  /* Icon / NumberStrings */
-  --icon-stroke-s: var(--stroke-s);
-
-    /* Card / NumberStrings */
-    --Card-border-radius-s: var(--border-radius-s);
-    --Card-border-radius-l: var(--border-radius-m);
-
-
-
-  /* Semantic-tokens */
-  /* FAQ-colors */
-  --faq-bg-color: var(--dark-green);
-  --faq-text-color: var(--light-white);
-
-  /* Footer-colors */
-  --footer-bg-color: var(--light-orange);
-  --footer-header-color: var(--dark-black);
-  --footer-text-color: var(--light-black);
-
-  /* Burn-colors */
-  --burn-bg-color: var(--dusty-green);
-  --burn-text: var(--light-white);
-
-  /* Newsletter-color*/
-  --news-bg: var(--orange);
-  --news-text: var(--light-white);
-
-  /* Typeface */
-  --header-font: "Montserrat";
-  --paragraph-font: "Inter";
-  --mob-quote-style: "light italic";
-
     /* Fonts */
-  --mob-h1-size: 1.5rem;
-  --mob-h1-line-height: 2.3rem;
-  --mob-h1-weight-default: 500;
-  --mob-h1-weight-thin: 200;
-  --mob-h1-weight-semi-bold: 600;
-  --mob-h1-weight-bold: 700;
+  --h1-size: 3.125rem;
+  --h1-line-height: 2.3rem;
+  --h1-weight-regular: 500;
+  --h1-weight-thin: 200;
+  --h1-weight-semi-bold: 600;
+  --h1-weight-bold: 700;
 
-  --mob-h2-size: 1.3rem;
-  --mob-h2-line-height: 2rem;
-  --mob-h2-weight-default: 500;
-  --mob-h2-weight-thin: 300;
-  --mob-h2-weight-semibold: 600;
-  --mob-h2-weight-bold: 700;
+  --h2-size: 2.5rem;
+  --h2-line-height: 2rem;
+  --h2-weight-regular: 500;
+  --h2-weight-thin: 200;
+  --h2-weight-semibold: 600;
+  --h2-weight-bold: 700;
 
-  --mob-h3-size: 1.1rem;
-  --mob-h3-line-height: 1.75rem;
-  --mob-h3-weight-default: 500;
-  --mob-h3-weight-thin: 300;
-  --mob-h3-weight-semibold: 600;
-  --mob-h3-weight-bold: 700;
+  --h3-size: 2rem;
+  --h3-line-height: 1.75rem;
+  --h3-weight-regular: 500;
+  --h3-weight-thin: 200;
+  --h3-weight-semibold: 600;
+  --h3-weight-bold: 700;
 
-  --mob-paragraph-size: 1rem;
-  --mob-paragraph-line-height: 1.2rem;
-  /* jeg har ændret i de to nedenstående så at default er light */
-  --mob-paragraph-weight-regular: 500;
-  --mob-paragraph-weight-default: 300;
-  --mob-paragraph-weight-semibold: 600;
-  --mob-paragraph-weight-bold: 700;
+  --paragraph-size: 1.5rem;
+  --paragraph-line-height: 1.2rem;
+  --paragraph-weight-thin: 200;
+  --paragraph-weight-regular: 500;
+  --paragraph-weight-semibold: 600;
+  --paragraph-weight-bold: 700;
 
-  --mob-button-size: 0.8rem;
-  --mob-button-line-height: auto;
-  --mob-button-weight-default: 500;
-  --mob-button-weight-thin: 300;
-  --mob-button-weight-semibold: 600;
-  --mob-button-weight-bold: 700;
+  --quote-size: 1.875rem;
+  --quote-line-height: auto;
+  --quote-weight: 200;
 
-  --mob-quote-size: 1.2rem;
-  --mob-quote-line-height: auto;
-  --mob-quote-weight: 300;
-
-  --default-inline: 1.5rem;
+  --default-inline: 3rem; /*Inline der skal bruges på alle sider/sektioner*/
   }
   
 }

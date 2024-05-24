@@ -17,7 +17,7 @@ const { titel, img } = Astro.props;
   article {
     color: var(--light-black);
     aspect-ratio: 19/20;
-    max-width: 25rem;
+    width: 100%;
     border-radius: 5px;
     overflow: hidden;
   }
@@ -49,5 +49,16 @@ const { titel, img } = Astro.props;
   }
   p {
     margin-bottom: 0.3rem;
+
+  }
+  h3{
+    
+  }
+
+
+  @media screen and (min-width: 750px){
+    article{
+      aspect-ratio: 6/3;
+    }
   }
 </style>
