@@ -4,6 +4,7 @@ import Textsection from "../components/Textsection.astro";
 import WorkshopShelf from "../components/WorkshopShelf.astro";
 import Button from "../components/Button.astro";
 import Banner from "../components/Banner.astro";
+import TextImage from "../components/TextImage.astro";
 ---
 
 <MainLayout>
@@ -11,10 +12,10 @@ import Banner from "../components/Banner.astro";
 
 
     <div class="section-gap">
-        <div class="gap">
-        <div><Textsection header="Katrine Blinkenberg" text="Mit navn er Katrine Blinkenberg, og jeg er hovedet bag FirePaperRun. I 2022 vaglte jeg at ligge præstearbejdet fra mig og udforske min kreative side. Siden da, har jeg afholdt mange forskellige workshops, i gips og ler."/></div>
-        
-        <div class="default-inline"><p>I Sydhavnen, i de smukkeste omgivelser, kan du lære at skabe unikaværker i keramik eller gips. Kun fantasien sætter grænser.</p></div>
+        <div class="default-inline top">
+            <h2>Katrine Blinkenberg</h2>
+            <p>Mit navn er Katrine Blinkenberg, og jeg er hovedet bag FirePaperRun. I 2022 vaglte jeg at ligge præstearbejdet fra mig og udforske min kreative side. Siden da, har jeg afholdt mange forskellige workshops, i gips og ler.
+            </p>
         </div>
         
         
@@ -22,28 +23,27 @@ import Banner from "../components/Banner.astro";
             <div class="video-section">
                 video her
 
-                <div>
-                    <p class="quote">“FirePaperRun handler om de unikke, smukke
+                <div class="quote">
+                    <p>“FirePaperRun handler om de unikke, smukke
                         relationer vi har til andre mennesker”</p>
                 </div>
             </div>
         </div>
 
-        <div class="firepaperrun">
-        <div class="pad-bot">
-            <Textsection header="FirePaperRun" text="Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det sædvanlige kontorliv. Vi afholder workshops for private og virksomheder og alt kan skræddersyes til hvad det er i gerne vil udforske og lære."/>
-        </div>
-        <div>
-            <img src="/public/banner/header.jpg" alt="billede til workshop">
-        </div>
+        <div class="firepaperrun ">
+           <TextImage>
+            <div class="gap">
+                <div><Textsection header="FirePaperRun" text="Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det sædvanlige kontorliv. Vi afholder workshops for private og virksomheder og alt kan skræddersyes til hvad det er i gerne vil udforske og lære."/></div>
+                <div><Textsection header="Håndværk og mennesket" text="Man kan lære meget om et menneske ved at se hvordan de arbejder med deres hænder. Samtidig kan det, at have et kreativt afbræk i dagligdagen skabe et nyt pust af energi og inspiration til din hverdag! Alle kan lære at lave kunst, og det er aldrig for sent at lære."/></div>
+            </TextImage> 
+            </div>
         </div>
 
-        <Textsection header="Håndværk og mennesket" text="Man kan lære meget om et menneske ved at se hvordan de arbejder med deres hænder. Samtidig kan det, at have et kreativt afbræk i dagligdagen skabe et nyt pust af energi og inspiration til din hverdag! Alle kan lære at lave kunst, og det er aldrig for sent at lære."/>
 
         <div class="default-inline kommendeworkshops">
             <div><h2>Kommende workshops</h2></div>
             <div><WorkshopShelf/></div>
-            <div class="btn"><Button type="secondary">Se alle workshops</Button></div>
+            <div class="btn"><Button type="secondary" knaptekst="Se alle workshop" link="book_workshop"/></div>
         </div>
 </div>
 </MainLayout>
@@ -51,9 +51,7 @@ import Banner from "../components/Banner.astro";
 
 <style>
 
-.default-inline{
-    padding-inline: var(--default-inline);
-}
+
 
 .section-gap{
     display: flex;
@@ -61,18 +59,11 @@ import Banner from "../components/Banner.astro";
     gap: var(--padding-default);
 }
 
-.section-gap div{
-    padding-bottom: var(--padding-s);
-}
-
-.gap div:first-child{
-    padding-top: var(--padding-m);
-}
-
 .firepaperrun{
     display: flex;
     flex-direction: column;
     gap: var(--padding-s);
+    padding-bottom: var(--padding-m);
 }
 
 .kommendeworkshops{
@@ -86,20 +77,46 @@ import Banner from "../components/Banner.astro";
     align-self: center;
 }
 
-.pad-bot{
-    padding-bottom: var(--padding-m);
-}
-
-.quote{
+.quote p{
+    max-width: 50%;
+    margin-inline: auto;
+    text-align: center;
     font-size: var(--quote-size);
     line-height: var(--quote-line-height);
     font-weight: var(--quote-weight);
     font-style: var(--quote-style);
 }
 
+
+
+
 @media screen and (min-width: 750px){
 
+.quote p{
+    max-width: 50%;
+    margin-inline: auto;
+    text-align: center;
+    font-size: var(--quote-size);
+    line-height: var(--quote-line-height);
+    font-weight: var(--quote-weight);
+    font-style: var(--quote-style);
+}
 
+.gap{
+    gap: var(--padding-m);
+}
+
+.top{
+    padding-top: var(--padding-m);
+}
+
+.firepaperrun{
+    padding-right: var(--default-inline);
+}
+
+.default-inline{
+    padding-inline: var(--default-inline);
+}
 
 }
 
