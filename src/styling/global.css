@@ -31,24 +31,24 @@ h3 {
   color: var(--dark-black);
 }
 h1 {
-  font-size: var(--mob-h1-size);
-  line-height: var(--mob-h1-line-height);
-  font-weight: var(--mob-h1-weight-default);
+  font-size: var(--h1-size);
+  line-height: var(--h1-line-height);
+  font-weight: var(--h1-weight-default);
 }
 h2 {
-  font-size: var(--mob-h2-size);
-  line-height: var(--mob-h2-line-height);
-  font-weight: var(--mob-h2-weight-default);
+  font-size: var(--h2-size);
+  line-height: var(--h2-line-height);
+  font-weight: var(--h2-weight-default);
 }
 h3 {
-  font-size: var(--mob-h3-size);
-  line-height: var(--mob-h3-line-height);
-  font-weight: var(--mob-h3-weight-default);
+  font-size: var(--h3-size);
+  line-height: var(--h3-line-height);
+  font-weight: var(--h3-weight-default);
 }
 p {
-  font-size: var(--mob-paragraph-size);
-  line-height: var(--mob-paragraph-line-height);
-  font-weight: var(--mob-paragraph-weight-default);
+  font-size: var(--paragraph-size);
+  line-height: var(--paragraph-line-height);
+  font-weight: var(--paragraph-weight-default);
   max-width: 65ch;
 }
 a{

@@ -28,7 +28,7 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
   </section>
   <section class="workshop_shelf">
  <div> <WorkshopShelf/></div>
-  <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
+ <Button type="secondary" knaptekst="Se alle workshops" link="book_workshop"/>
   </section>
 <ProductCard/>
   <Newsletter/>
@@ -72,6 +72,7 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
   }
   .workshop_shelf {
     padding-block: 1.8rem;
+    padding-inline: var(--default-inline);
   }
   .frontpage_intro h2 {
     margin-bottom: 0.5rem;
@@ -92,8 +93,8 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
   }
 
   p{
-    font-weight: var(--mob-h1-weight-thin);
-    font-size: var(--mob-h1-size);
+    font-weight: var(--h1-weight-thin);
+    font-size: var(--h1-size);
   }
 
   

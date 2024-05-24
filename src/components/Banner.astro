@@ -1,0 +1,39 @@
+---
+const {image, header} = Astro.props;
+---
+
+<section class="header_section">
+    <div class="div1">
+        <img src={`/banner/${image}`} alt="Header billede" /> </div><div class="div2"><h1>{header}</h1></div>
+</section>
+
+<style>
+        .header_section {
+    display: grid; 
+grid-template-columns: repeat(2, 1fr); 
+grid-template-rows: repeat(2, 1fr); 
+grid-column-gap: 0px;
+grid-row-gap: 0px; 
+}
+.div1 { 
+    grid-area: 1 / 1 / 3 / 3; 
+} 
+.div2 { 
+    grid-area: 2 / 1 / 3 / 3;
+    align-self: end; 
+    padding-bottom: 1rem;
+}
+h1 {
+    color: var(--lighter-white);
+    padding-left: 1rem;
+}
+
+h2 {
+    padding-left: 1rem;
+    padding-top: 2rem;
+}
+img{
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+</style>
