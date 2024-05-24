@@ -3,25 +3,50 @@ import MainLayout from "../layout/MainLayout.astro";
 import Textsection from "../components/Textsection.astro";
 import WorkshopGrid from "../components/WorkshopGrid.astro";
 import Button from "../components/Button.astro";
+import Burn from "../components/Burn.astro";
+import Faq from "../components/Faq.astro";
 ---
 
 <MainLayout>
     <section class="header_section">
         <div class="div1">
-    <img class="header_img" src="/public/workshop/kop_workshop.jpg" alt="" /> </div><div class="div2"><h1>Arbejde med keramik</h1></div>
+    <img class="header_img" src="/public/workshops/kop_workshop.jpg" alt="" /> </div><div class="div2"><h1>Arbejd med keramik</h1></div>
     </section>
     
-   <Textsection class="content"
-   header="Oplev ContainerClay" text="I en container i Sydhavnen kan du komme til den vildeste workshop i keramik. Hyg med gamle venner og stift nye bekendtskaber når vi holder 3 timers keramik workshop. Jeg tager dig igennem hele processen, så du kan tage dine egne unika værker med hjem." />
+    <div class="text-content">
+   <Textsection
+   header="Oplev ContainerClay" text="I en container i Sydhavnen kan du komme til den vildeste workshop i keramik. Hyg med gamle venner og stift nye bekendtskaber når vi holder 3 timers keramik workshop. Jeg tager dig igennem hele processen, så du kan tage dine egne unika værker med hjem." /></div>
    <img src="/public/produkter/gips.jpg"/>
-<Textsection class="content"
-   header="Processen" text="Til alle mine keramik workshops, får du udleveret ler. Jeg vil tage dig gennem processen hvor du lærer nyttige teknikker som er baseret på en japansk metode. Når du er færdig med dit keramik, kan du markere hvilken farve du ønsker eller lade mig bestemme for dig. Du kan forvente at dit keramik er færdig cirka 2-3 uger efter da det først skal tørre, brændes samt glaseres." /></Textsection>" <img src="/public/produkter/workshop-keramik.jpg"/>
+
+   <div class="text-content">
+<Textsection
+   header="Processen" text="Til alle mine keramik workshops, får du udleveret ler. Jeg vil tage dig gennem processen hvor du lærer nyttige teknikker som er baseret på en japansk metode. Når du er færdig med dit keramik, kan du markere hvilken farve du ønsker eller lade mig bestemme for dig. Du kan forvente at dit keramik er færdig cirka 2-3 uger efter da det først skal tørre, brændes samt glaseres." /></Textsection></div>
    
+<section class="header_section">
+        <div class="div1">
+    <img class="header_img" src="/public/produkter/keramik.jpg" alt="" /> </div><div class="div2"><h1>Services: Clay to go</h1></div>
+      </section>
+      <div class="text-content">
+    <Textsection
+    header="" text="Mange laver keramik hjemme i en privat atmosfære. Hvis du vil lave keramik hjemme, kan du hente ler i containeren eller købe den i webshoppen med evt. forsendelse."/></div>
+  
+    <Button type="secondary">Køb produkter</Button>
+
+<section class="header_section">
+<div class="div1">
+ <img class="header_img" src="/public/produkter/keramik.jpg" alt="" /> </div><div class="div2"><h1>Services: Brænding</h1></div>
+      </section>
+      <div class="text-content">
+    <Textsection
+    header="" text="Når du er færdig med at bygge, skal du bringe dit keramik ned til vores container. Leret skal være helt tørt før det kan brændes, så vent min. 3 uger. Jeg brænder normalt ved 1.260 grader, hvillket betyder, at det er stentøj. Da det forkerte ler kan ødelægge oven, er det vigtigt, du enten køber dit ler hos mig eller at du kan dokumentere hvilken type ler, du bruger."/></div>
+<Burn></Burn>
+
    <section>
    <h2>Kommende workshops</h2>
      <WorkshopGrid />
       <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
       </section>
+      <Faq></Faq>
 </MainLayout>
 
 <style>
@@ -41,8 +66,24 @@ grid-row-gap: 0px;
     padding-bottom: 1rem;
 }
 
+img{
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
 h1 {
     color: var(--lighter-white);
+    padding-left: 1rem;
 }
 
+h2 {
+    padding-left: 1rem;
+    padding-top: 2rem;
+}
+
+.text-content {
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;
+}
 </style>
