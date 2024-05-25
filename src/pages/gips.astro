@@ -5,25 +5,77 @@ import WorkshopGrid from "../components/WorkshopGrid.astro";
 import Button from "../components/Button.astro";
 import Faq from "../components/Faq.astro";
 import Banner from "../components/Banner.astro";
-import TextImage from "../components/TextImage.astro";
 ---
 
 <MainLayout>
    
     <Banner header="At arbejde med gips" image="gips.jpg"/>
-   <TextImage>
-    <Textsection
-   header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem." /></TextImage>
+    <div class="seperation">
+        <div class="section-gap">
+            <div>
+                <Textsection
+            header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem." />
+                <img src="/public/workshops/gips_workshop.jpg" alt="gips workshop"></div>
+            
+            <div>
+                <Textsection
+            header="At arbejde intuitivt" text="Når du arbejder med gips, handler det om at kunne give slip og skabe ud fra intuition. Du har kun et lille tidsrum til at bygge skulpturen fra gipsen rammer vandet til det størkner. " />
+            <p>Det er først når skulpturen skal efterarbejdes at fordybelsen kommer.</p>
+            <p>Denne metode minder om en skrivemetode ved navn automatskrift, som jeg selv har haft glæde af i mit tidligere arbejde som præst. Metoden handler om at sætte en tidsgrænse og inde for denne grænse skal du bare tømme hovedet ned på papir.</p>
+            <p>Måske du selv kunne få gavn af denne metode?</p>
+            <img src="/public/workshops/gips_workshop2.jpg"/></div>
+            
+        </div>
 
-<div class="text-content">
-<Textsection
-   header="At arbejde intuitivt" text="Når du arbejder med gips, handler det om at kunne give slip og skabe ud fra intuition. Du har kun et lille tidsrum til at bygge skulpturen fra gipsen rammer vandet til det størkner. Det er først når skulpturen skal efterarbejdes at fordybelsen kommer. Denne metode minder om en skrivemetode ved navn automatskrift, som jeg selv har haft glæde af i mit tidligere arbejde som præst. Metoden handler om at sætte en tidsgrænse og inde for denne grænse skal du bare tømme hovedet ned på papir. Måske du selv kunne få gavn af denne metode?" /></div>
-   <img src="/public/workshops/gips_workshop2.jpg"/>
-
-   <section>
-   <h2>Kommende workshops</h2>
-     <WorkshopGrid />
-      <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
-      </section>
-      <Faq></Faq>
+    <div class="workshop">
+        <h2>Kommende workshops</h2>
+            <WorkshopGrid />
+            <div class="btn"><Button type="secondary" knaptekst="Se alle workshop" link="book_workshop"/></div>
+        </div>
+    </div>
+        <Faq></Faq>
 </MainLayout>
+
+<style>
+
+img{
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+.btn{
+    align-self: center;
+    padding-bottom: var(--default-inline);
+}
+
+
+.section-gap{
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-inline);
+}
+
+.section-gap div{
+    display: flex;
+    flex-direction: column;
+    gap: var(--default-inline);
+}
+
+.section-gap div:first-child{
+padding-top: var(--default-inline);
+}
+
+.section-gap div:last-child p{
+    padding-inline: var(--default-inline);
+}
+
+.workshop{
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--default-inline);
+}
+
+.workshop h2{
+    padding-inline: var(--default-inline);
+}
+
+</style>
