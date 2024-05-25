@@ -1,6 +1,8 @@
 ---
 import MainLayout from "../../layout/MainLayout.astro";
 import Button from "../../components/Button.astro";
+import WorkshopShelf from "../../components/WorkshopShelf.astro";
+import Newsletter from "../../components/Newsletter.astro";
 // jeg oplevede at jeg fik en fejl nede i min body hvor fejlen lød på property "name" does not exist on type "never"
 // // Jeg har derfor benyttet nedenstående kode til at få Types ript til at forstå hvilken slags data mine objekter indeholder. *Denne løsning har jeg fået fra ChatGPT.
 interface Workshop {
@@ -42,15 +44,15 @@ function formatDate(dateString) {
 <MainLayout>
   <section class="workshop_grid">
     <div>
-      <img src=`/workshops/${myData.image}` alt=`billede af ${myData.name}` />
+      <img class="workshop_img" src=`/workshops/${myData.image}` alt=`billede af ${myData.name}` />
     </div>
     <div class="workshop_info">
       <h1>{myData.name}</h1>
       <p>Fra {myData.price} DKK</p>
-      <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{myData.location}</p></div>
+      <div class="lokation"><p><span><img src="/logo/location-black.svg" alt="location logo" /></span>{myData.location}</p> <p class="adress">Oscar Pettifords Vej 23 8th, 2450 København S</p></div>
       <div class="dato_tid">
-        <div class="dato"><span><img src="/logo/calender.svg" alt="" /></span>{formatDate(myData.date)}</div>
-        <div class="tid"><span><img src="/logo/time.svg" alt="" /></span>{myData.start_time.slice(0, 5)}-{myData.end_time.slice(0, 5)}</div>
+        <div class="dato"><p><span><img src="/logo/calender-black.svg" alt="" /></span>{formatDate(myData.date)}</p></div>
+        <div class="tid"><p><span><img src="/logo/time-black.svg" alt="" /></span>{myData.start_time.slice(0, 5)}-{myData.end_time.slice(0, 5)}</p></div>
       </div>
       <div class="choose_amount">
         <button>-</button>
@@ -59,70 +61,97 @@ function formatDate(dateString) {
       </div>
       <p>Kun 4 ledige pladser</p>
       <div class="buy_button"><Button type="primary" knaptekst="Læg i kurv" link="/" /></div>
-      <div class="description"><p>{myData.description}</p>
-      <div class="overlay"></div></div>
+      <div class="description"><h3>Workshopbeskrivelse</h3><p>{myData.description}</p></div>
     </div>
   </section>
+  <section class="workshop_shelf">
+    <h2>Andre kunder har også set</h2>
+    <WorkshopShelf />
+    <div><Button type="secondary" knaptekst="Se alle workshops" link="book_workshop" /></div>
+  </section>
+
+  <section class="newsletter">
+    <Newsletter />
+  </section>
+
+  <style>
+    .workshop_info {
+      margin-inline: var(--default-inline);
+      display: flex;
+      flex-direction: column;
+      margin-block-start: var(--padding-xl);
+      margin-block-end: var(--padding-xxl);
+    }
+.workshop_img{
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+    span img {
+      width: 1rem;
+      height: 100%;
+    }
+    .dato_tid {
+      display: flex;
+      gap: 2rem;
+      padding: 0;
+      margin-bottom: var(--padding-xl);
+      margin-top: 0.3rem;
+    }
+    .dato_tid span,
+    .lokation span {
+      margin-right: 0.7rem;
+    }
+
+    .lokation {
+      margin-top: var(--padding-m);
+    }
+    .adress {
+      font-weight: var(--paragraph-weight-thin);
+      font-size: 0.7rem;
+      margin-left: 1.7rem;
+      margin-bottom: var(--padding-xs);
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    button {
+      background-color: transparent;
+      padding-inline: 1.5rem;
+      padding-block: 0.6rem;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+    .choose_amount {
+      display: flex;
+      margin-bottom: var(--padding-xs);
+    }
+    .show_amount {
+      width: 100%;
+      border: 1px solid black;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .buy_button {
+      align-self: center;
+      margin-block: var(--padding-xl);
+    }
+    .workshop_shelf {
+      display: flex;
+      flex-direction: column;
+      margin-block: var(--padding-xl);
+    }
+    .workshop_shelf div {
+      align-self: center;
+    }
+
+    .workshop_shelf h2 {
+      margin-inline: var(--default-inline);
+      margin-block: var(--padding-xl);
+    }
+  </style>
 </MainLayout>
-<style>
-  img {
-    width: 100%;
-    aspect-ratio: 3/2;
-    object-fit: cover;
-  }
-  .workshop_info {
-    margin-inline: var(--default-inline);
-    display: flex;
-    flex-direction: column;
-  }
-
-  span img {
-    aspect-ratio: 1;
-  }
-  .dato_tid {
-    display: flex;
-    gap: 2rem;
-    padding: 0;
-    margin-bottom: 1.25rem;
-    margin-top: 0.3rem;
-  }
-  .dato_tid span {
-    margin-right: 0.7rem;
-  }
-  span {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  button {
-    background-color: transparent;
-    padding-inline: 1.5rem;
-    padding-block: 0.6rem;
-    border: 1px solid black;
-    cursor: pointer;
-  }
-  .choose_amount {
-    display: flex;
-  }
-  .show_amount {
-    width: 10rem;
-    border: 1px solid black;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .buy_button {
-    align-self: center;
-  }
-  .description{
-    position: relative;
-  }
-  .overlay{
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-    position: absolute;
-    top: 0;
-  }
-</style>
