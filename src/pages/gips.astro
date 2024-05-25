@@ -5,15 +5,15 @@ import WorkshopGrid from "../components/WorkshopGrid.astro";
 import Button from "../components/Button.astro";
 import Faq from "../components/Faq.astro";
 import Banner from "../components/Banner.astro";
+import TextImage from "../components/TextImage.astro";
 ---
 
 <MainLayout>
    
     <Banner header="At arbejde med gips" image="gips.jpg"/>
-   <div class="text-content">
-   <Textsection
-   header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem." /></div> 
-   <img src="/public/workshops/gips_workshop2.jpg"/>
+   <TextImage>
+    <Textsection
+   header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem." /></TextImage>
 
 <div class="text-content">
 <Textsection
@@ -27,14 +27,3 @@ import Banner from "../components/Banner.astro";
       </section>
       <Faq></Faq>
 </MainLayout>
-
-<style>
-
-.text-content {
-    padding-top: 2rem;
-    padding-left: 1rem;
-    padding-right: 4rem;
-    padding-bottom: 2rem;
-}
-
-</style>
