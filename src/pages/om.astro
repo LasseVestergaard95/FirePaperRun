@@ -12,7 +12,7 @@ import TextImage from "../components/TextImage.astro";
 
 
     <div class="section-gap">
-        <div class="default-inline top">
+        <div class="default-inline top bot">
             <h2>Katrine Blinkenberg</h2>
             <p>Mit navn er Katrine Blinkenberg, og jeg er hovedet bag FirePaperRun. I 2022 vaglte jeg at ligge præstearbejdet fra mig og udforske min kreative side. Siden da, har jeg afholdt mange forskellige workshops, i gips og ler.
             </p>
@@ -21,12 +21,15 @@ import TextImage from "../components/TextImage.astro";
         
         <div class="default-inline">
             <div class="video-section">
-                video her
-
-                <div class="quote">
-                    <p>“FirePaperRun handler om de unikke, smukke
-                        relationer vi har til andre mennesker”</p>
+                <div class="quote bot">
+                    <p>“FirePaperRun handler om de unikke, smukkerelationer vi har til andre mennesker
+                    </p>
                 </div>
+                <div class="video bot">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dMrog3NwJAc?si=kL5kAFYEb4PUmCSh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                
             </div>
         </div>
 
@@ -90,7 +93,15 @@ import TextImage from "../components/TextImage.astro";
     padding-top: var(--padding-m);
 }
 
+.bot{
+    padding-bottom: var(--padding-m);
+}
 
+iframe {
+        object-fit: cover;
+        height: 280px;
+        width: 100%;
+    }
 
 
 @media screen and (min-width: 750px){
@@ -135,6 +146,18 @@ import TextImage from "../components/TextImage.astro";
 .section-gap{
     gap: var(--padding-xxl);
 }
+
+iframe {
+        object-fit: cover;
+        height: 600px;
+        width: 1080px;
+        align-self: center;
+    }
+
+    .video{
+        display: flex;
+        flex-direction: column;
+    }
 
 }
 
