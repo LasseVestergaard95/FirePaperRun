@@ -9,14 +9,17 @@ import Banner from "../components/Banner.astro";
 
 <MainLayout>
    
-    <Banner header="At arbejde med gips" image="gips.jpg"/>
+    <Banner header="At arbejde med gips" image="gips.jpg" p1="Har du nogensinde undret dig over, hvordan man arbejder med gips, og hvad man ville kunne udvikle? Læs mere her!"/>
     <div class="seperation">
         <div class="section-gap">
-            <div>
+            <div class="grid">
+                <div>
                 <Textsection
-            header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. " />
-            <p>Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem.</p>
-                <img src="/public/workshops/gips_workshop.jpg" alt="gips workshop"></div>
+                header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. " />
+                <p>Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem.</p>
+                </div>
+                <div><img src="/public/workshops/gips_workshop.jpg" alt="gips workshop"></div>
+            </div>
             
             <div>
                 <Textsection
@@ -77,6 +80,25 @@ padding-top: var(--default-inline);
 
 .workshop h2{
     padding-inline: var(--default-inline);
+}
+
+@media screen and (min-width: 750px){
+.section-gap .grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding-right: var(--default-inline);
+}
+
+img{
+    border-radius: var(--border-radius-m);
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    height: 70%;
+
+}
+
+
 }
 
 </style>
