@@ -79,7 +79,7 @@
   /* Typeface */
   --header-font: "Montserrat";
   --paragraph-font: "Inter";
-  --mob-quote-style: "light italic";
+  --quote-style: italic;
 
     /* Fonts */
   --h1-size: 1.5rem;
@@ -133,7 +133,7 @@
 
 @media screen and (min-width: 750px) {
   :root {
-    --padding-default: 9.372px; /*Bruges til at adskille sektioner*/
+    --padding-default: 3rem; /*Bruges til at adskille sektioner*/
     --padding-xs: 1rem;
     --padding-s: 2rem;
     --padding-m: 3rem;
@@ -145,28 +145,28 @@
   --border-radius-m: 15px;
 
     /* Fonts */
-  --h1-size: 3.125rem;
-  --h1-line-height: 2.3rem;
+  --h1-size: 2.5rem;
+  --h1-line-height: 5rem;
   --h1-weight-regular: 500;
   --h1-weight-thin: 200;
   --h1-weight-semi-bold: 600;
   --h1-weight-bold: 700;
 
-  --h2-size: 2.5rem;
+  --h2-size: 2rem;
   --h2-line-height: 2rem;
   --h2-weight-regular: 500;
   --h2-weight-thin: 200;
   --h2-weight-semibold: 600;
   --h2-weight-bold: 700;
 
-  --h3-size: 2rem;
+  --h3-size: 1.6rem;
   --h3-line-height: 1.75rem;
   --h3-weight-regular: 500;
   --h3-weight-thin: 200;
   --h3-weight-semibold: 600;
   --h3-weight-bold: 700;
 
-  --paragraph-size: 1.5rem;
+  --paragraph-size: 0.9rem;
   --paragraph-line-height: 1.2rem;
   --paragraph-weight-thin: 200;
   --paragraph-weight-regular: 500;
