@@ -18,8 +18,8 @@ function formatDate(dateString) {
     <div class="main_info">
       <h3>{name}</h3>
       <div class="dato_tid">
-        <div class="dato"><span><img src="/logo/calender.svg" alt="" /></span>{formatDate(date)}</div>
-        <div class="tid"><span><img src="/logo/time.svg" alt="" /></span>{start.slice(0, 5)}-{end.slice(0, 5)}</div>
+        <div class="dato"><p><span><img src="/logo/calender.svg" alt="" /></span>{formatDate(date)}</p></div>
+        <div class="tid"><p><span><img src="/logo/time.svg" alt="" /></span>{start.slice(0, 5)}-{end.slice(0, 5)}</p></div>
       </div>
       <p class={`pris, ${sold_out === true && "is_sold_out_dash"}`}>Fra {price} DKK <span class="span_sold_out">{sold_out === true && "Udsolgt"}</span></p>
     </div>
