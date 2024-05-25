@@ -30,13 +30,10 @@ import TextImage from "../components/TextImage.astro";
             </div>
         </div>
 
-        <div class="firepaperrun ">
-           <TextImage>
-            <div class="gap">
+        <div class="firepaperrun gap section-gap">
                 <div><Textsection header="FirePaperRun" text="Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det sædvanlige kontorliv. Vi afholder workshops for private og virksomheder og alt kan skræddersyes til hvad det er i gerne vil udforske og lære."/></div>
+                <img src="/public/banner/header.jpg" alt="workshopbillede">
                 <div><Textsection header="Håndværk og mennesket" text="Man kan lære meget om et menneske ved at se hvordan de arbejder med deres hænder. Samtidig kan det, at have et kreativt afbræk i dagligdagen skabe et nyt pust af energi og inspiration til din hverdag! Alle kan lære at lave kunst, og det er aldrig for sent at lære."/></div>
-            </TextImage> 
-            </div>
         </div>
 
 
@@ -53,17 +50,15 @@ import TextImage from "../components/TextImage.astro";
 
 
 
-.section-gap{
-    display: flex;
-    flex-direction: column;
-    gap: var(--padding-default);
-}
 
 .firepaperrun{
     display: flex;
     flex-direction: column;
-    gap: var(--padding-s);
-    padding-bottom: var(--padding-m);
+    gap: var(--padding-xxl);
+}
+
+.firepaperrun div:last-child{
+    padding-bottom: var(--padding-xxl);
 }
 
 .kommendeworkshops{
@@ -85,6 +80,14 @@ import TextImage from "../components/TextImage.astro";
     line-height: var(--quote-line-height);
     font-weight: var(--quote-weight);
     font-style: var(--quote-style);
+}
+
+.default-inline{
+    padding-inline: var(--default-inline);
+}
+
+.top{
+    padding-top: var(--padding-m);
 }
 
 
@@ -112,10 +115,25 @@ import TextImage from "../components/TextImage.astro";
 
 .firepaperrun{
     padding-right: var(--default-inline);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.firepaperrun img{
+    border-radius: var(--border-radius-m);
+}
+
+.firepaperrun .gap .section-gap div:last-child{
+    column-span: 1/2;
 }
 
 .default-inline{
     padding-inline: var(--default-inline);
+}
+
+.section-gap{
+    gap: var(--padding-xxl);
 }
 
 }
