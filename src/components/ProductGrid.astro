@@ -1,0 +1,29 @@
+---
+import ProductCard from "./ProductCard.astro";
+const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/products", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjZmlpbHBsb2xhZmhnb3R6Z3JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzM4NjEsImV4cCI6MjAzMDMwOTg2MX0.NG1pwR1rYfymfHS_elIDmB5V-2TOWGrrPumjrgwhDp4",
+  },
+}).then((res) => res.json());
+---
+
+<section class="product_grid">
+    {
+      data.map((product) => {
+        return <ProductCard id={product.id} name={product.name}  price={product.price} sold_out={product.sold_out} image={product.image} />;
+      })
+    }
+  </section>
+
+  <style>
+    .product_grid{
+      display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+    margin-inline: var(--default-inline);
+
+    margin-block: var(--default-inline);
+    place-items: center;
+    }
+  </style>
