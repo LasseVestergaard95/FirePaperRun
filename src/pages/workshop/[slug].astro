@@ -153,5 +153,32 @@ function formatDate(dateString) {
       margin-inline: var(--default-inline);
       margin-block: var(--padding-xl);
     }
+
+    @media screen and (min-width: 650px){
+      .workshop_grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-inline: var(--default-inline);
+        padding-top: 5rem;
+      }
+      .workshop_info{
+        margin-block-start: initial;
+      }
+      .workshop_img{
+        aspect-ratio: 8/9;
+        max-width: 30rem;
+        border-radius: 5px;
+      }
+      .lokation{
+        margin-top: var(--padding-xs);
+      }
+      .choose_amount{
+        max-width: 15rem;
+      }
+      .buy_button{
+        align-self: initial;
+        margin-block: var(--padding-s);
+      }
+    }
   </style>
 </MainLayout>
