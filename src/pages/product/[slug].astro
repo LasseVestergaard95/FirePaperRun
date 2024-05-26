@@ -1,0 +1,161 @@
+---
+import MainLayout from "../../layout/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import Newsletter from "../../components/Newsletter.astro";
+import ProductShelf from "../../components/ProductShelf.astro";
+
+interface Product {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  description: string;
+  unique: boolean;
+  measurements: string;
+  type: string;
+}
+
+export async function getStaticPaths() {
+  const data: Product[] = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/products", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjZmlpbHBsb2xhZmhnb3R6Z3JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzM4NjEsImV4cCI6MjAzMDMwOTg2MX0.NG1pwR1rYfymfHS_elIDmB5V-2TOWGrrPumjrgwhDp4",
+    },
+  }).then((response) => response.json());
+
+  return data.map((product) => {
+    return {
+      params: { slug: product.name + product.id },
+      props: { myData: product },
+    };
+  });
+}
+const { myData } = Astro.props;
+---
+
+<MainLayout>
+  <div class="header_background"></div>
+  <section class="product_grid">
+    <div>
+      <img class="product_img" src=`/produkter/${myData.image}` alt=`billede af ${myData.name}` />
+    </div>
+    <div class="product_info">
+      <p>{myData.type}</p>
+      <h1>{myData.name}</h1>
+      <p class="price">{myData.price} DKK + evt. fragt</p>
+      <p class="measurements">Mål: <span>{myData.measurements}</span></p>
+      <p class="unique">{myData.unique ? "Dette produkt er et unika. Kun 1 stk på lager" : ""}</p>
+      <div class="pick_up"><p>Kan afhentes i containeren ude i Sydhavn.</p><a href="https://g.co/kgs/FY5qoPJ">Find vej</a></div>
+      <details>
+        <summary>Produktbeskrivelse</summary>
+        <p>{myData.description}</p>
+      </details>
+      <div class="buy_button">
+        <Button type="primary" knaptekst="Læg i kurv" link="/" />
+      </div>
+    </div>
+  </section>
+  <section class="product_shelf">
+    <h2>Andre kunder har også set</h2>
+    <ProductShelf/>
+    <div><Button type="secondary" knaptekst="Se alle produkter" link="../kob-produkter" /></div>
+  </section>
+
+  <section class="newsletter">
+    <Newsletter />
+  </section>
+
+  <style>
+    .product_info {
+      margin-inline: var(--default-inline);
+      display: flex;
+
+      flex-direction: column;
+      margin-block-start: var(--padding-xl);
+      margin-block-end: var(--padding-xxl);
+    }
+    .product_img {
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: bottom;
+    }
+
+    .buy_button {
+      align-self: center;
+      margin-block-start: var(--padding-l);
+    }
+    .product_shelf {
+      display: flex;
+      flex-direction: column;
+      margin-block: var(--padding-xl);
+      margin-inline: var(--default-inline);
+    }
+    .product_shelf div {
+      align-self: center;
+    }
+
+    .product_shelf h2 {
+      margin-block: var(--padding-xl);
+    }
+    details {
+      margin-bottom: var(--padding-xl);
+    }
+    summary {
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: var(--paragraph-weight-semibold);
+    }
+    .price {
+      margin-bottom: var(--padding-m);
+      margin-top: var(--padding-xs);
+    }
+    .measurements {
+      font-weight: 600;
+      margin-bottom: var(--padding-s);
+    }
+    .measurements span {
+      font-weight: 400;
+    }
+    .unique {
+      font-style: italic;
+      margin-bottom: var(--padding-s);
+    }
+    .pick_up {
+      font-weight: 600;
+      margin-bottom: var(--padding-l);
+    }
+    .pick_up a {
+      font-weight: 300;
+      text-decoration: underline;
+    }
+
+    @media screen and (min-width: 650px) {
+      .header_background {
+        width: 100%;
+        background-color: rgb(28, 42, 28);
+        height: 70px;
+      }
+
+      .product_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-inline: var(--default-inline);
+        margin-inline: auto;
+        padding-top: 5rem;
+        max-width: 1200px;
+      }
+      .product_info {
+        margin-block-start: initial;
+      }
+      .product_img {
+        object-position: 50% 80%;
+        border-radius: 5px;
+      }
+
+      .buy_button {
+        align-self: initial;
+        margin-block: var(--padding-s);
+      }
+    }
+  </style>
+</MainLayout>
