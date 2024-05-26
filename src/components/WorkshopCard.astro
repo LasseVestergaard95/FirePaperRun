@@ -11,9 +11,9 @@ function formatDate(dateString) {
 ---
 
 <article>
-  <a class={sold_out === !false && "is_sold_out"} href={`/workshop/${name + id}`}>
+  <a href={`/workshop/${name + id}`}>
     <div class="gradient"></div>
-    <img src={`/workshops/${image}`} alt={`billede af ${name}`} />
+    <img class={sold_out === !false && "is_sold_out"} src={`/workshops/${image}`} alt={`billede af ${name}`} />
     <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{location}</p></div>
     <div class="main_info">
       <h3>{name}</h3>
@@ -21,7 +21,7 @@ function formatDate(dateString) {
         <div class="dato"><p><span><img src="/logo/calender.svg" alt="" /></span>{formatDate(date)}</p></div>
         <div class="tid"><p><span><img src="/logo/time.svg" alt="" /></span>{start.slice(0, 5)}-{end.slice(0, 5)}</p></div>
       </div>
-      <p class={`pris, ${sold_out === true && "is_sold_out_dash"}`}>Fra {price} DKK <span class="span_sold_out">{sold_out === true && "Udsolgt"}</span></p>
+      <div class="pris"><p class={`${sold_out === true && "is_sold_out_dash"}`}>Fra {price} DKK</p> <div class="span_sold_out">{sold_out === true && "Udsolgt"}</div></div>
     </div>
   </a>
 </article>
@@ -98,14 +98,22 @@ function formatDate(dateString) {
   .is_sold_out {
     filter: grayscale(0.8);
   }
+  .is_sold_out_text {
+    color: grey;
+  }
   .is_sold_out_dash {
     text-decoration: line-through;
   }
   .span_sold_out {
-    margin-left: 1rem;
     vertical-align: bottom;
-    color: orange;
-    font-weight: var(--mob-h2-weight-default);
+    color: rgb(219, 65, 9);
+    padding-inline: 1rem;
+    font-weight: var(--h2-weight-default);
+    font-size: x-large;
   }
-
+  .pris {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 </style>
