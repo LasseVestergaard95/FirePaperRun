@@ -12,7 +12,7 @@ function formatDate(dateString) {
 
 <article>
   <a href={`/workshop/${name + id}`}>
-    <div class="gradient"></div>
+    <div class="gradient is_sold_out"></div>
     <img class={sold_out === !false && "is_sold_out"} src={`/workshops/${image}`} alt={`billede af ${name}`} />
     <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{location}</p></div>
     <div class="main_info">
@@ -55,7 +55,7 @@ function formatDate(dateString) {
   }
   .gradient {
     position: absolute;
-    background-image: linear-gradient(to top, rgba(22, 22, 22, 0.6) 20%, transparent);
+    background-image: linear-gradient(to top, rgba(40, 33, 26, 0.8) 100%, transparent);
     height: 100%;
     width: 100%;
   }
@@ -96,17 +96,15 @@ function formatDate(dateString) {
     display: flex;
   }
   .is_sold_out {
-    filter: grayscale(0.8);
+    opacity: 50%;
   }
-  .is_sold_out_text {
-    color: grey;
-  }
+ 
   .is_sold_out_dash {
     text-decoration: line-through;
   }
   .span_sold_out {
     vertical-align: bottom;
-    color: rgb(219, 65, 9);
+    color: var(--dark-black);
     padding-inline: 1rem;
     font-weight: var(--h2-weight-default);
     font-size: x-large;
