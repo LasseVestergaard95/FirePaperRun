@@ -7,24 +7,38 @@ import Faq from "../components/Faq.astro";
 
 <MainLayout>
   <Banner header="Book workshops" image="workshop.jpg" p1="Du kan udforske mine workshops og læse mere om dem individuelt, før du vælger at booke dem. " p2="Hvis du er interesseret i en virksomhedsworkshop, så tøv ikke med at række ud til mig." />
-  <button>Sorter</button>
+ <div> <button><span><img src="/logo/sort.svg" alt=""></span>Sorter </button></div>
   <WorkshopGrid />
   <Faq />
 </MainLayout>
 
 <style>
+  
+span img{
+  width: 1rem;
+}
+span{
+  display: inline-block;
+  vertical-align: middle;
+}
   button {
+    cursor: pointer;
     background-color: transparent;
     border: 1px solid black;
     width: 100%;
     padding-block: 1rem;
     font-size: var(--paragraph-size);
-    margin-inline: var(--default-inline);
   }
+
   @media screen and (min-width: 500px) {
     button {
       margin-top: var(--padding-m);
       width: 12rem;
+      margin-inline: var(--default-inline);
+    }
+    div{
+      display: flex;
+      justify-content: end;
     }
   }
 </style>
