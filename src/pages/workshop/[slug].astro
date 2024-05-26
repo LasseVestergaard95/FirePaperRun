@@ -42,6 +42,7 @@ function formatDate(dateString) {
 ---
 
 <MainLayout>
+  <div class="header_background"></div>
   <section class="workshop_grid">
     <div>
       <img class="workshop_img" src=`/workshops/${myData.image}` alt=`billede af ${myData.name}` />
@@ -155,7 +156,11 @@ function formatDate(dateString) {
     }
 
     @media screen and (min-width: 650px){
-      .workshop_grid{
+      .header_background{
+        width: 100%;
+        background-color: rgb(28, 42, 28);
+        height: 70px;
+      }      .workshop_grid{
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-inline: var(--default-inline);
