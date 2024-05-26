@@ -16,6 +16,7 @@ interface Workshop {
   end_time: string;
   description: string;
   sold_out: boolean;
+  spots: number;
 }
 export async function getStaticPaths() {
   const data: Workshop[] = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops", {
