@@ -31,7 +31,6 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
  <div> <WorkshopShelf/></div>
  <div><Button type="secondary" knaptekst="Se alle workshops" link="book_workshop"/></div>
   </section>
-<ProductGrid/>
   <Faq/>
   <Newsletter/>
 </MainLayout>
@@ -131,6 +130,12 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
 
   img{
     object-position: center;
+  }
+
+  .workshop_shelf {
+    padding-block: 1.8rem;
+    display: flex;
+    flex-direction: column;
   }
   }
 </style>
