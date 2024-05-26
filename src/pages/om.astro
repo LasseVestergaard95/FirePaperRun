@@ -4,43 +4,34 @@ import Textsection from "../components/Textsection.astro";
 import WorkshopShelf from "../components/WorkshopShelf.astro";
 import Button from "../components/Button.astro";
 import Banner from "../components/Banner.astro";
-import TextImage from "../components/TextImage.astro";
+import VirksomhedsBanner from "../components/VirksomhedsBanner.astro";
 ---
 
 <MainLayout>
     <Banner header="Bagom FirePaperRun" image="om-os.jpg" p1="Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det  sædvanlige kontorliv." p2="I Sydhavnen, i de smukkeste omgivelser, kan du lære at skabe unikaværker i keramik eller gips. Kun fantasien sætter grænser."/>
 
-
-    <div class="section-gap">
-        <div class="default-inline top bot">
-            <h2>Katrine Blinkenberg</h2>
-            <p>Mit navn er Katrine Blinkenberg, og jeg er hovedet bag FirePaperRun. I 2022 vaglte jeg at ligge præstearbejdet fra mig og udforske min kreative side. Siden da, har jeg afholdt mange forskellige workshops, i gips og ler.
-            </p>
-        </div>
-        
-        
-        <div class="default-inline">
-            <div class="video-section">
-                <div class="quote bot">
-                    <p>“FirePaperRun handler om de unikke, smukkerelationer vi har til andre mennesker
-                    </p>
-                </div>
-                <div class="video bot">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dMrog3NwJAc?si=kL5kAFYEb4PUmCSh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-
-                
+    <div class="grid1-1">
+        <div class="gap">
+            <div><Textsection header="Katrine Blinkenberg" text="Mit navn er Katrine Blinkenberg, og jeg er hovedet bag FirePaperRun. I 2022 vaglte jeg at ligge præstearbejdet fra mig og udforske min kreative side. Siden da, har jeg afholdt mange forskellige workshops, i gips og ler."/>
+            </div>
+            <div><Textsection header="Håndværk og mennesket" text="Man kan lære meget om et menneske ved at se hvordan de arbejder med deres hænder. Samtidig kan det, at have et kreativt afbræk i dagligdagen skabe et nyt pust af energi og inspiration til din hverdag! Alle kan lære at lave kunst, og det er aldrig for sent at lære. Vi afholder workshops for private og virksomheder og alt kan skræddersyes til hvad det er i gerne vil udforske og lære."/>    
             </div>
         </div>
-
-        <div class="firepaperrun gap section-gap">
-                <div><Textsection header="FirePaperRun" text="Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det sædvanlige kontorliv. Vi afholder workshops for private og virksomheder og alt kan skræddersyes til hvad det er i gerne vil udforske og lære."/></div>
-                <img src="/public/banner/header.jpg" alt="workshopbillede">
-                <div><Textsection header="Håndværk og mennesket" text="Man kan lære meget om et menneske ved at se hvordan de arbejder med deres hænder. Samtidig kan det, at have et kreativt afbræk i dagligdagen skabe et nyt pust af energi og inspiration til din hverdag! Alle kan lære at lave kunst, og det er aldrig for sent at lære."/></div>
+               
+        <div class="iframe-wrapper"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/dMrog3NwJAc?si=kL5kAFYEb4PUmCSh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
         </div>
+    </div>
+
+    <div class="quote">
+        <p>“FirePaperRun handler om de unikke, smukkerelationer vi har til andre mennesker"
+        </p>
+    </div>
+                
+       <VirksomhedsBanner/>         
 
 
-        <div class="default-inline kommendeworkshops">
+        <div class="default-inline">
             <div><h2>Kommende workshops</h2></div>
             <div><WorkshopShelf/></div>
             <div class="btn"><Button type="secondary" knaptekst="Se alle workshop" link="book_workshop"/></div>
@@ -51,113 +42,98 @@ import TextImage from "../components/TextImage.astro";
 
 <style>
 
-
-
-
-.firepaperrun{
+.grid1-1{
     display: flex;
     flex-direction: column;
-    gap: var(--padding-xxl);
+    padding-block: var(--default-inline);
 }
 
-.firepaperrun div:last-child{
-    padding-bottom: var(--padding-xxl);
-}
 
-.kommendeworkshops{
+.gap{
     display: flex;
     flex-direction: column;
-    padding-bottom: 5rem;
-    gap: var(--padding-s);
+    gap: var(--padding-l);
 }
 
-.btn{
-    align-self: center;
-}
-
-.quote p{
-    max-width: 50%;
-    margin-inline: auto;
-    text-align: center;
-    font-size: var(--quote-size);
-    line-height: var(--quote-line-height);
-    font-weight: var(--quote-weight);
-    font-style: var(--quote-style);
+.gap div:last-child{
+    padding-bottom: var(--default-inline);
 }
 
 .default-inline{
     padding-inline: var(--default-inline);
 }
 
-.top{
-    padding-top: var(--padding-m);
-}
-
-.bot{
-    padding-bottom: var(--padding-m);
-}
 
 iframe {
         object-fit: cover;
-        height: 280px;
-        width: 100%;
+        aspect-ratio: 16/9;
+        align-self: center;
     }
+
+.quote p{
+    font-size: var(--quote-size);
+    line-height: var(--quote-line-height);
+    font-weight: var(--quote-weight);
+    font-style: var(--quote-style);
+
+}
+
+.quote{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-block: 4rem;
+
+}
+
+.default-inline h2{
+    padding-bottom: var(--default-inline);
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: var(--padding-xl);
+}
+
 
 
 @media screen and (min-width: 750px){
 
-.quote p{
-    max-width: 50%;
-    margin-inline: auto;
-    text-align: center;
-    font-size: var(--quote-size);
-    line-height: var(--quote-line-height);
-    font-weight: var(--quote-weight);
-    font-style: var(--quote-style);
-}
-
-.gap{
-    gap: var(--padding-m);
-}
-
-.top{
-    padding-top: var(--padding-m);
-}
-
-.firepaperrun{
-    padding-right: var(--default-inline);
+.grid1-1{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
+    padding-block: var(--default-inline);
+    padding-right: var(--default-inline);
 }
 
-.firepaperrun img{
-    border-radius: var(--border-radius-m);
-}
-
-.firepaperrun .gap .section-gap div:last-child{
-    column-span: 1/2;
+.gap{
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-xxl);
 }
 
 .default-inline{
     padding-inline: var(--default-inline);
 }
 
-.section-gap{
-    gap: var(--padding-xxl);
-}
 
 iframe {
         object-fit: cover;
-        height: 600px;
-        width: 1080px;
+        aspect-ratio: 16/9;
         align-self: center;
+        border-radius: var(--border-radius-s);
     }
 
-    .video{
-        display: flex;
-        flex-direction: column;
-    }
+.quote{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 6rem;
+}
 
 }
 
