@@ -54,7 +54,8 @@ input[type="text"], input[type="email"]{
   background-color: transparent;
   color: var(--news-text);
   opacity: 70%;
-  padding-block: var(--padding-xs);
+  padding-block: var(--padding-s);
+  font: var(--paragraph-font);
 }
 
 input:focus,
@@ -95,7 +96,6 @@ h2{
 /*Desktop*/
 @media screen and (min-width: 750px){
   #newsletter{
-  padding-block: 5rem;
   background-color: var(--orange);
   position: relative;
   z-index: 1;
@@ -119,9 +119,6 @@ input{
   border: none;
 }
 
-input::placeholder, textarea::placeholder, #newsletter{
-  color: var(--news-text);
-}
 
 input:focus,
 select:focus,
@@ -136,8 +133,7 @@ input[type="text"], input[type="email"]{
   background-color: transparent;
   color: var(--news-text);
   opacity: 70%;
-  margin-bottom: var(--padding-xs);
-  padding-block: var(--padding-s)
+  font: var(--paragraph-font);
 }
 
 .newsletter-width{
@@ -146,7 +142,6 @@ input[type="text"], input[type="email"]{
   margin: auto;
 }
 
-/*BUTTON SKAL SKIFTES UD MED DESKTOP VER*/
 input[type="submit"]{
   color: var(--button-stroke-color-white);
   border: var(--button-stroke-xs) solid var(--button-stroke-white);
