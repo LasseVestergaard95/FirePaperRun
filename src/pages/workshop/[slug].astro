@@ -15,6 +15,7 @@ interface Workshop {
   start_time: string;
   end_time: string;
   description: string;
+  sold_out: boolean;
 }
 export async function getStaticPaths() {
   const data: Workshop[] = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops", {
@@ -60,8 +61,10 @@ function formatDate(dateString) {
         <span class="show_amount">1</span>
         <button>+</button>
       </div>
-      <p>Kun 4 ledige pladser</p>
-      <div class="buy_button"><Button type="primary" knaptekst="Læg i kurv" link="/" /></div>
+      <p>{myData.sold_out ? "Ingen ledige pladser" : `${myData.spots} pladser tilgængelige`}</p>
+      <div class="buy_button">
+        <Button type={myData.sold_out ? "sold_out" : "primary"} knaptekst={myData.sold_out ? "Udsolgt" : "Læg i kurv"} link="/" />
+      </div>
       <div class="description"><h3>Workshopbeskrivelse</h3><p>{myData.description}</p></div>
     </div>
   </section>
