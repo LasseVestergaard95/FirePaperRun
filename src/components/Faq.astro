@@ -40,15 +40,25 @@
     padding-inline: var(--default-inline);
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
   details {
     max-width: 30rem;
-    gap: var(--padding-xl);
+    padding-block: var(--padding-xs);
+  }
+
+  summary{
+    font-size: var(--paragraph-size);
+  }
+  section div{
+    max-width: 440px;
   }
 
 
   h2{
     color: var(--light-white);
+    text-align: center;
+    padding-bottom: var(--padding-s);
   }
 
   @media screen and (min-width: 750px){  
@@ -62,16 +72,13 @@
 
   summary{
     font-size: var(--paragraph-size);
-    font-weight: var( --paragraph-weight-semibold);
   }
 
   details{
     padding-block: var(--padding-xs);
   }
 
-  details summary p{
-    font-weight: var( --paragraph-weight-thin);
-  }
+  
   h2{
     text-align: center;
     padding-bottom: var(--padding-xs);
