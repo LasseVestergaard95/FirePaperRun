@@ -27,6 +27,7 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
     </div>
   </section>
   <section class="workshop_shelf">
+    <h2>Kommende workshops</h2>
  <div> <WorkshopShelf/></div>
  <div><Button type="secondary" knaptekst="Se alle workshops" link="book_workshop"/></div>
   </section>
@@ -65,6 +66,7 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
 
   .banner-text{
     display: flex;
+    min-width: 320px;
     gap: 50px;
   }
   .frontpage_intro {
@@ -74,10 +76,15 @@ import WorkshopShelf from "../components/WorkshopShelf.astro";
     padding-block: 1.8rem;
     display: flex;
     flex-direction: column;
-  }
-  .workshop_shelf:last-child{
     align-self: center;
+    padding-inline: var(--default-inline);
   }
+
+  .workshop_shelf h2{
+    padding-bottom: var(--padding-s);
+  }
+  
+
   .frontpage_intro h2 {
     margin-bottom: 0.5rem;
   }
