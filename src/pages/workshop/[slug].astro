@@ -57,6 +57,11 @@ function formatDate(dateString) {
         <div class="dato"><p><span><img src="/logo/calender-black.svg" alt="" /></span>{formatDate(myData.date)}</p></div>
         <div class="tid"><p><span><img src="/logo/time-black.svg" alt="" /></span>{myData.start_time.slice(0, 5)}-{myData.end_time.slice(0, 5)}</p></div>
       </div>
+      <details>
+        <summary>Læs mere om workshoppen</summary>
+        <p>{myData.description}</p>
+      </details>
+
       <div class="choose_amount">
         <button>-</button>
         <span class="show_amount">1</span>
@@ -66,7 +71,6 @@ function formatDate(dateString) {
       <div class="buy_button">
         <Button type={myData.sold_out ? "sold_out" : "primary"} knaptekst={myData.sold_out ? "Udsolgt" : "Læg i kurv"} link="/" />
       </div>
-      <div class="description"><h3>Workshopbeskrivelse</h3><p>{myData.description}</p></div>
     </div>
   </section>
   <section class="workshop_shelf">
@@ -99,7 +103,7 @@ function formatDate(dateString) {
       display: flex;
       gap: 2rem;
       padding: 0;
-      margin-bottom: var(--padding-xl);
+      margin-bottom: var(--padding-s);
       margin-top: 0.3rem;
     }
     .dato_tid span,
@@ -143,20 +147,28 @@ function formatDate(dateString) {
     }
     .buy_button {
       align-self: center;
-      margin-block: var(--padding-xl);
+      margin-block-start: var(--padding-l);
     }
     .workshop_shelf {
       display: flex;
       flex-direction: column;
       margin-block: var(--padding-xl);
+      margin-inline: var(--default-inline);
     }
     .workshop_shelf div {
       align-self: center;
     }
 
     .workshop_shelf h2 {
-      margin-inline: var(--default-inline);
       margin-block: var(--padding-xl);
+    }
+    details {
+      margin-bottom: var(--padding-xl);
+    }
+    summary {
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: var(--paragraph-weight-semibold);
     }
 
     @media screen and (min-width: 650px) {
@@ -168,15 +180,17 @@ function formatDate(dateString) {
       .workshop_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-inline: var(--default-inline);
+        padding-inline: var(--default-inline);
+        margin-inline: auto;
         padding-top: 5rem;
+        max-width: 1200px;
+        
       }
       .workshop_info {
         margin-block-start: initial;
       }
       .workshop_img {
-        aspect-ratio: 8/9;
-        max-width: 30rem;
+        max-height: 70dvh;
         border-radius: 5px;
       }
       .lokation {

@@ -1,0 +1,48 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+import ProductGrid from "../components/ProductGrid.astro";
+import Banner from "../components/Banner.astro";
+import Faq from "../components/Faq.astro";
+---
+
+<MainLayout>
+  <Banner header="Køb produkter" image="workshop-keramik.jpg" p1="Her kan du se og købe mine kopper og skåle. Hvis du er interesseret i mine skulpturer, kan du besøge min personlige hjemmeside, KatrineBlinkenberg.com" />
+ <div> <button><span><img src="/logo/sort.svg" alt=""></span>Sorter</button><button><span><img src="/logo/sort.svg" alt=""></span>Filtrer</button></div>
+  <ProductGrid />
+  <Faq />
+</MainLayout>
+
+<style>
+  div{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+span img{
+  width: 1rem;
+}
+span{
+  display: inline-block;
+  vertical-align: middle;
+}
+  button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid black;
+    width: 100%;
+    padding-block: 1rem;
+    font-size: var(--paragraph-size);
+  }
+
+  @media screen and (min-width: 500px) {
+    button {
+      margin-top: var(--padding-m);
+      width: 12rem;
+      
+    }
+    div{
+        justify-content: space-between;
+        margin-inline: var(--default-inline);
+    }
+  }
+</style>
+---

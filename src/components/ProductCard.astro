@@ -5,18 +5,17 @@ const { name, image, price, id, sold_out } = Astro.props;
 <article>
   <a href={`/product/${name + id}`}>
     <img src={`/produkter/${image}`} alt={`billede af ${name}`} />
-    <p>{name}</p>
     <p>{price} DKK</p>
+    <p>{name}</p>
   </a>
 </article>
 
 <style>
-  article {
+  a {
     display: flex;
     flex-direction: column;
-    gap: 0.3125rem;
+    gap: 1.25rem;
     width: 100%;
-    margin-inline: 0.5rem;
     margin-block: 1rem;
   }
   img {
@@ -24,5 +23,12 @@ const { name, image, price, id, sold_out } = Astro.props;
     object-fit: cover;
     border-radius: 5px;
     object-position: bottom;
+  }
+  p:first-of-type{
+    font-weight:var(--paragraph-weight-regular);
+  }
+  p:last-of-type{
+    font-family: var(--header-font);
+    font-size: var(--h3-size);
   }
 </style>
