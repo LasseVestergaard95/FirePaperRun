@@ -54,7 +54,8 @@ input[type="text"], input[type="email"]{
   background-color: transparent;
   color: var(--news-text);
   opacity: 70%;
-  padding-block: var(--padding-xs);
+  padding-block: var(--padding-s);
+  font: var(--paragraph-font);
 }
 
 input:focus,
@@ -65,20 +66,20 @@ button:focus {
     outline: none;
 }
 
-
 input[type="submit"]{
   color: var(--button-stroke-color-white);
+  font-family: var(--paragraph-font);
   border: var(--button-stroke-xs) solid var(--button-stroke-white);
-  background-color: transparent;
-  align-self: center;
-  padding: 1rem;
-  padding-inline: var(--padding-s);
-  padding-block: var(--padding-xs);
   border-radius: var(--button-border-s);
-  margin-top: var(--padding-s);
+  background-color: transparent;
+  padding-inline: var(--padding-m);
+  padding-block: var(--padding-xs);
+  margin-top: var(--padding-m);
+  align-self: center;
   width: fit-content;
   cursor: pointer;
 }
+
 
 form{
   padding-bottom: 1.25rem;
@@ -95,7 +96,6 @@ h2{
 /*Desktop*/
 @media screen and (min-width: 750px){ 
   #newsletter{
-  padding-block: 5rem;
   background-color: var(--orange);
   position: relative;
   z-index: 1;
@@ -117,11 +117,9 @@ input{
   width: 100%;
   padding: 0.25rem;
   border: none;
+  
 }
 
-input::placeholder, textarea::placeholder, #newsletter{
-  color: var(--news-text);
-}
 
 input:focus,
 select:focus,
@@ -136,8 +134,7 @@ input[type="text"], input[type="email"]{
   background-color: transparent;
   color: var(--news-text);
   opacity: 70%;
-  margin-bottom: var(--padding-xs);
-  padding-block: var(--padding-s)
+  font: var(--paragraph-font);
 }
 
 .newsletter-width{
@@ -146,17 +143,16 @@ input[type="text"], input[type="email"]{
   margin: auto;
 }
 
-/*BUTTON SKAL SKIFTES UD MED DESKTOP VER*/
 input[type="submit"]{
   color: var(--button-stroke-color-white);
+  font-family: var(--paragraph-font);
   border: var(--button-stroke-xs) solid var(--button-stroke-white);
-  background-color: transparent;
-  align-self: center;
-  padding: 1rem;
-  padding-inline: var(--padding-s);
-  padding-block: var(--padding-xs);
   border-radius: var(--button-border-s);
-  margin-top: var(--padding-s);
+  background-color: transparent;
+  padding-inline: 1rem;
+  padding-block: 0.8rem;
+  margin-top: var(--padding-m);
+  align-self: center;
   width: fit-content;
   cursor: pointer;
 }
