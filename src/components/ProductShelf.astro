@@ -1,4 +1,5 @@
 ---
+const {header}=Astro.props;
 import ProductCard from "./ProductCard.astro";
 const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/products", {
   method: "GET",
@@ -8,12 +9,13 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/produ
 }).then((res) => res.json());
 ---
 
-<section class="product_shelf">
-    {
+<section>
+  <h2>{header}</h2>
+    <div class="product_shelf">{
       data.map((product) => {
         return <ProductCard id={product.id} name={product.name}  price={product.price} sold_out={product.sold_out} image={product.image} />;
       })
-    }
+    }</div>
   </section>
 
   <style>
@@ -35,6 +37,8 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/produ
     flex: 0 0 auto;
 
   }
+  h2{  margin-block: var(--padding-xl);}
+
 
 
   </style>

@@ -56,8 +56,7 @@ const { myData } = Astro.props;
     </div>
   </section>
   <section class="product_shelf">
-    <h2>Andre kunder har også set</h2>
-    <ProductShelf/>
+    <ProductShelf header="Andre kunder har også set"/>
     <div><Button type="secondary" knaptekst="Se alle produkter" link="../kob-produkter" /></div>
   </section>
 
@@ -94,10 +93,6 @@ const { myData } = Astro.props;
     }
     .product_shelf div {
       align-self: center;
-    }
-
-    .product_shelf h2 {
-      margin-block: var(--padding-xl);
     }
     details {
       margin-bottom: var(--padding-s);
