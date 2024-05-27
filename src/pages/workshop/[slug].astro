@@ -83,8 +83,7 @@ const address = locationToAddress[myData.location];
     </div>
   </section>
   <section class="workshop_shelf">
-    <h2>Andre kunder har også set</h2>
-    <WorkshopShelf />
+    <WorkshopShelf header="Andre kunder har også set" />
     <div><Button type="secondary" knaptekst="Se alle workshops" link="book_workshop" /></div>
   </section>
 
@@ -161,7 +160,6 @@ const address = locationToAddress[myData.location];
       display: flex;
       flex-direction: column;
       margin-block: var(--padding-xl);
-      margin-inline: var(--default-inline);
     }
     .workshop_shelf div {
       align-self: center;
@@ -216,6 +214,13 @@ const address = locationToAddress[myData.location];
         align-self: initial;
         margin-block: var(--padding-s);
       }
+      .price {
+      margin-bottom: var(--padding-s);
+      margin-top: 0.5rem;
+    }
+    details {
+      margin-block: var(--padding-s);
+    }
     }
   </style>
 </MainLayout>

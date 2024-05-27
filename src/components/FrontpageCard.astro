@@ -1,9 +1,9 @@
 ---
-const { titel, img } = Astro.props;
+const { titel, img, link } = Astro.props;
 ---
 
 <article>
-  <a href="/">
+  <a href=`/${link}`>
     <div class="gradient"></div>
     <img src={img} alt="" />
     <div>

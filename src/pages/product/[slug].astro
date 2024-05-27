@@ -47,7 +47,7 @@ const { myData } = Astro.props;
       <p class="unique">{myData.unique ? "Dette produkt er et unika. Kun 1 stk på lager" : ""}</p>
       <div class="pick_up"><p>Kan afhentes i containeren ude i Sydhavn.</p><a href="https://g.co/kgs/FY5qoPJ">Find vej</a></div>
       <details>
-        <summary>Produktbeskrivelse</summary>
+        <summary>Læs mere om produktet</summary>
         <p>{myData.description}</p>
       </details>
       <div class="buy_button">
@@ -56,8 +56,7 @@ const { myData } = Astro.props;
     </div>
   </section>
   <section class="product_shelf">
-    <h2>Andre kunder har også set</h2>
-    <ProductShelf/>
+    <ProductShelf header="Andre kunder har også set"/>
     <div><Button type="secondary" knaptekst="Se alle produkter" link="../kob-produkter" /></div>
   </section>
 
@@ -94,10 +93,6 @@ const { myData } = Astro.props;
     }
     .product_shelf div {
       align-self: center;
-    }
-
-    .product_shelf h2 {
-      margin-block: var(--padding-xl);
     }
     details {
       margin-bottom: var(--padding-s);
@@ -163,6 +158,16 @@ const { myData } = Astro.props;
         align-self: initial;
         margin-block: var(--padding-s);
       }
+      .price {
+      margin-bottom: var(--padding-s);
+      margin-top: 0.5rem;
+    }
+    .unique {
+      margin-bottom: var(--padding-xs);
+    }
+    details{
+      margin-bottom: 1rem;
+    }
     }
   </style>
 </MainLayout>
