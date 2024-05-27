@@ -33,11 +33,11 @@ import Banner from "../components/Banner.astro";
 
 <Banner header="ClayToGo" image="/claytogo.webp" p1="Mange laver keramik hjemme i en privat atmosfære. Hvis du vil lave keramik hjemme, kan du hente ler i containeren eller købe den i webshoppen med evt. forsendelse."><Button type="teritary" knaptekst="Køb produkter" link="kob-produkter"/></Banner>
 
-<div class="claytogo default-inline">
-    <p>
+<div class="claytogo">
+    <p class="default-inline">
         Mange laver keramik hjemme i en privat atmosfære. Hvis du vil lave keramik hjemme, kan du hente ler i containeren eller købe den i webshoppen med evt. forsendelse.
     </p>
-    <div class="btn"><Button type="secondary" knaptekst="Køb produkter" link="kob-produkter"/></div>
+    <div class="btn"><Button type="secondary" knaptekst="Køb produkter" link="kob-produkter"/> </div>
 </div>
 
 
@@ -75,6 +75,10 @@ img{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.claytogo p{
+    padding-top: var(--padding-m);
 }
 
 .btn{
@@ -137,6 +141,7 @@ img{
 .claytogo{
     display: none;
 }
+
 .slide{
     display: none;
 }
