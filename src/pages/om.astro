@@ -10,16 +10,16 @@ import VirksomhedsBanner from "../components/VirksomhedsBanner.astro";
 <MainLayout>
     <Banner header="Bagom FirePaperRun" image="om-os.webp" p1="Kom til workshop hos FirePaperRun og oplev enestående øjeblikke, som et afbræk fra det  sædvanlige kontorliv." p2="I Sydhavnen, i de smukkeste omgivelser, kan du lære at skabe unikaværker i keramik eller gips. Kun fantasien sætter grænser."/>
 
-    <div class="grid1-1">
-        <div class="gap">
-            <div><Textsection header="Katrine Blinkenberg" text="Mit navn er Katrine Blinkenberg, og jeg er hovedet bag FirePaperRun. I 2022 vaglte jeg at ligge præstearbejdet fra mig og udforske min kreative side. Siden da, har jeg afholdt mange forskellige workshops, i gips og ler."/>
-            </div>
-            <div><Textsection header="Håndværk og mennesket" text="Man kan lære meget om et menneske ved at se hvordan de arbejder med deres hænder. Samtidig kan det, at have et kreativt afbræk i dagligdagen skabe et nyt pust af energi og inspiration til din hverdag! Alle kan lære at lave kunst, og det er aldrig for sent at lære. Vi afholder workshops for private og virksomheder og alt kan skræddersyes til hvad det er i gerne vil udforske og lære."/>    
-            </div>
+    <div class="grid_container">
+        <div class="section1">
+             <Textsection header="Katrine Blinkenberg" text="Mit navn er Katrine Blinkenberg, og jeg er hovedet bag FirePaperRun. I 2022 vaglte jeg at ligge præstearbejdet fra mig og udforske min kreative side. Siden da, har jeg afholdt mange forskellige workshops, i gips og ler."/>
         </div>
-               
+            
         <div class="iframe-wrapper"><iframe width="100%" height="100%" src="https://www.youtube.com/embed/dMrog3NwJAc?si=kL5kAFYEb4PUmCSh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        </iframe>
+        </iframe></div>
+
+        <div class="section2">
+            <Textsection header="Håndværk og mennesket" text="Man kan lære meget om et menneske ved at se hvordan de arbejder med deres hænder. Samtidig kan det, at have et kreativt afbræk i dagligdagen skabe et nyt pust af energi og inspiration til din hverdag! Alle kan lære at lave kunst, og det er aldrig for sent at lære. Vi afholder workshops for private og virksomheder og alt kan skræddersyes til hvad det er i gerne vil udforske og lære."/>    
         </div>
     </div>
 
@@ -48,18 +48,22 @@ import VirksomhedsBanner from "../components/VirksomhedsBanner.astro";
     padding-block: var(--default-inline);
 }
 
-
-.gap{
-    display: flex;
-    flex-direction: column;
-    gap: var(--padding-l);
-}
-
 .gap div:last-child{
     padding-bottom: var(--default-inline);
 }
 
+.grid_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-block: var(--default-inline);
+}
 
+.section1, .section2 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
 
 iframe {
@@ -114,6 +118,27 @@ iframe {
     gap: var(--padding-xxl);
 }
 
+.grid_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "section1 iframe-wrapper"
+            "section2 iframe-wrapper";
+        gap: 2rem;
+        padding-right: var(--default-inline);
+    }
+
+    .section1 {
+        grid-area: section1;
+    }
+
+    .iframe-wrapper {
+        grid-area: iframe-wrapper;
+    }
+
+    .section2 {
+        grid-area: section2;
+    }
 
 
 iframe {
