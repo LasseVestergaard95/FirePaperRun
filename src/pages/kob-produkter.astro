@@ -6,24 +6,24 @@ import Faq from "../components/Faq.astro";
 ---
 
 <MainLayout>
-  <Banner header="Køb produkter" image="workshop-keramik.webp" p1="Her kan du se og købe mine kopper og skåle. Hvis du er interesseret i mine skulpturer, kan du besøge min personlige hjemmeside, KatrineBlinkenberg.com" />
- <div> <button><span><img src="/logo/sort.svg" alt=""></span>Sorter</button><button><span><img src="/logo/filter.svg" alt=""></span>Filtrer</button></div>
+  <Banner header="Køb produkter" image="produkter.webp" p1="Her kan du se og købe mine kopper og skåle. Hvis du er interesseret i mine skulpturer, kan du besøge min personlige hjemmeside, KatrineBlinkenberg.com" />
+  <div><button><span><img src="/logo/sort.svg" alt="" /></span>Sorter</button><button><span><img src="/logo/filter.svg" alt="" /></span>Filtrer</button></div>
   <ProductGrid />
   <Faq />
 </MainLayout>
 
 <style>
-  div{
+  div {
     display: flex;
     flex-direction: row-reverse;
   }
-span img{
-  width: 1rem;
-}
-span{
-  display: inline-block;
-  vertical-align: middle;
-}
+  span img {
+    width: 1rem;
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
   button {
     cursor: pointer;
     background-color: transparent;
@@ -39,11 +39,10 @@ span{
       margin-top: var(--padding-m);
       margin-bottom: 1rem;
       width: 12rem;
-      
     }
-    div{
-        justify-content: space-between;
-        margin-inline: var(--default-inline);
+    div {
+      justify-content: space-between;
+      margin-inline: var(--default-inline);
     }
   }
 </style>
