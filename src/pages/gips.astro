@@ -1,39 +1,54 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
 import Textsection from "../components/Textsection.astro";
-import WorkshopGrid from "../components/WorkshopGrid.astro";
 import Button from "../components/Button.astro";
 import Faq from "../components/Faq.astro";
 import Banner from "../components/Banner.astro";
+import VirksomhedsBanner from "../components/VirksomhedsBanner.astro";
+import WorkshopShelf from "../components/WorkshopShelf.astro";
 ---
 
 <MainLayout>
    
-    <Banner header="At arbejde med gips" image="gips.jpg" p1="Har du nogensinde undret dig over, hvordan man arbejder med gips, og hvad man ville kunne udvikle? Læs mere her!"/>
-    <div class="seperation">
-        <div class="section-gap">
-            <div class="grid">
-                <div>
-                <Textsection
-                header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. " />
-                <p>Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem.</p>
+    <Banner header="At arbejde med gips" image="/gips.webp"  p1="Har du nogensinde undret dig over, hvordan man arbejder med gips, og hvad man ville kunne udvikle? Læs mere her!"/>
+    <div class="grid1-1">
+        <div>
+            <Textsection header="Oplev skulptur workshop" text="Fra tid til anden åbner vi vores hjem op på 8. sal i skønne Metropolis. Med udsigt over havet og havnen tilbringer vi 4 timer sammen og arbejder med en af mine yndlings materialer: Gips. Jeg tager dig igennem hele processen, så du kan tage din egen unika skulptur med hjem."/>
+            <div><Textsection header="Arbejde intuitivt" text="Når du arbejder med gips, handler det om at kunne give slip og skabe ud fra intuition. Du har kun et lille tidsrum til at bygge skulpturen fra gipsen rammer vandet til det størkner. Det er først når skulpturen skal efterarbejdes at fordybelsen kommer. " />
+                <div class="default-inline">
+                        <p>Denne metode minder om en skrivemetode ved navn automatskrift, som jeg selv har haft glæde af i mit tidligere arbejde som præst. Metoden handler om at sætte en tidsgrænse og inde for denne grænse skal du bare tømme hovedet ned på papir.</p>
+                        <p>Måske du selv kunne få gavn af denne metode?</p>
                 </div>
-                <div><img src="/public/workshops/gips_workshop.jpg" alt="gips workshop"></div>
             </div>
-            
-            <div>
-                <Textsection
-            header="At arbejde intuitivt" text="Når du arbejder med gips, handler det om at kunne give slip og skabe ud fra intuition. Du har kun et lille tidsrum til at bygge skulpturen fra gipsen rammer vandet til det størkner. " />
-            <p>Det er først når skulpturen skal efterarbejdes at fordybelsen kommer.</p>
-            <p>Denne metode minder om en skrivemetode ved navn automatskrift, som jeg selv har haft glæde af i mit tidligere arbejde som præst. Metoden handler om at sætte en tidsgrænse og inde for denne grænse skal du bare tømme hovedet ned på papir.</p>
-            <p>Måske du selv kunne få gavn af denne metode?</p>
-            <img src="/public/workshops/gips_workshop2.jpg"/></div>
-            
         </div>
+        <div class="slideshow">
+            <div class="slide" style="width:100%"><img src="/workshops/gips_workshop.webp" alt="gips workshop"></div>
+            <div class="slide" style="width:100%"><img src="/workshops/gips_workshop2.webp" alt="gips workshop"></div>
+        <div class="slide" style="width:100%"><img src="/workshops/gips_workshop3.webp" alt="gips workshop"></div>
+        <div class="slide" style="width:100%"><img src="/workshops/gips_workshop4.webp" alt="gips workshop"></div>
+
+        <div class="slide" style="width:100%"><img src="/workshops/gips_workshop5.webp" alt="gips workshop"></div>
+    </div>
+    </div>
+
+    <div class="resultater">
+        <h2>Resultater fra gipsworkshop</h2>
+        <div class="billeder">
+            <img src="/workshops/resultat1.webp" alt="gips resultat">
+        <img src="/workshops/resultat2.webp" alt="gips resultat">
+    <img src="/workshops/resultat3.webp" alt="gips resultat">
+        </div>
+    </div>
+
+    <VirksomhedsBanner/>
+
+    
+    
+  
 
     <div class="workshop">
         <h2>Kommende workshops</h2>
-            <WorkshopGrid />
+            <WorkshopShelf />
             <div class="btn"><Button type="secondary" knaptekst="Se alle workshop" link="book_workshop"/></div>
         </div>
     </div>
@@ -51,27 +66,42 @@ img{
     padding-bottom: var(--default-inline);
 }
 
-
-.section-gap{
+.grid1-1{
     display: flex;
     flex-direction: column;
-    gap: var(--default-inline);
+    padding-block: var(--default-inline);
+    gap: 2rem;
 }
 
-.section-gap div{
+.grid1-1 div:first-child{
     display: flex;
     flex-direction: column;
-    gap: var(--default-inline);
+    gap: 2rem;
+
 }
 
-.section-gap div:first-child{
-padding-top: var(--default-inline);
+.grid1-1 div:first-child div:last-child {
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.section-gap div p{
+.resultater{
+    display: flex;
+    flex-direction: column;
     padding-inline: var(--default-inline);
+    gap: 1rem;
+    padding-block: var(--default-inline);
 }
 
+.billeder{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.billeder img{
+    border-radius: var(--border-radius-s);
+}
 .workshop{
     display: flex;
     flex-direction: column;
@@ -82,23 +112,22 @@ padding-top: var(--default-inline);
     padding-inline: var(--default-inline);
 }
 
-@media screen and (min-width: 750px){
-.section-gap .grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    padding-right: var(--default-inline);
-}
-
-img{
-    border-radius: var(--border-radius-m);
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    height: 70%;
-
-}
-
-
-}
-
 </style>
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("slide");
+      for (i = 0; i < x.length; i++) {
+        (x[i] as HTMLElement).style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      (x[myIndex - 1] as HTMLElement).style.display = "block";
+      setTimeout(carousel, 3500); // Change image every 2 seconds
+    }
+</script>
+
+

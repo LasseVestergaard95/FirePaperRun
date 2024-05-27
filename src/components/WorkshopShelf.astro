@@ -1,4 +1,5 @@
 ---
+const {header}= Astro.props;
 import WorkshopCard from "./WorkshopCard.astro";
 const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops?limit=3", {
   method: "GET",
@@ -8,24 +9,30 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
 }).then((res) => res.json());
 ---
 
-<section class="workshop_shelf">
+<section>
+  <h2>{header}</h2>
+  <div class="workshop_shelf">
   {
     data.map((workshop) => {
       return <WorkshopCard id={workshop.id} name={workshop.name} location={workshop.location} image={workshop.image} start={workshop.start_time} end={workshop.end_time} date={workshop.date} price={workshop.price} sold_out={workshop.sold_out} />;
     })
-  }
+  }</div>
 </section>
 
 <style>
+  section{
+    padding-inline: var(--default-inline);
+  }
   .workshop_shelf {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-block-end: 2.5rem;
 
   }
+
   .workshop_shelf::-webkit-scrollbar {
     display: none;
   }
@@ -33,9 +40,10 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/works
     flex: 0 0 auto;
 
   }
-  @media screen and (min-width: 650px){
-    .workshop_shelf{
-      margin-inline: var(--default-inline);
-    }
+  h2{
+    margin-block: var(--padding-s);
   }
+
+ 
+
 </style>

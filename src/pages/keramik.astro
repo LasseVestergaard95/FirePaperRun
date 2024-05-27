@@ -1,89 +1,208 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
 import Textsection from "../components/Textsection.astro";
-import WorkshopGrid from "../components/WorkshopGrid.astro";
+import WorkshopShelf from "../components/WorkshopShelf.astro";
 import Button from "../components/Button.astro";
 import Burn from "../components/Burn.astro";
 import Faq from "../components/Faq.astro";
+import Banner from "../components/Banner.astro";
 ---
 
 <MainLayout>
-    <section class="header_section">
-        <div class="div1">
-    <img class="header_img" src="/public/workshops/kop_workshop.jpg" alt="" /> </div><div class="div2"><h1>Arbejd med keramik</h1></div>
-    </section>
+    <Banner header="At arbejde med keramik" image="/keramik.webp" p1="Har du nogensinde undret dig over, hvordan man arbejder med keramik, og hvad man ville kunne udvikle? Læs mere her!"/>
     
-    <div class="text-content">
-   <Textsection
-   header="Oplev ContainerClay" text="I en container i Sydhavnen kan du komme til den vildeste workshop i keramik. Hyg med gamle venner og stift nye bekendtskaber når vi holder 3 timers keramik workshop. Jeg tager dig igennem hele processen, så du kan tage dine egne unika værker med hjem." /></div>
-   <img src="/public/produkter/gips.jpg"/>
+<div class="grid1-1">
+    <div>
+        <div>
+            <Textsection
+   header="Oplev ContainerClay" text="I en container i Sydhavnen kan du komme til den vildeste workshop i keramik. Hyg med gamle venner og stift nye bekendtskaber når vi holder 3 timers keramik workshop. Jeg tager dig igennem hele processen, så du kan tage dine egne unika værker med hjem." />
+        </div>
+        <div>
+            <Textsection
+        header="Processen" text="Til alle mine keramik workshops, får du udleveret ler. Jeg vil tage dig gennem processen hvor du lærer nyttige teknikker som er baseret på en japansk metode. Når du er færdig med dit keramik, kan du markere hvilken farve du ønsker eller lade mig bestemme for dig. Du kan forvente at dit keramik er færdig cirka 2-3 uger efter da det først skal tørre, brændes samt glaseres." /></Textsction>
+        </div>
+        <div class="slideshow">
+            <div class="slide" style="width:100%"><img src="/public/workshops/keramik_workshop.webp" alt="gips workshop"></div>
+            <div class="slide" style="width:100%"><img src="/public/workshops/keramik_workshop2.webp" alt="gips workshop"></div>
+        <div class="slide" style="width:100%"><img src="/public/workshops/keramik_workshop3.webp" alt="gips workshop"></div>
+        <div class="slide" style="width:100%"><img src="/public/workshops/keramik_workshop4.webp" alt="gips workshop"></div>
+        <div class="slide" style="width:100%"><img src="/public/workshops/keramik_workshop5.webp" alt="gips workshop"></div>
+    </div>
+</div>
 
-   <div class="text-content">
-<Textsection
-   header="Processen" text="Til alle mine keramik workshops, får du udleveret ler. Jeg vil tage dig gennem processen hvor du lærer nyttige teknikker som er baseret på en japansk metode. Når du er færdig med dit keramik, kan du markere hvilken farve du ønsker eller lade mig bestemme for dig. Du kan forvente at dit keramik er færdig cirka 2-3 uger efter da det først skal tørre, brændes samt glaseres." /></Textsection></div>
-   
-<section class="header_section">
-        <div class="div1">
-    <img class="header_img" src="/public/produkter/keramik.jpg" alt="" /> </div><div class="div2"><h1>Services: Clay to go</h1></div>
-      </section>
-      <div class="text-content">
-    <Textsection
-    header="" text="Mange laver keramik hjemme i en privat atmosfære. Hvis du vil lave keramik hjemme, kan du hente ler i containeren eller købe den i webshoppen med evt. forsendelse."/></div>
-  
-    <Button type="secondary">Køb produkter</Button>
 
-<section class="header_section">
-<div class="div1">
- <img class="header_img" src="/public/produkter/keramik.jpg" alt="" /> </div><div class="div2"><h1>Services: Brænding</h1></div>
-      </section>
-      <div class="text-content">
-    <Textsection
-    header="" text="Når du er færdig med at bygge, skal du bringe dit keramik ned til vores container. Leret skal være helt tørt før det kan brændes, så vent min. 3 uger. Jeg brænder normalt ved 1.260 grader, hvillket betyder, at det er stentøj. Da det forkerte ler kan ødelægge oven, er det vigtigt, du enten køber dit ler hos mig eller at du kan dokumentere hvilken type ler, du bruger."/></div>
-<Burn></Burn>
+<Banner header="ClayToGo" image="/claytogo.webp" p1="Mange laver keramik hjemme i en privat atmosfære. Hvis du vil lave keramik hjemme, kan du hente ler i containeren eller købe den i webshoppen med evt. forsendelse."><Button type="teritary" knaptekst="Køb produkter" link="kob-produkter"/></Banner>
 
-   <section>
+<div class="claytogo">
+    <p class="default-inline">
+        Mange laver keramik hjemme i en privat atmosfære. Hvis du vil lave keramik hjemme, kan du hente ler i containeren eller købe den i webshoppen med evt. forsendelse.
+    </p>
+    <div class="btn"><Button type="secondary" knaptekst="Køb produkter" link="kob-produkter"/> </div>
+</div>
+
+
+<div class="grid1">
+    <Burn></Burn>
+<div class="default-inline">
+    <h2>Brænding</h2>
+    <p>Når du er færdig med at bygge, skal du bringe dit keramik ned til vores container. Leret skal være helt tørt før det kan brændes, så vent min. 3 uger.</p>
+    <p>
+        Jeg brænder normalt ved 1.260 grader, hvillket betyder, at det er stentøj. Da det forkerte ler kan ødelægge oven, er det vigtigt, du enten køber dit ler hos mig eller at du kan dokumentere hvilken type ler, du bruger. 
+    </p>
+    </div>
+</div>
+
+
+<div class="workshop">
    <h2>Kommende workshops</h2>
-     <WorkshopGrid />
-      <Button type= "secondary" link="/book_workshop">Se alle workshops</Button>
-      </section>
+     <WorkshopShelf />
+     <div class="btn"><Button type="secondary" knaptekst="Se alle workshop" link="book_workshop"/>
+</div>
       <Faq></Faq>
 </MainLayout>
 
 <style>
-    .header_section {
-    display: grid; 
-grid-template-columns: repeat(2, 1fr); 
-grid-template-rows: repeat(2, 1fr); 
-grid-column-gap: 0px;
-grid-row-gap: 0px; 
-}
-.div1 { 
-    grid-area: 1 / 1 / 3 / 3; 
-} 
-.div2 { 
-    grid-area: 2 / 1 / 3 / 3;
-    align-self: end; 
-    padding-bottom: 1rem;
-}
+
 
 img{
     aspect-ratio: 16/9;
     object-fit: cover;
 }
-h1 {
-    color: var(--lighter-white);
-    padding-left: 1rem;
+
+
+
+.claytogo{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-h2 {
-    padding-left: 1rem;
-    padding-top: 2rem;
+.claytogo p{
+    padding-top: var(--padding-m);
 }
 
-.text-content {
-    padding-top: 2rem;
-    padding-left: 1rem;
-    padding-right: 4rem;
-    padding-bottom: 2rem;
+.btn{
+    align-self: center;
+    padding-bottom: var(--padding-xxl);
+}
+
+.workshop{
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--padding-l);
+}
+
+.workshop h2{
+    padding-bottom: 1rem;
+}
+
+.grid1-1, .grid1{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.grid1-1{
+    padding-block: var(--default-inline);
+}
+
+.grid1-1 div:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+
+.workshop h2, .default-inline{
+    padding-inline: var(--default-inline);
+}
+
+.default-inline{
+    order: -1;
+}
+
+
+@media screen and (min-width: 750px){
+    .grid1-1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding-block: var(--default-inline);
+    padding-right: var(--default-inline);
+    }
+    .grid1-1 div:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+
+.claytogo{
+    display: none;
+}
+
+.slide{
+    display: none;
+}
+
+.resultater{
+    display: flex;
+    flex-direction: column;
+    padding-inline: var(--default-inline);
+    gap: 1rem;
+
+}
+
+.billeder{
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 1fr;
+gap: 2rem;
+}
+
+img{
+    border-radius: var(--border-radius-s);
+}
+
+.default-inline{
+    padding-inline: var(--default-inline);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.grid1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding-block: var(--padding-l);
+    }
+
+.workshop h2{
+    padding-inline: var(--default-inline);
+}
+
+
+
+
+
 }
 </style>
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("slide");
+      for (i = 0; i < x.length; i++) {
+        (x[i] as HTMLElement).style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      (x[myIndex - 1] as HTMLElement).style.display = "block";
+      setTimeout(carousel, 3500); // Change image every 2 seconds
+    }
+</script>

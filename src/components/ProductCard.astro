@@ -1,28 +1,37 @@
 ---
-
+const { name, image, price, id, sold_out } = Astro.props;
 ---
 
 <article>
-    <img src="/produkter/keramik_kop1.jpg" alt="">
-    <p>Unika keramik kop</p>
-    <p>299 DKK</p>
+  <a href={`/product/${name + id}`}>
+    <img src={`/produkter/${image}.webp`} alt={`billede af ${name}`} />
+    <p>{price} DKK</p>
+    <p>{name}</p>
+  </a>
 </article>
 
 <style>
-    article{
-        display: flex;
-        flex-direction: column;
-        gap: 0.3125rem;;
-        width: 100%;
-        max-width: 10rem;
-        margin-inline: 0.5rem;
-        margin-block: 1rem;
-    }
-    img{
-        aspect-ratio: 16/20;
-        object-fit: cover;
-        border-radius: 5px;
-        object-position: bottom;
+  a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 10rem;
 
-    }
+  }
+  img {
+    aspect-ratio: 16/20;
+    object-fit: cover;
+    border-radius: 5px;
+    object-position: bottom;
+  }
+  p:first-of-type{
+    font-weight:var(--paragraph-weight-regular);
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+  p:last-of-type{
+    font-family: var(--header-font);
+    font-size: 1.1rem;
+  }
+
 </style>

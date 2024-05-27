@@ -1,0 +1,66 @@
+---
+
+---
+
+<section>
+  <div>
+    <h2>Kom til en uforglemmelig dag</h2>
+    <p>Tag med din virksomhed til en kreativ workshop hos FirePaperRun.</p>
+  </div>
+  <div>
+    <a href="mailto:fire.paper.run@gmail.com">Send en efterspørgelse</a>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-xl);
+    background-image: url("/public/banner/om-os.webp");
+    background-size: cover;
+    background-position: center;
+    padding: var(--default-inline);
+    padding-block: 6rem;
+    margin-block: var(--default-inline);
+    margin-bottom: 5rem;
+
+  }
+
+  section div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  h2,
+  p,
+  a {
+    color: var(--light-white);
+  }
+
+  h2 {
+    font-weight: var(--h2-weight-semibold);
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--light-orange);
+  }
+
+  @media screen and (min-width: 750px) {
+    h2,
+    p,
+    a {
+      color: var(--light-white);
+    
+    }
+    section{
+      margin-bottom: 7rem;
+    }
+
+  }
+</style>

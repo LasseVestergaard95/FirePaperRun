@@ -15,6 +15,8 @@ interface Workshop {
   start_time: string;
   end_time: string;
   description: string;
+  sold_out: boolean;
+  spots: number;
 }
 export async function getStaticPaths() {
   const data: Workshop[] = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops", {
@@ -39,34 +41,50 @@ function formatDate(dateString) {
   const month = date.toLocaleString("da-DK", { month: "short" });
   return `${day}. ${month}`;
 }
+
+// Metode til at vise den korrekte adresse alt efter workshoppens lokation. Bemærk at denne funktion har vi fået hjælp til af ChatGPT
+const locationToAddress = {
+  "Lejligheden, Sydhavn": "Oscar Pettifords Vej 23 8th, 2450 København S",
+  "Containeren, Sydhavn": "Ved Slusen 29, 2450 København S",
+  "Sommerhuset, Holbæk": "To-Bjerg 91, 4300 Holbæk",
+};
+
+const address = locationToAddress[myData.location];
 ---
 
 <MainLayout>
+  <div class="header_background"></div>
   <section class="workshop_grid">
     <div>
-      <img class="workshop_img" src=`/workshops/${myData.image}` alt=`billede af ${myData.name}` />
+      <img class="workshop_img" src=`/workshops/${myData.image}.webp` alt=`billede af ${myData.name}` />
     </div>
     <div class="workshop_info">
       <h1>{myData.name}</h1>
-      <p>Fra {myData.price} DKK</p>
-      <div class="lokation"><p><span><img src="/logo/location-black.svg" alt="location logo" /></span>{myData.location}</p> <p class="adress">Oscar Pettifords Vej 23 8th, 2450 København S</p></div>
+      <p class="price">Fra {myData.price} DKK</p>
+      <div class="lokation"><p><span><img src="/logo/location-black.svg" alt="location logo" /></span>{myData.location}</p> <p class="address">{address}</p></div>
       <div class="dato_tid">
         <div class="dato"><p><span><img src="/logo/calender-black.svg" alt="" /></span>{formatDate(myData.date)}</p></div>
         <div class="tid"><p><span><img src="/logo/time-black.svg" alt="" /></span>{myData.start_time.slice(0, 5)}-{myData.end_time.slice(0, 5)}</p></div>
       </div>
+      
+
       <div class="choose_amount">
         <button>-</button>
         <span class="show_amount">1</span>
         <button>+</button>
       </div>
-      <p>Kun 4 ledige pladser</p>
-      <div class="buy_button"><Button type="primary" knaptekst="Læg i kurv" link="/" /></div>
-      <div class="description"><h3>Workshopbeskrivelse</h3><p>{myData.description}</p></div>
+      <p>{myData.sold_out ? "Ingen ledige pladser" : `${myData.spots} pladser tilgængelige`}</p>
+      <div class="buy_button">
+        <Button type={myData.sold_out ? "sold_out" : "primary"} knaptekst={myData.sold_out ? "Udsolgt" : "Læg i kurv"} link="/" />
+      </div>
+      <details>
+        <summary>Læs mere om workshoppen</summary>
+        <p>{myData.description}</p>
+      </details>
     </div>
   </section>
   <section class="workshop_shelf">
-    <h2>Andre kunder har også set</h2>
-    <WorkshopShelf />
+    <WorkshopShelf header="Andre kunder har også set" />
     <div><Button type="secondary" knaptekst="Se alle workshops" link="book_workshop" /></div>
   </section>
 
@@ -82,10 +100,10 @@ function formatDate(dateString) {
       margin-block-start: var(--padding-xl);
       margin-block-end: var(--padding-xxl);
     }
-.workshop_img{
-  aspect-ratio: 1;
-  object-fit: cover;
-}
+    .workshop_img {
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
     span img {
       width: 1rem;
       height: 100%;
@@ -94,7 +112,7 @@ function formatDate(dateString) {
       display: flex;
       gap: 2rem;
       padding: 0;
-      margin-bottom: var(--padding-xl);
+      margin-bottom: var(--padding-s);
       margin-top: 0.3rem;
     }
     .dato_tid span,
@@ -102,10 +120,8 @@ function formatDate(dateString) {
       margin-right: 0.7rem;
     }
 
-    .lokation {
-      margin-top: var(--padding-m);
-    }
-    .adress {
+  
+    .address {
       font-weight: var(--paragraph-weight-thin);
       font-size: 0.7rem;
       margin-left: 1.7rem;
@@ -130,6 +146,7 @@ function formatDate(dateString) {
     }
     .show_amount {
       width: 100%;
+      max-width: 18rem;
       border: 1px solid black;
       text-align: center;
       display: flex;
@@ -138,47 +155,75 @@ function formatDate(dateString) {
     }
     .buy_button {
       align-self: center;
-      margin-block: var(--padding-xl);
+      margin-block-start: var(--padding-l);
     }
     .workshop_shelf {
       display: flex;
       flex-direction: column;
       margin-block: var(--padding-xl);
     }
-    .workshop_shelf div {
-      align-self: center;
-    }
-
-    .workshop_shelf h2 {
-      margin-inline: var(--default-inline);
+   
+.workshop_shelf div{
+  align-self: center;
+}
+  
+    details {
       margin-block: var(--padding-xl);
     }
+    summary {
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: var(--paragraph-weight-semibold);
+    }
+    .price{
+      margin-bottom: var(--padding-l);
+      margin-top: var(--padding-m);
+      font-weight: 500;
+      font-size: var(--h3-size);
+    }
 
-    @media screen and (min-width: 650px){
-      .workshop_grid{
+
+
+    @media screen and (min-width: 650px) {
+      .header_background {
+        width: 100%;
+        background-color: var(--dark-red);
+        height: 70px;
+      }
+      .workshop_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-inline: var(--default-inline);
+        padding-inline: var(--default-inline);
+        margin-inline: auto;
         padding-top: 5rem;
+
       }
-      .workshop_info{
+
+      .workshop_info {
         margin-block-start: initial;
+        margin-block-end: var(--padding-xs);
       }
-      .workshop_img{
-        aspect-ratio: 8/9;
-        max-width: 30rem;
+      .workshop_img {
+        max-height: 70dvh;
         border-radius: 5px;
       }
-      .lokation{
+      .lokation {
         margin-top: var(--padding-xs);
       }
-      .choose_amount{
+      .choose_amount {
         max-width: 15rem;
       }
-      .buy_button{
+      .buy_button {
         align-self: initial;
         margin-block: var(--padding-s);
       }
+      .price {
+      margin-bottom: var(--padding-s);
+      margin-top: 0.5rem;
+    }
+    details {
+      margin-block: var(--padding-s);
+    }
     }
   </style>
 </MainLayout>

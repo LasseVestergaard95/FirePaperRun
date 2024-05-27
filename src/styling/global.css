@@ -10,7 +10,6 @@ body {
   line-height: 1.6;
   color: var(--light-black);
   background-color: var(--light-white);
-
   margin-inline: auto;
 }
 
@@ -54,5 +53,9 @@ p {
 a{
   text-decoration: none;
   color: inherit;
+}
+.full_bleed{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 

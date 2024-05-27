@@ -11,23 +11,25 @@ function formatDate(dateString) {
 ---
 
 <article>
-  <a class={sold_out === !false && "is_sold_out"} href={`/workshop/${name + id}`}>
-    <div class="gradient"></div>
-    <img src={`/workshops/${image}`} alt={`billede af ${name}`} />
-    <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{location}</p></div>
+  <div class="span_sold_out">{sold_out === true && "Udsolgt"}</div>
+  <a href={`/workshop/${name + id}`}>
+    <div class=`${sold_out ? "is_sold_out" : "gradient"}`></div>
+    <img class={sold_out === !false && "is_sold_out"} src={`/workshops/${image}.webp`} alt={`billede af ${name}`} />
+    <div class="lokation"><p><span><img src="/logo/location-white.svg" alt="location logo" /></span>{location}</p></div>
     <div class="main_info">
       <h3>{name}</h3>
       <div class="dato_tid">
-        <div class="dato"><p><span><img src="/logo/calender.svg" alt="" /></span>{formatDate(date)}</p></div>
-        <div class="tid"><p><span><img src="/logo/time.svg" alt="" /></span>{start.slice(0, 5)}-{end.slice(0, 5)}</p></div>
+        <div class="dato"><p><span><img src="/logo/calender-white.svg" alt="" /></span>{formatDate(date)}</p></div>
+        <div class="tid"><p><span><img src="/logo/time-white.svg" alt="" /></span>{start.slice(0, 5)}-{end.slice(0, 5)}</p></div>
       </div>
-      <p class={`pris, ${sold_out === true && "is_sold_out_dash"}`}>Fra {price} DKK <span class="span_sold_out">{sold_out === true && "Udsolgt"}</span></p>
+      <div class="pris"><p class={`${sold_out === true && "is_sold_out_dash"}`}>Fra {price} DKK</p> </div>
     </div>
   </a>
 </article>
 
 <style>
   article {
+    position: relative;
     width: 100%;
     min-width: 20rem;
     height: 17rem;
@@ -51,11 +53,13 @@ function formatDate(dateString) {
     aspect-ratio: 16/9;
   }
   span img {
-    aspect-ratio: 1;
+    aspect-ratio:initial;
+    width: 1rem;
   }
   .gradient {
     position: absolute;
-    background-image: linear-gradient(to top, rgba(22, 22, 22, 0.6) 20%, transparent);
+    background-image: linear-gradient(to top,rgba(40,33,26,.8) 100%,transparent);
+    opacity: 50%;
     height: 100%;
     width: 100%;
   }
@@ -90,22 +94,38 @@ function formatDate(dateString) {
   .dato_tid span {
     margin-right: 0.7rem;
   }
+  .lokation span{
+    margin-right: 0.7rem;
+  }
 
   .dato,
   .tid {
     display: flex;
   }
   .is_sold_out {
-    filter: grayscale(0.8);
+    position: absolute;
+    opacity: 60%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 100%, transparent);
+    height: 100%;
+    width: 100%;
   }
+ 
   .is_sold_out_dash {
     text-decoration: line-through;
   }
   .span_sold_out {
-    margin-left: 1rem;
-    vertical-align: bottom;
-    color: orange;
-    font-weight: var(--mob-h2-weight-default);
+    position: absolute;
+    background-color: white;
+    color: black;
+    left: 1rem;
+    top:1rem;
+    padding-inline: 1rem;
+    z-index: 100;
+    font-weight: 500;
   }
-
+  .pris {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
 </style>
