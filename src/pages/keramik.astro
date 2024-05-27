@@ -9,7 +9,7 @@ import Banner from "../components/Banner.astro";
 ---
 
 <MainLayout>
-    <Banner header="At arbejde med keramik" image="/banner/keramik.jpg"/>
+    <Banner header="At arbejde med keramik" image="/banner/keramik.jpg" p1="Har du nogensinde undret dig over, hvordan man arbejder med keramik, og hvad man ville kunne udvikle? Læs mere her!"/>
     
 <div class="grid1-1">
     <div>
@@ -31,21 +31,18 @@ import Banner from "../components/Banner.astro";
 </div>
 
 
-<Banner header="ClayToGo" image="/produkter/keramik.jpg"/>
-      <div class="text-content">
-    <Textsection
-    header="" text="Mange laver keramik hjemme i en privat atmosfære. Hvis du vil lave keramik hjemme, kan du hente ler i containeren eller købe den i webshoppen med evt. forsendelse."/></div>
-  
-    <Button type="secondary">Køb produkter</Button>
+<Banner header="ClayToGo" image="/claytogo.jpg" p1="Mange laver keramik hjemme i en privat atmosfære. Hvis du vil lave keramik hjemme, kan du hente ler i containeren eller købe den i webshoppen med evt. forsendelse."><Button type="teritary" knaptekst="Køb produkter" link="kob-produkter"/></Banner>
 
-<section class="header_section">
-<div class="div1">
- <img class="header_img" src="/public/produkter/keramik.jpg" alt="" /> </div><div class="div2"><h1>Services: Brænding</h1></div>
-      </section>
-      <div class="text-content">
-    <Textsection
-    header="" text="Når du er færdig med at bygge, skal du bringe dit keramik ned til vores container. Leret skal være helt tørt før det kan brændes, så vent min. 3 uger. Jeg brænder normalt ved 1.260 grader, hvillket betyder, at det er stentøj. Da det forkerte ler kan ødelægge oven, er det vigtigt, du enten køber dit ler hos mig eller at du kan dokumentere hvilken type ler, du bruger."/></div>
+
+<div class="default-inline">
+    <h2>Brænding</h2>
+    <p>Når du er færdig med at bygge, skal du bringe dit keramik ned til vores container. Leret skal være helt tørt før det kan brændes, så vent min. 3 uger.</p>
+    <p>
+        Jeg brænder normalt ved 1.260 grader, hvillket betyder, at det er stentøj. Da det forkerte ler kan ødelægge oven, er det vigtigt, du enten køber dit ler hos mig eller at du kan dokumentere hvilken type ler, du bruger. 
+    </p>
+</div>
 <Burn></Burn>
+
 
    <section>
    <h2>Kommende workshops</h2>
@@ -74,7 +71,7 @@ img{
     .grid1-1 div:first-child{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .slide{
@@ -98,6 +95,13 @@ gap: 2rem;
 
 img{
     border-radius: var(--border-radius-s);
+}
+
+.default-inline{
+    padding-inline: var(--default-inline);
+    padding-block: 3rem;
+    padding-top: 5rem;
+    align-items: end;
 }
 }
 </style>
