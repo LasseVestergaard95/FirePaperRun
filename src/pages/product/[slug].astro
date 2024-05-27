@@ -43,7 +43,7 @@ const { myData } = Astro.props;
       <p>{myData.type}</p>
       <h1>{myData.name}</h1>
       <p class="price">{myData.price} DKK + evt. fragt</p>
-      <p class="measurements">Mål: <span>{myData.measurements}</span></p>
+      {myData.measurements &&(<p class="measurements">Mål: <span>{myData.measurements}</span></p>)}
       <p class="unique">{myData.unique ? "Dette produkt er et unika. Kun 1 stk på lager" : ""}</p>
       <div class="pick_up"><p>Kan afhentes i containeren ude i Sydhavn.</p><a href="https://g.co/kgs/FY5qoPJ">Find vej</a></div>
       <details>
@@ -82,13 +82,15 @@ const { myData } = Astro.props;
 
     .buy_button {
       align-self: center;
-      margin-block-start: var(--padding-l);
+      margin-block-start: var(--padding-s);
     }
     .product_shelf {
       display: flex;
       flex-direction: column;
       margin-block: var(--padding-xl);
-      margin-inline: var(--default-inline);
+      padding-inline: var(--default-inline);
+      margin-inline: auto;
+      max-width: 1200px;
     }
     .product_shelf div {
       align-self: center;
@@ -98,7 +100,7 @@ const { myData } = Astro.props;
       margin-block: var(--padding-xl);
     }
     details {
-      margin-bottom: var(--padding-xl);
+      margin-bottom: var(--padding-s);
     }
     summary {
       cursor: pointer;
