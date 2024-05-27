@@ -60,7 +60,7 @@ const address = locationToAddress[myData.location];
     </div>
     <div class="workshop_info">
       <h1>{myData.name}</h1>
-      <p>Fra {myData.price} DKK</p>
+      <p class="price">Fra {myData.price} DKK</p>
       <div class="lokation"><p><span><img src="/logo/location-black.svg" alt="location logo" /></span>{myData.location}</p> <p class="address">{address}</p></div>
       <div class="dato_tid">
         <div class="dato"><p><span><img src="/logo/calender-black.svg" alt="" /></span>{formatDate(myData.date)}</p></div>
@@ -120,9 +120,7 @@ const address = locationToAddress[myData.location];
       margin-right: 0.7rem;
     }
 
-    .lokation {
-      margin-top: var(--padding-m);
-    }
+  
     .address {
       font-weight: var(--paragraph-weight-thin);
       font-size: 0.7rem;
@@ -148,6 +146,7 @@ const address = locationToAddress[myData.location];
     }
     .show_amount {
       width: 100%;
+      max-width: 18rem;
       border: 1px solid black;
       text-align: center;
       display: flex;
@@ -172,12 +171,17 @@ const address = locationToAddress[myData.location];
       margin-block: var(--padding-xl);
     }
     details {
-      margin-bottom: var(--padding-xl);
+      margin-block: var(--padding-xl);
     }
     summary {
       cursor: pointer;
       font-size: 1rem;
       font-weight: var(--paragraph-weight-semibold);
+    }
+    .price{
+      margin-bottom: var(--padding-l);
+      margin-top: var(--padding-m);
+      font-weight: 600;
     }
 
     @media screen and (min-width: 650px) {

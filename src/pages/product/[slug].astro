@@ -40,7 +40,7 @@ const { myData } = Astro.props;
       <img class="product_img" src=`/produkter/${myData.image}` alt=`billede af ${myData.name}` />
     </div>
     <div class="product_info">
-      <p>{myData.type}</p>
+      <p class="type">{myData.type}</p>
       <h1>{myData.name}</h1>
       <p class="price">{myData.price} DKK + evt. fragt</p>
       {myData.measurements &&(<p class="measurements">Mål: <span>{myData.measurements}</span></p>)}
@@ -108,8 +108,9 @@ const { myData } = Astro.props;
       font-weight: var(--paragraph-weight-semibold);
     }
     .price {
-      margin-bottom: var(--padding-m);
-      margin-top: var(--padding-xs);
+      margin-bottom: var(--padding-l);
+      margin-top: var(--padding-m);
+      font-weight: 600;
     }
     .measurements {
       font-weight: 600;
@@ -129,6 +130,10 @@ const { myData } = Astro.props;
     .pick_up a {
       font-weight: 300;
       text-decoration: underline;
+    }
+    .type{
+      font-size: 0.9rem;
+      font-weight: 200;
     }
 
     @media screen and (min-width: 650px) {
