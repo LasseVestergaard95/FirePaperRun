@@ -17,6 +17,7 @@ interface Workshop {
   description: string;
   sold_out: boolean;
   spots: number;
+  type: string;
 }
 export async function getStaticPaths() {
   const data: Workshop[] = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/workshops", {
@@ -52,13 +53,14 @@ const locationToAddress = {
 const address = locationToAddress[myData.location];
 ---
 
-<MainLayout>
+<MainLayout title=`${myData.name}`>
   <div class="header_background"></div>
   <section class="workshop_grid">
     <div>
       <img class="workshop_img" src=`/workshops/${myData.image}.webp` alt=`billede af ${myData.name}` />
     </div>
     <div class="workshop_info">
+      <p class="type">{myData.type}</p>
       <h1>{myData.name}</h1>
       <p class="price">Fra {myData.price} DKK</p>
       <div class="lokation"><p><span><img src="/logo/location-black.svg" alt="location logo" /></span>{myData.location}</p> <p class="address">{address}</p></div>
@@ -182,7 +184,10 @@ const address = locationToAddress[myData.location];
       font-size: var(--h3-size);
     }
 
-
+    .type{
+      font-size: 0.9rem;
+      font-weight: 200;
+    }
 
     @media screen and (min-width: 650px) {
       .header_background {
