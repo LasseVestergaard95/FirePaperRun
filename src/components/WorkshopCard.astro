@@ -14,12 +14,12 @@ function formatDate(dateString) {
   <a href={`/workshop/${name + id}`}>
     <div class="gradient is_sold_out"></div>
     <img class={sold_out === !false && "is_sold_out"} src={`/workshops/${image}`} alt={`billede af ${name}`} />
-    <div class="lokation"><p><span><img src="/logo/location.svg" alt="location logo" /></span>{location}</p></div>
+    <div class="lokation"><p><span><img src="/logo/location-white.svg" alt="location logo" /></span>{location}</p></div>
     <div class="main_info">
       <h3>{name}</h3>
       <div class="dato_tid">
-        <div class="dato"><p><span><img src="/logo/calender.svg" alt="" /></span>{formatDate(date)}</p></div>
-        <div class="tid"><p><span><img src="/logo/time.svg" alt="" /></span>{start.slice(0, 5)}-{end.slice(0, 5)}</p></div>
+        <div class="dato"><p><span><img src="/logo/calender-white.svg" alt="" /></span>{formatDate(date)}</p></div>
+        <div class="tid"><p><span><img src="/logo/time-white.svg" alt="" /></span>{start.slice(0, 5)}-{end.slice(0, 5)}</p></div>
       </div>
       <div class="pris"><p class={`${sold_out === true && "is_sold_out_dash"}`}>Fra {price} DKK</p> <div class="span_sold_out">{sold_out === true && "Udsolgt"}</div></div>
     </div>
@@ -51,7 +51,8 @@ function formatDate(dateString) {
     aspect-ratio: 16/9;
   }
   span img {
-    aspect-ratio: 1;
+    aspect-ratio:initial;
+    width: 1rem;
   }
   .gradient {
     position: absolute;
@@ -88,6 +89,9 @@ function formatDate(dateString) {
     vertical-align: middle;
   }
   .dato_tid span {
+    margin-right: 0.7rem;
+  }
+  .lokation span{
     margin-right: 0.7rem;
   }
 

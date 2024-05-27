@@ -41,6 +41,15 @@ function formatDate(dateString) {
   const month = date.toLocaleString("da-DK", { month: "short" });
   return `${day}. ${month}`;
 }
+
+// Metode til at vise den korrekte adresse alt efter workshoppens lokation. Bemærk at denne funktion har vi fået hjælp til af ChatGPT
+const locationToAddress = {
+  "Lejligheden, Sydhavn": "Oscar Pettifords Vej 23 8th, 2450 København S",
+  "Containeren, Sydhavn": "Ved Slusen 29, 2450 København S",
+  "Sommerhuset, Holbæk": "To-Bjerg 91, 4300 Holbæk",
+};
+
+const address = locationToAddress[myData.location];
 ---
 
 <MainLayout>
@@ -52,7 +61,7 @@ function formatDate(dateString) {
     <div class="workshop_info">
       <h1>{myData.name}</h1>
       <p>Fra {myData.price} DKK</p>
-      <div class="lokation"><p><span><img src="/logo/location-black.svg" alt="location logo" /></span>{myData.location}</p> <p class="adress">Oscar Pettifords Vej 23 8th, 2450 København S</p></div>
+      <div class="lokation"><p><span><img src="/logo/location-black.svg" alt="location logo" /></span>{myData.location}</p> <p class="address">{address}</p></div>
       <div class="dato_tid">
         <div class="dato"><p><span><img src="/logo/calender-black.svg" alt="" /></span>{formatDate(myData.date)}</p></div>
         <div class="tid"><p><span><img src="/logo/time-black.svg" alt="" /></span>{myData.start_time.slice(0, 5)}-{myData.end_time.slice(0, 5)}</p></div>
@@ -114,7 +123,7 @@ function formatDate(dateString) {
     .lokation {
       margin-top: var(--padding-m);
     }
-    .adress {
+    .address {
       font-weight: var(--paragraph-weight-thin);
       font-size: 0.7rem;
       margin-left: 1.7rem;
@@ -185,6 +194,7 @@ function formatDate(dateString) {
         padding-top: 5rem;
         max-width: 1200px;
       }
+
       .workshop_info {
         margin-block-start: initial;
       }
