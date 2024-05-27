@@ -11,8 +11,9 @@ function formatDate(dateString) {
 ---
 
 <article>
+  <div class="span_sold_out">{sold_out === true && "Udsolgt"}</div>
   <a href={`/workshop/${name + id}`}>
-    <div class="gradient is_sold_out"></div>
+    <div class=`${sold_out ? "is_sold_out" : "gradient"}`></div>
     <img class={sold_out === !false && "is_sold_out"} src={`/workshops/${image}`} alt={`billede af ${name}`} />
     <div class="lokation"><p><span><img src="/logo/location-white.svg" alt="location logo" /></span>{location}</p></div>
     <div class="main_info">
@@ -21,13 +22,14 @@ function formatDate(dateString) {
         <div class="dato"><p><span><img src="/logo/calender-white.svg" alt="" /></span>{formatDate(date)}</p></div>
         <div class="tid"><p><span><img src="/logo/time-white.svg" alt="" /></span>{start.slice(0, 5)}-{end.slice(0, 5)}</p></div>
       </div>
-      <div class="pris"><p class={`${sold_out === true && "is_sold_out_dash"}`}>Fra {price} DKK</p> <div class="span_sold_out">{sold_out === true && "Udsolgt"}</div></div>
+      <div class="pris"><p class={`${sold_out === true && "is_sold_out_dash"}`}>Fra {price} DKK</p> </div>
     </div>
   </a>
 </article>
 
 <style>
   article {
+    position: relative;
     width: 100%;
     min-width: 20rem;
     height: 17rem;
@@ -56,7 +58,8 @@ function formatDate(dateString) {
   }
   .gradient {
     position: absolute;
-    background-image: linear-gradient(to top, rgba(40, 33, 26, 0.8) 100%, transparent);
+    background-image: linear-gradient(to top,rgba(40,33,26,.8) 100%,transparent);
+    opacity: 50%;
     height: 100%;
     width: 100%;
   }
@@ -100,18 +103,25 @@ function formatDate(dateString) {
     display: flex;
   }
   .is_sold_out {
-    opacity: 50%;
+    position: absolute;
+    opacity: 60%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 100%, transparent);
+    height: 100%;
+    width: 100%;
   }
  
   .is_sold_out_dash {
     text-decoration: line-through;
   }
   .span_sold_out {
-    vertical-align: bottom;
-    color: var(--dark-black);
+    position: absolute;
+    background-color: white;
+    color: black;
+    left: 1rem;
+    top:1rem;
     padding-inline: 1rem;
-    font-weight: var(--h2-weight-default);
-    font-size: x-large;
+    z-index: 100;
+    font-weight: 500;
   }
   .pris {
     display: flex;

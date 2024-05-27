@@ -14,9 +14,8 @@ const { name, image, price, id, sold_out } = Astro.props;
   a {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
     width: 100%;
-    min-width: 9rem;
+    min-width: 10rem;
     margin-block: 1rem;
   }
   img {
@@ -27,9 +26,12 @@ const { name, image, price, id, sold_out } = Astro.props;
   }
   p:first-of-type{
     font-weight:var(--paragraph-weight-regular);
+    margin-top: 0.4rem;
+    margin-bottom: 0.6rem;
   }
   p:last-of-type{
     font-family: var(--header-font);
-    font-size: var(--h3-size);
+    font-size: 1.1rem;
   }
+
 </style>
