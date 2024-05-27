@@ -5,7 +5,7 @@ import Banner from "../components/Banner.astro";
 import Faq from "../components/Faq.astro";
 ---
 
-<MainLayout>
+<MainLayout title="Køb produkter">
   <Banner header="Køb produkter" image="produkter.webp" p1="Her kan du se og købe mine kopper og skåle. Hvis du er interesseret i mine skulpturer, kan du besøge min personlige hjemmeside, KatrineBlinkenberg.com" />
   <div><button><span><img src="/logo/sort.svg" alt="" /></span>Sorter</button><button><span><img src="/logo/filter.svg" alt="" /></span>Filtrer</button></div>
   <ProductGrid />
@@ -32,12 +32,13 @@ import Faq from "../components/Faq.astro";
     padding-block: 1rem;
     font-size: var(--paragraph-size);
     color: var(--dark-black);
+    margin-bottom: 1rem;
   }
 
   @media screen and (min-width: 500px) {
     button {
       margin-top: var(--padding-m);
-      margin-bottom: 1rem;
+      
       width: 12rem;
     }
     div {
