@@ -4,7 +4,7 @@ const { name, image, price, id, sold_out } = Astro.props;
 
 <article>
   <a href={`/product/${name + id}`}>
-    <img src={`/produkter/${image}`} alt={`billede af ${name}`} />
+    <img src={`/produkter/${image}.webp`} alt={`billede af ${name}`} />
     <p>{price} DKK</p>
     <p>{name}</p>
   </a>

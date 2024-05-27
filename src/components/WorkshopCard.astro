@@ -14,7 +14,7 @@ function formatDate(dateString) {
   <div class="span_sold_out">{sold_out === true && "Udsolgt"}</div>
   <a href={`/workshop/${name + id}`}>
     <div class=`${sold_out ? "is_sold_out" : "gradient"}`></div>
-    <img class={sold_out === !false && "is_sold_out"} src={`/workshops/${image}`} alt={`billede af ${name}`} />
+    <img class={sold_out === !false && "is_sold_out"} src={`/workshops/${image}.webp`} alt={`billede af ${name}`} />
     <div class="lokation"><p><span><img src="/logo/location-white.svg" alt="location logo" /></span>{location}</p></div>
     <div class="main_info">
       <h3>{name}</h3>
