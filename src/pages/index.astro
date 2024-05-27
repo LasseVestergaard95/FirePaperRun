@@ -29,9 +29,8 @@ import VirksomhedsBanner from "../components/VirksomhedsBanner.astro";
   </section>
   <VirksomhedsBanner/>
   <section class="workshop_shelf">
-    <h2>Kommende workshops</h2>
- <div> <WorkshopShelf/></div>
- <div><Button type="secondary" knaptekst="Se alle workshops" link="book_workshop"/></div>
+ <div> <WorkshopShelf header="Kommende workshops"/></div>
+ <div class="shelf_button"><Button type="secondary" knaptekst="Se alle workshops" link="book_workshop"/></div>
   </section>
   <Faq/>
   <Newsletter/>
@@ -72,6 +71,7 @@ import VirksomhedsBanner from "../components/VirksomhedsBanner.astro";
   }
   .frontpage_intro {
     padding-block: 1.8rem;
+   
   }
   .workshop_shelf {
     padding-block: 1.8rem;
@@ -83,6 +83,9 @@ import VirksomhedsBanner from "../components/VirksomhedsBanner.astro";
 
   .workshop_shelf h2{
     padding-bottom: var(--padding-s);
+  }
+  .shelf_button{
+    margin-bottom: var(--padding-m);
   }
   
 

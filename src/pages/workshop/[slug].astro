@@ -66,10 +66,7 @@ const address = locationToAddress[myData.location];
         <div class="dato"><p><span><img src="/logo/calender-black.svg" alt="" /></span>{formatDate(myData.date)}</p></div>
         <div class="tid"><p><span><img src="/logo/time-black.svg" alt="" /></span>{myData.start_time.slice(0, 5)}-{myData.end_time.slice(0, 5)}</p></div>
       </div>
-      <details>
-        <summary>Læs mere om workshoppen</summary>
-        <p>{myData.description}</p>
-      </details>
+      
 
       <div class="choose_amount">
         <button>-</button>
@@ -80,6 +77,10 @@ const address = locationToAddress[myData.location];
       <div class="buy_button">
         <Button type={myData.sold_out ? "sold_out" : "primary"} knaptekst={myData.sold_out ? "Udsolgt" : "Læg i kurv"} link="/" />
       </div>
+      <details>
+        <summary>Læs mere om workshoppen</summary>
+        <p>{myData.description}</p>
+      </details>
     </div>
   </section>
   <section class="workshop_shelf">
@@ -161,13 +162,9 @@ const address = locationToAddress[myData.location];
       flex-direction: column;
       margin-block: var(--padding-xl);
     }
-    .workshop_shelf div {
-      align-self: center;
-    }
+   
 
-    .workshop_shelf h2 {
-      margin-block: var(--padding-xl);
-    }
+  
     details {
       margin-block: var(--padding-xl);
     }
@@ -179,13 +176,14 @@ const address = locationToAddress[myData.location];
     .price{
       margin-bottom: var(--padding-l);
       margin-top: var(--padding-m);
-      font-weight: 600;
+      font-weight: 500;
+      font-size: var(--h3-size);
     }
 
     @media screen and (min-width: 650px) {
       .header_background {
         width: 100%;
-        background-color: rgb(28, 42, 28);
+        background-color: var(--dark-red);
         height: 70px;
       }
       .workshop_grid {
@@ -194,11 +192,12 @@ const address = locationToAddress[myData.location];
         padding-inline: var(--default-inline);
         margin-inline: auto;
         padding-top: 5rem;
-        max-width: 1200px;
+
       }
 
       .workshop_info {
         margin-block-start: initial;
+        margin-block-end: var(--padding-xs);
       }
       .workshop_img {
         max-height: 70dvh;

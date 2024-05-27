@@ -46,13 +46,14 @@ const { myData } = Astro.props;
       {myData.measurements &&(<p class="measurements">Mål: <span>{myData.measurements}</span></p>)}
       <p class="unique">{myData.unique ? "Dette produkt er et unika. Kun 1 stk på lager" : ""}</p>
       <div class="pick_up"><p>Kan afhentes i containeren ude i Sydhavn.</p><a href="https://g.co/kgs/FY5qoPJ">Find vej</a></div>
+      
+      <div class="buy_button">
+        <Button type="primary" knaptekst="Læg i kurv" link="/" />
+      </div>
       <details>
         <summary>Læs mere om produktet</summary>
         <p>{myData.description}</p>
       </details>
-      <div class="buy_button">
-        <Button type="primary" knaptekst="Læg i kurv" link="/" />
-      </div>
     </div>
   </section>
   <section class="product_shelf">
@@ -89,13 +90,12 @@ const { myData } = Astro.props;
       margin-block: var(--padding-xl);
       padding-inline: var(--default-inline);
       margin-inline: auto;
-      max-width: 1200px;
+
     }
-    .product_shelf div {
-      align-self: center;
-    }
+   
     details {
       margin-bottom: var(--padding-s);
+      margin-top: var(--padding-xl);
     }
     summary {
       cursor: pointer;
@@ -105,7 +105,8 @@ const { myData } = Astro.props;
     .price {
       margin-bottom: var(--padding-l);
       margin-top: var(--padding-m);
-      font-weight: 600;
+      font-weight: 500;
+      font-size: var(--h3-size);
     }
     .measurements {
       font-weight: 600;
@@ -134,7 +135,7 @@ const { myData } = Astro.props;
     @media screen and (min-width: 650px) {
       .header_background {
         width: 100%;
-        background-color: rgb(28, 42, 28);
+        background-color: var(--dark-red);
         height: 70px;
       }
 
@@ -144,10 +145,11 @@ const { myData } = Astro.props;
         padding-inline: var(--default-inline);
         margin-inline: auto;
         padding-top: 5rem;
-        max-width: 1200px;
+  
       }
       .product_info {
         margin-block-start: initial;
+        margin-block-end: var(--padding-xs);
       }
       .product_img {
         object-position: 50% 80%;
@@ -167,6 +169,10 @@ const { myData } = Astro.props;
     }
     details{
       margin-bottom: 1rem;
+      margin-top: var(--padding-xs);
+    }
+    .pick_up{
+      margin-bottom: var(--padding-xs);
     }
     }
   </style>

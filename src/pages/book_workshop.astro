@@ -7,20 +7,19 @@ import Faq from "../components/Faq.astro";
 
 <MainLayout>
   <Banner header="Book workshops" image="workshop.webp" p1="Du kan udforske mine workshops og læse mere om dem individuelt, før du vælger at booke dem. " p2="Hvis du er interesseret i en virksomhedsworkshop, så tøv ikke med at række ud til mig." />
- <div> <button><span><img src="/logo/sort.svg" alt=""></span>Sorter</button></div>
+  <div><button><span><img src="/logo/sort.svg" alt="" /></span>Sorter</button></div>
   <WorkshopGrid />
   <Faq />
 </MainLayout>
 
 <style>
-  
-span img{
-  width: 1rem;
-}
-span{
-  display: inline-block;
-  vertical-align: middle;
-}
+  span img {
+    width: 1rem;
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
   button {
     cursor: pointer;
     background-color: transparent;
@@ -34,10 +33,11 @@ span{
   @media screen and (min-width: 500px) {
     button {
       margin-top: var(--padding-m);
+      margin-bottom: 1rem;
       width: 12rem;
       margin-inline: var(--default-inline);
     }
-    div{
+    div {
       display: flex;
       justify-content: end;
     }

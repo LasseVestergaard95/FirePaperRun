@@ -32,8 +32,8 @@ import VirksomhedsBanner from "../components/VirksomhedsBanner.astro";
 
 
         <div class="default-inline">
-            <div><h2>Kommende workshops</h2></div>
-            <div><WorkshopShelf/></div>
+
+            <div><WorkshopShelf header="Kommende workshops"/></div>
             <div class="btn"><Button type="secondary" knaptekst="Se alle workshop" link="book_workshop"/></div>
         </div>
 </div>
@@ -59,9 +59,7 @@ import VirksomhedsBanner from "../components/VirksomhedsBanner.astro";
     padding-bottom: var(--default-inline);
 }
 
-.default-inline{
-    padding-inline: var(--default-inline);
-}
+
 
 
 iframe {
@@ -116,9 +114,6 @@ iframe {
     gap: var(--padding-xxl);
 }
 
-.default-inline{
-    padding-inline: var(--default-inline);
-}
 
 
 iframe {
