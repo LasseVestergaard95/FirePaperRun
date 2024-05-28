@@ -8,18 +8,13 @@ import Faq from "../components/Faq.astro";
 import Banner from "../components/Banner.astro";
 ---
 
-<MainLayout>
+<MainLayout title="Keramik">
     <Banner header="At arbejde med keramik" image="/keramik.webp" p1="Har du nogensinde undret dig over, hvordan man arbejder med keramik, og hvad man ville kunne udvikle? Læs mere her!"/>
     
-<div class="grid1-1">
-    <div>
-        <div>
+    <div class="grid_container">
+        <div class="section1">
             <Textsection
-   header="Oplev ContainerClay" text="I en container i Sydhavnen kan du komme til den vildeste workshop i keramik. Hyg med gamle venner og stift nye bekendtskaber når vi holder 3 timers keramik workshop. Jeg tager dig igennem hele processen, så du kan tage dine egne unika værker med hjem." />
-        </div>
-        <div>
-            <Textsection
-        header="Processen" text="Til alle mine keramik workshops, får du udleveret ler. Jeg vil tage dig gennem processen hvor du lærer nyttige teknikker som er baseret på en japansk metode. Når du er færdig med dit keramik, kan du markere hvilken farve du ønsker eller lade mig bestemme for dig. Du kan forvente at dit keramik er færdig cirka 2-3 uger efter da det først skal tørre, brændes samt glaseres." /></Textsction>
+                header="Oplev ContainerClay" text="I en container i Sydhavnen kan du komme til den vildeste workshop i keramik. Hyg med gamle venner og stift nye bekendtskaber når vi holder 3 timers keramik workshop. Jeg tager dig igennem hele processen, så du kan tage dine egne unika værker med hjem." />
         </div>
         <div class="slideshow">
             <div class="slide" style="width:100%"><img src="/workshops/keramik_workshop.webp" alt="keramik workshop"></div>
@@ -42,7 +37,7 @@ import Banner from "../components/Banner.astro";
 
 
 <div class="grid1">
-    <Burn></Burn>
+    <div><Burn></Burn></div>
 <div class="default-inline">
     <h2>Brænding</h2>
     <p>Når du er færdig med at bygge, skal du bringe dit keramik ned til vores container. Leret skal være helt tørt før det kan brændes, så vent min. 3 uger.</p>
@@ -122,6 +117,19 @@ img{
     order: -1;
 }
 
+.grid_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-block: var(--default-inline);
+}
+
+.section1, .section2 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 
 @media screen and (min-width: 750px){
     .grid1-1{
@@ -145,6 +153,8 @@ img{
 .slide{
     display: none;
 }
+
+
 
 .resultater{
     display: flex;
@@ -179,9 +189,34 @@ img{
     padding-block: var(--padding-l);
     }
 
+    .grid1 div:first-child{
+        order: -1;
+    }
+
 .workshop h2{
     padding-inline: var(--default-inline);
 }
+.grid_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "section1 slideshow"
+            "section2 slideshow";
+        gap: 2rem;
+        padding-right: var(--default-inline);
+    }
+
+    .section1 {
+        grid-area: section1;
+    }
+
+    .slideshow {
+        grid-area: slideshow;
+    }
+
+    .section2 {
+        grid-area: section2;
+    }
 
 
 
