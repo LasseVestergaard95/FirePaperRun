@@ -9,19 +9,20 @@ const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/produ
 ---
 
 <section class="product_grid">
-    {
-      data.map((product) => {
-        return <ProductCard id={product.id} name={product.name}  price={product.price} sold_out={product.sold_out} image={product.image} />;
-      })
-    }
-  </section>
+  {
+    data.map((product) => {
+      return <ProductCard id={product.id} name={product.name} price={product.price} sold_out={product.sold_out} image={product.image} />;
+    })
+  }
+</section>
 
-  <style>
-    .product_grid{
-      display: grid;
+<style>
+  .product_grid {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-    gap: 1rem;
+    column-gap: 1rem;
+    row-gap: 3rem;
     margin-inline: var(--default-inline);
     margin-bottom: 7rem;
-    }
-  </style>
+  }
+</style>
