@@ -1,7 +1,7 @@
 ---
 const {header}=Astro.props;
 import ProductCard from "./ProductCard.astro";
-const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/products", {
+const data = await fetch("https://lcfiilplolafhgotzgrk.supabase.co/rest/v1/products?limit=4", {
   method: "GET",
   headers: {
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjZmlpbHBsb2xhZmhnb3R6Z3JrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3MzM4NjEsImV4cCI6MjAzMDMwOTg2MX0.NG1pwR1rYfymfHS_elIDmB5V-2TOWGrrPumjrgwhDp4",
