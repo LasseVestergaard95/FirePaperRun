@@ -229,7 +229,10 @@ img{
 }
 </style>
 
+
+
 <script>
+//Denne del har vi fået hjælp til fra ChatGPT
 
     var myIndex = 0;
     carousel();
@@ -243,6 +246,6 @@ img{
       myIndex++;
       if (myIndex > x.length) { myIndex = 1 }
       (x[myIndex - 1] as HTMLElement).style.display = "block";
-      setTimeout(carousel, 3500); // Change image every 2 seconds
+      setTimeout(carousel, 3500); 
     }
 </script>
